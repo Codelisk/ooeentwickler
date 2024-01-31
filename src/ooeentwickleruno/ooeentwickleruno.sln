@@ -635,6 +635,7 @@ Global
 	EndGlobalSection
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		..\..\submodules\Framework.Uno\src\Framework.Base\Framework.UnoNative.Shared\Framework.UnoNative.Shared.projitems*{05414bc5-ee81-480f-a9f6-40617f802eb4}*SharedItemsImports = 13
+		..\ooeentwicklerfoundation\ooeentwickler.foundation.shared\ooeentwickler.foundation.shared.projitems*{0b9ce412-6f5f-4e24-8c9d-511827f21de9}*SharedItemsImports = 5
 		..\ooeentwicklerfoundation\ooeentwickler.foundation.shared\ooeentwickler.foundation.shared.projitems*{7722768e-1c27-409b-ab06-b705776f1c48}*SharedItemsImports = 13
 		..\..\submodules\Framework.Uno\src\Framework.Base\Framework.UnoNative.Shared\Framework.UnoNative.Shared.projitems*{dc5bfd62-a0c6-4a13-a074-7ac9ed85f60d}*SharedItemsImports = 5
 	EndGlobalSection
