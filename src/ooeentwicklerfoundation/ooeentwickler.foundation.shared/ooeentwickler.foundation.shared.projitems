@@ -11,5 +11,6 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Dtos\TestDto.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\TestEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Usings.cs" />
   </ItemGroup>
 </Project>
