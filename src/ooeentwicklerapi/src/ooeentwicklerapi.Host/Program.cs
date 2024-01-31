@@ -14,14 +14,15 @@ namespace ooeentwicklerapi.Host
 
             ConfigureDatabase(builder);
 
-            builder.Services.ConfigureAllServices<DtoEntityProfile, BaseDbContext>();
+            builder.Services.ConfigureAllServices<DtoEntityProfile, OoeDbContext>();
+            builder.Services.InitModules();
             builder.Build().ConfigureAndStartApp();
         }
         public static void ConfigureDatabase(WebApplicationBuilder builder)
         {
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
-            builder.Services.AddDbContext<BaseDbContext>(opt =>
+            builder.Services.AddDbContext<OoeDbContext>(opt =>
             {
                 //opt.UseMySql(connectionString, new MariaDbServerVersion("15.1"), x => x.MigrationsAssembly("Backend.Host"));
                 //opt.UseSqlite(connectionString);

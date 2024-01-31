@@ -32,6 +32,7 @@
     <ProjectReference Include="..\ooeentwicklerapi.Controller\ooeentwicklerapi.Controller.csproj" />
     <ProjectReference Include="..\ooeentwicklerapi.Database\ooeentwicklerapi.Database.csproj" />
     <ProjectReference Include="..\ooeentwicklerapi.Foundation\ooeentwicklerapi.Foundation.csproj" />
+    <ProjectReference Include="..\ooeentwicklerapi.Managers\ooeentwicklerapi.Managers.csproj" />
   </ItemGroup>
 
 </Project>

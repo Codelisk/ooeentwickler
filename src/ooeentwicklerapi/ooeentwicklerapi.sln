@@ -55,8 +55,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebRepositories.Contract.Ge
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebRepositories.Generator", "..\..\submodules\Framework.Restservice\submodules\CodeGen\src\Generators\Web\WebRepositories.Generator\WebRepositories.Generator.csproj", "{A63E3D85-1342-433D-BA0D-2C36C254252B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoFilterer.Dynamics", "..\..\submodules\Framework.Restservice\submodules\CodeGen\src\Submodules\AutoFilterer\src\AutoFilterer.Dynamics\AutoFilterer.Dynamics.csproj", "{005C0F9F-4835-4E7E-92BC-16AB1945BC83}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codelisk.AutoRegisterInject.Generator", "..\..\submodules\Framework.Restservice\submodules\CodeGen\src\Submodules\AutoRegisterInject\src\AutoRegisterInject\Codelisk.AutoRegisterInject.Generator.csproj", "{A1566715-0EB2-4E01-9266-B958C13804F4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ooeentwicklerapi.Controller", "src\ooeentwicklerapi.Controller\ooeentwicklerapi.Controller.csproj", "{85378B48-5657-4A6B-BF6C-0ECC2573A11D}"
@@ -69,7 +67,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ooeentwicklerapi.Managers",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ooeentwicklerapi.Repositories", "src\ooeentwicklerapi.Repositories\ooeentwicklerapi.Repositories.csproj", "{579C6D07-2823-41F9-A85E-B4873D8C4B28}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ooeentwicklerapi.Host", "src\ooeentwicklerapi.Host\ooeentwicklerapi.Host.csproj", "{04A8CF7C-7E79-4D0B-ACCB-FB0EC3AFCC86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ooeentwicklerapi.Host", "src\ooeentwicklerapi.Host\ooeentwicklerapi.Host.csproj", "{04A8CF7C-7E79-4D0B-ACCB-FB0EC3AFCC86}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -165,10 +163,6 @@ Global
 		{A63E3D85-1342-433D-BA0D-2C36C254252B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A63E3D85-1342-433D-BA0D-2C36C254252B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A63E3D85-1342-433D-BA0D-2C36C254252B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{005C0F9F-4835-4E7E-92BC-16AB1945BC83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{005C0F9F-4835-4E7E-92BC-16AB1945BC83}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{005C0F9F-4835-4E7E-92BC-16AB1945BC83}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{005C0F9F-4835-4E7E-92BC-16AB1945BC83}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A1566715-0EB2-4E01-9266-B958C13804F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A1566715-0EB2-4E01-9266-B958C13804F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1566715-0EB2-4E01-9266-B958C13804F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -226,7 +220,6 @@ Global
 		{3E4700D7-AC51-4434-8EF4-33016677EA1E} = {AE561F6E-E106-4C7E-9054-33C3AE93A3AE}
 		{49BCCF79-38E5-4D14-BD47-185D75FE6FB1} = {AE561F6E-E106-4C7E-9054-33C3AE93A3AE}
 		{A63E3D85-1342-433D-BA0D-2C36C254252B} = {AE561F6E-E106-4C7E-9054-33C3AE93A3AE}
-		{005C0F9F-4835-4E7E-92BC-16AB1945BC83} = {AE561F6E-E106-4C7E-9054-33C3AE93A3AE}
 		{A1566715-0EB2-4E01-9266-B958C13804F4} = {AE561F6E-E106-4C7E-9054-33C3AE93A3AE}
 		{85378B48-5657-4A6B-BF6C-0ECC2573A11D} = {8A5062BB-B35B-42C0-9BD8-642F371539FF}
 		{7888AAAE-6A89-4000-B0E3-7455B232370D} = {8A5062BB-B35B-42C0-9BD8-642F371539FF}

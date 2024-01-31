@@ -4,7 +4,7 @@
       <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
       <CompilerGeneratedFilesOutputPath>$(BaseIntermediateOutputPath)obj/generated</CompilerGeneratedFilesOutputPath></PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\submodules\Framework.Restservice\src\Framework.Restservice.Database\Framework.Restservice.Database.csproj" />
+    <ProjectReference Include="..\..\..\..\submodules\Framework.Restservice\src\Framework.Restservice.Database\Framework.Restservice.Database.csproj" PrivateAssets="all" />
     <ProjectReference Include="..\..\..\..\submodules\Framework.Restservice\submodules\CodeGen\src\GeneratorHelper\Foundation.Crawler\Foundation.Crawler.csproj" OutputItemType="Analyzer" PrivateAssets="all" />
     <ProjectReference Include="..\..\..\..\submodules\Framework.Restservice\submodules\CodeGen\src\GeneratorHelper\Generators.Base\Generators.Base.csproj" OutputItemType="Analyzer" PrivateAssets="all" />
     <ProjectReference Include="..\..\..\..\submodules\Framework.Restservice\submodules\CodeGen\src\Generators\Web\WebDbContext.Generator\WebDbContext.Generator.csproj" OutputItemType="Analyzer" PrivateAssets="all" />
