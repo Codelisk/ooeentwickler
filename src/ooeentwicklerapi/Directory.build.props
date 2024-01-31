@@ -1,19 +1,19 @@
 <Project>
-  <Import Project="..\submodules\Framework.Restservice\Backend.props" Condition="exists('..\submodules\Framework.Restservice\Backend.props')" />
-  <Import Project="..\..\submodules\Framework.Restservice\Backend.props" Condition="exists('..\..\submodules\Framework.Restservice\Backend.props')" />
-  <Import Project="..\..\..\submodules\Framework.Restservice\Backend.props" Condition="exists('..\..\..\submodules\Framework.Restservice\Backend.props')" />
-  <Import Project="..\..\..\..\submodules\Framework.Restservice\Backend.props" Condition="exists('..\..\..\..\submodules\Framework.Restservice\Backend.props')" />
-  <Import Project="..\..\..\..\..\submodules\Framework.Restservice\Backend.props" Condition="exists('..\..\..\..\..\submodules\Framework.Restservice\Backend.props')" />
-  <Import Project="..\..\..\..\..\..\submodules\Framework.Restservice\Backend.props" Condition="exists('..\..\..\..\..\..\submodules\Framework.Restservice\Backend.props')" />
-  <Import Project="..\..\..\..\..\..\..\submodules\Framework.Restservice\Backend.props" Condition="exists('..\..\..\..\..\..\..\submodules\Framework.Restservice\Backend.props')" />
-  <Import Project="..\..\..\..\..\..\..\..\submodules\Framework.Restservice\Backend.props" Condition="exists('..\..\..\..\..\..\..\..\submodules\Framework.Restservice\Backend.props')" />
+  <Import Project="..\Framework.Uno\submodules\Framework.Restservice\Backend.props" Condition="exists('..\Framework.Uno\submodules\Framework.Restservice\Backend.props')" />
+  <Import Project="..\..\Framework.Uno\submodules\Framework.Restservice\Backend.props" Condition="exists('..\..\Framework.Uno\submodules\Framework.Restservice\Backend.props')" />
+  <Import Project="..\..\..\Framework.Uno\submodules\Framework.Restservice\Backend.props" Condition="exists('..\..\..\Framework.Uno\submodules\Framework.Restservice\Backend.props')" />
+  <Import Project="..\..\..\..\Framework.Uno\submodules\Framework.Restservice\Backend.props" Condition="exists('..\..\..\..\Framework.Uno\submodules\Framework.Restservice\Backend.props')" />
+  <Import Project="..\..\..\..\..\Framework.Uno\submodules\Framework.Restservice\Backend.props" Condition="exists('..\..\..\..\..\Framework.Uno\submodules\Framework.Restservice\Backend.props')" />
+  <Import Project="..\..\..\..\..\..\Framework.Uno\submodules\Framework.Restservice\Backend.props" Condition="exists('..\..\..\..\..\..\Framework.Uno\submodules\Framework.Restservice\Backend.props')" />
+  <Import Project="..\..\..\..\..\..\..\Framework.Uno\submodules\Framework.Restservice\Backend.props" Condition="exists('..\..\..\..\..\..\..\Framework.Uno\submodules\Framework.Restservice\Backend.props')" />
+  <Import Project="..\..\..\..\..\..\..\..\Framework.Uno\submodules\Framework.Restservice\Backend.props" Condition="exists('..\..\..\..\..\..\..\..\Framework.Uno\submodules\Framework.Restservice\Backend.props')" />
   
-  <Import Project="..\submodules\Framework.Restservice\Directory.Build.props" Condition="exists('..\submodules\Framework.Restservice\Directory.Build.props')" />
-  <Import Project="..\..\submodules\Framework.Restservice\Directory.Build.props" Condition="exists('..\..\submodules\Framework.Restservice\Directory.Build.props')" />
-  <Import Project="..\..\..\submodules\Framework.Restservice\Directory.Build.props" Condition="exists('..\..\..\submodules\Framework.Restservice\Directory.Build.props')" />
-  <Import Project="..\..\..\..\submodules\Framework.Restservice\Directory.Build.props" Condition="exists('..\..\..\..\submodules\Framework.Restservice\Directory.Build.props')" />
-  <Import Project="..\..\..\..\..\submodules\Framework.Restservice\Directory.Build.props" Condition="exists('..\..\..\..\..\submodules\Framework.Restservice\Directory.Build.props')" />
-  <Import Project="..\..\..\..\..\..\submodules\Framework.Restservice\Directory.Build.props" Condition="exists('..\..\..\..\..\..\submodules\Framework.Restservice\Directory.Build.props')" />
-  <Import Project="..\..\..\..\..\..\..\submodules\Framework.Restservice\Directory.Build.props" Condition="exists('..\..\..\..\..\..\..\submodules\Framework.Restservice\Directory.Build.props')" />
-  <Import Project="..\..\..\..\..\..\..\..\submodules\Framework.Restservice\Directory.Build.props" Condition="exists('..\..\..\..\..\..\..\..\submodules\Framework.Restservice\Directory.Build.props')" />
+  <Import Project="..\Framework.Uno\submodules\Framework.Restservice\Directory.Build.props" Condition="exists('..\Framework.Uno\submodules\Framework.Restservice\Directory.Build.props')" />
+  <Import Project="..\..\Framework.Uno\submodules\Framework.Restservice\Directory.Build.props" Condition="exists('..\..\Framework.Uno\submodules\Framework.Restservice\Directory.Build.props')" />
+  <Import Project="..\..\..\Framework.Uno\submodules\Framework.Restservice\Directory.Build.props" Condition="exists('..\..\..\Framework.Uno\submodules\Framework.Restservice\Directory.Build.props')" />
+  <Import Project="..\..\..\..\Framework.Uno\submodules\Framework.Restservice\Directory.Build.props" Condition="exists('..\..\..\..\Framework.Uno\submodules\Framework.Restservice\Directory.Build.props')" />
+  <Import Project="..\..\..\..\..\Framework.Uno\submodules\Framework.Restservice\Directory.Build.props" Condition="exists('..\..\..\..\..\Framework.Uno\submodules\Framework.Restservice\Directory.Build.props')" />
+  <Import Project="..\..\..\..\..\..\Framework.Uno\submodules\Framework.Restservice\Directory.Build.props" Condition="exists('..\..\..\..\..\..\Framework.Uno\submodules\Framework.Restservice\Directory.Build.props')" />
+  <Import Project="..\..\..\..\..\..\..\Framework.Uno\submodules\Framework.Restservice\Directory.Build.props" Condition="exists('..\..\..\..\..\..\..\Framework.Uno\submodules\Framework.Restservice\Directory.Build.props')" />
+  <Import Project="..\..\..\..\..\..\..\..\Framework.Uno\submodules\Framework.Restservice\Directory.Build.props" Condition="exists('..\..\..\..\..\..\..\..\Framework.Uno\submodules\Framework.Restservice\Directory.Build.props')" />
 </Project>
