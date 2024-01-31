@@ -18,3 +18,10 @@ internal partial class ModuleInitializer : Framework.ApiClient.ModuleInitializer
         base.AddApi<TAuthService>(services);
     }
 }
+public static class ModuleInitializerExtension
+{
+    public static void AddApi<TAuthService>(this IServiceCollection services) where TAuthService : class, IAuthenticationService
+    {
+        new ModuleInitializer().AddApi<TAuthService>(services);
+    }
+}

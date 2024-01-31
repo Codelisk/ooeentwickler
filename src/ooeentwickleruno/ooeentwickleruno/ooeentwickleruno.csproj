@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>$(DotNetVersion);</TargetFrameworks>
     <TargetFrameworks Condition="'$(OverrideTargetFramework)'!=''">$(OverrideTargetFramework)</TargetFrameworks>
@@ -83,13 +83,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Services\" />
+    <Compile Remove="Services\**" />
+    <Content Remove="Services\**" />
+    <EmbeddedResource Remove="Services\**" />
+    <None Remove="Services\**" />
+    <Page Remove="Services\**" />
+    <PRIResource Remove="Services\**" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\submodules\Framework.Uno\src\Framework.Base\Framework.ApiClient\Framework.ApiClient.csproj" />
     <ProjectReference Include="..\..\..\submodules\Framework.Uno\src\Framework.Base\Framework.Mvvm\Framework.Mvvm.csproj" />
     <ProjectReference Include="..\..\..\submodules\Framework.Uno\src\Framework.Base\Framework.Services\Framework.Services.csproj" />
+    <ProjectReference Include="..\ApiConnector\ooeentwickleruno.apiclient\ooeentwickleruno.apiclient.csproj" />
   </ItemGroup>
 
   <Import Project="..\..\..\submodules\Framework.Uno\src\Framework.Base\Framework.UnoNative.Shared\Framework.UnoNative.Shared.projitems" Label="Shared" />
