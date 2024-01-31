@@ -1,0 +1,15 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "ooeentwickler.foundation.shared", "ooeentwickler.foundation.shared\ooeentwickler.foundation.shared.shproj", "{7722768E-1C27-409B-AB06-B705776F1C48}"
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		ooeentwickler.foundation.shared\ooeentwickler.foundation.shared.projitems*{7722768e-1c27-409b-ab06-b705776f1c48}*SharedItemsImports = 13
+	EndGlobalSection
+EndGlobal

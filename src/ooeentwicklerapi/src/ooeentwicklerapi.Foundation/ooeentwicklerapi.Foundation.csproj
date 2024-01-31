@@ -6,4 +6,6 @@
     <ProjectReference Include="..\..\..\..\submodules\Framework.Restservice\submodules\CodeGen\src\Generators\Web\WebAutoMapperProfile.Generator\WebAutoMapperProfile.Generator.csproj" OutputItemType="Analyzer" PrivateAssets="all" />
   </ItemGroup>
 
+  <Import Project="..\..\..\ooeentwicklerfoundation\ooeentwickler.foundation.shared\ooeentwickler.foundation.shared.projitems" Label="Shared" />
+
 </Project>

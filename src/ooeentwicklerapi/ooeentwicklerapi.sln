@@ -69,6 +69,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ooeentwicklerapi.Repositori
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ooeentwicklerapi.Host", "src\ooeentwicklerapi.Host\ooeentwicklerapi.Host.csproj", "{04A8CF7C-7E79-4D0B-ACCB-FB0EC3AFCC86}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{155F58DA-92B2-47E7-AF6F-4070F4D5B622}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "ooeentwickler.foundation.shared", "..\ooeentwicklerfoundation\ooeentwickler.foundation.shared\ooeentwickler.foundation.shared.shproj", "{7722768E-1C27-409B-AB06-B705776F1C48}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -227,8 +231,13 @@ Global
 		{9E3DB938-556D-4E7B-86CB-D9D84F8D4DDE} = {8A5062BB-B35B-42C0-9BD8-642F371539FF}
 		{579C6D07-2823-41F9-A85E-B4873D8C4B28} = {8A5062BB-B35B-42C0-9BD8-642F371539FF}
 		{04A8CF7C-7E79-4D0B-ACCB-FB0EC3AFCC86} = {8A5062BB-B35B-42C0-9BD8-642F371539FF}
+		{7722768E-1C27-409B-AB06-B705776F1C48} = {155F58DA-92B2-47E7-AF6F-4070F4D5B622}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EAE29681-AE4A-496D-90BC-0ED1EEE6F762}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		..\ooeentwicklerfoundation\ooeentwickler.foundation.shared\ooeentwickler.foundation.shared.projitems*{07a980f2-4b43-43b1-a671-966a69e39287}*SharedItemsImports = 5
+		..\ooeentwicklerfoundation\ooeentwickler.foundation.shared\ooeentwickler.foundation.shared.projitems*{7722768e-1c27-409b-ab06-b705776f1c48}*SharedItemsImports = 13
 	EndGlobalSection
 EndGlobal
