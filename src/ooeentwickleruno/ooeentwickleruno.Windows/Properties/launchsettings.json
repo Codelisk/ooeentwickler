@@ -1,0 +1,10 @@
+{
+	"profiles": {
+		"ooeentwickleruno.Windows (Unpackaged)": {
+			"commandName": "Project"
+		},
+		"ooeentwickleruno.Windows (Package)": {
+			"commandName": "MsixPackage"
+		}
+	}
+}
