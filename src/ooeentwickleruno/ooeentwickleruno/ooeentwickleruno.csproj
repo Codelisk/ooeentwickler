@@ -1,7 +1,6 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows')) or '$(EnableWindowsTargeting)' == 'true'">$(TargetFrameworks);$(DotNetVersion)-windows10.0.19041</TargetFrameworks>
-    <TargetFrameworks>$(TargetFrameworks);$(DotNetVersion);$(DotNetVersion)-android;$(DotNetVersion)-ios</TargetFrameworks>
+    <TargetFrameworks>$(DotNetVersion);</TargetFrameworks>
     <TargetFrameworks Condition="'$(OverrideTargetFramework)'!=''">$(OverrideTargetFramework)</TargetFrameworks>
 
     <!-- Ensures the .xr.xml files are generated in a proper layout folder -->
@@ -88,6 +87,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\submodules\Framework.Uno\src\Framework.Base\Framework.Uno\Framework.UnoNative.csproj" />
+    <ProjectReference Include="..\..\..\submodules\Framework.Uno\src\Framework.Base\Framework.ApiClient\Framework.ApiClient.csproj" />
+    <ProjectReference Include="..\..\..\submodules\Framework.Uno\src\Framework.Base\Framework.Mvvm\Framework.Mvvm.csproj" />
+    <ProjectReference Include="..\..\..\submodules\Framework.Uno\src\Framework.Base\Framework.Services\Framework.Services.csproj" />
   </ItemGroup>
+
+  <Import Project="..\..\..\submodules\Framework.Uno\src\Framework.Base\Framework.UnoNative.Shared\Framework.UnoNative.Shared.projitems" Label="Shared" />
 </Project>

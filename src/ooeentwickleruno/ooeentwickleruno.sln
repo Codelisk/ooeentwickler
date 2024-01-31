@@ -32,8 +32,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.Mvvm", "..\..\sub
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.Services", "..\..\submodules\Framework.Uno\src\Framework.Base\Framework.Services\Framework.Services.csproj", "{63A1D088-F8E1-48DA-93D2-72FBE7B4A459}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.UnoNative", "..\..\submodules\Framework.Uno\src\Framework.Base\Framework.Uno\Framework.UnoNative.csproj", "{E779BC6F-447E-417F-99CF-C51D6ED9FC49}"
-EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Framework.UnoNative.Shared", "..\..\submodules\Framework.Uno\src\Framework.Base\Framework.UnoNative.Shared\Framework.UnoNative.Shared.shproj", "{05414BC5-EE81-480F-A9F6-40617F802EB4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Submodules", "Submodules", "{B0FD6D02-A35A-4E0A-9AE0-8B512C33D7C1}"
@@ -202,22 +200,6 @@ Global
 		{63A1D088-F8E1-48DA-93D2-72FBE7B4A459}.Release|x64.Build.0 = Release|Any CPU
 		{63A1D088-F8E1-48DA-93D2-72FBE7B4A459}.Release|x86.ActiveCfg = Release|Any CPU
 		{63A1D088-F8E1-48DA-93D2-72FBE7B4A459}.Release|x86.Build.0 = Release|Any CPU
-		{E779BC6F-447E-417F-99CF-C51D6ED9FC49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E779BC6F-447E-417F-99CF-C51D6ED9FC49}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E779BC6F-447E-417F-99CF-C51D6ED9FC49}.Debug|arm64.ActiveCfg = Debug|Any CPU
-		{E779BC6F-447E-417F-99CF-C51D6ED9FC49}.Debug|arm64.Build.0 = Debug|Any CPU
-		{E779BC6F-447E-417F-99CF-C51D6ED9FC49}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{E779BC6F-447E-417F-99CF-C51D6ED9FC49}.Debug|x64.Build.0 = Debug|Any CPU
-		{E779BC6F-447E-417F-99CF-C51D6ED9FC49}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{E779BC6F-447E-417F-99CF-C51D6ED9FC49}.Debug|x86.Build.0 = Debug|Any CPU
-		{E779BC6F-447E-417F-99CF-C51D6ED9FC49}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E779BC6F-447E-417F-99CF-C51D6ED9FC49}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E779BC6F-447E-417F-99CF-C51D6ED9FC49}.Release|arm64.ActiveCfg = Release|Any CPU
-		{E779BC6F-447E-417F-99CF-C51D6ED9FC49}.Release|arm64.Build.0 = Release|Any CPU
-		{E779BC6F-447E-417F-99CF-C51D6ED9FC49}.Release|x64.ActiveCfg = Release|Any CPU
-		{E779BC6F-447E-417F-99CF-C51D6ED9FC49}.Release|x64.Build.0 = Release|Any CPU
-		{E779BC6F-447E-417F-99CF-C51D6ED9FC49}.Release|x86.ActiveCfg = Release|Any CPU
-		{E779BC6F-447E-417F-99CF-C51D6ED9FC49}.Release|x86.Build.0 = Release|Any CPU
 		{15029A57-CF22-4024-BFC5-8CC0F92BFB35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{15029A57-CF22-4024-BFC5-8CC0F92BFB35}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15029A57-CF22-4024-BFC5-8CC0F92BFB35}.Debug|arm64.ActiveCfg = Debug|Any CPU
@@ -536,7 +518,6 @@ Global
 		{6B66B415-99BF-444B-B8A1-12412E1D4C12} = {BB0BA901-54C8-430D-A5DB-EAFCC89EA3D8}
 		{29ED1150-56FF-487D-85DA-BB2763654C83} = {BB0BA901-54C8-430D-A5DB-EAFCC89EA3D8}
 		{63A1D088-F8E1-48DA-93D2-72FBE7B4A459} = {BB0BA901-54C8-430D-A5DB-EAFCC89EA3D8}
-		{E779BC6F-447E-417F-99CF-C51D6ED9FC49} = {BB0BA901-54C8-430D-A5DB-EAFCC89EA3D8}
 		{05414BC5-EE81-480F-A9F6-40617F802EB4} = {BB0BA901-54C8-430D-A5DB-EAFCC89EA3D8}
 		{15029A57-CF22-4024-BFC5-8CC0F92BFB35} = {B37F1E79-D818-4A35-8450-E42722E5E3EA}
 		{CFEA86F0-470D-4B5C-9F3A-615673A3E034} = {B37F1E79-D818-4A35-8450-E42722E5E3EA}
@@ -564,5 +545,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		..\..\submodules\Framework.Uno\src\Framework.Base\Framework.UnoNative.Shared\Framework.UnoNative.Shared.projitems*{05414bc5-ee81-480f-a9f6-40617f802eb4}*SharedItemsImports = 13
+		..\..\submodules\Framework.Uno\src\Framework.Base\Framework.UnoNative.Shared\Framework.UnoNative.Shared.projitems*{dc5bfd62-a0c6-4a13-a074-7ac9ed85f60d}*SharedItemsImports = 5
 	EndGlobalSection
 EndGlobal
