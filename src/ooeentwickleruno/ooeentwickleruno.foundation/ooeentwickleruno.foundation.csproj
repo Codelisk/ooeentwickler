@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>$(DotNetVersion)</TargetFramework>
+  </PropertyGroup>
+
+  <Import Project="..\..\ooeentwicklerfoundation\ooeentwickler.foundation.shared\ooeentwickler.foundation.shared.projitems" Label="Shared" />
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\submodules\Framework.Uno\src\Framework.Base\Framework.ApiClient\Framework.ApiClient.csproj" />
+    <ProjectReference Include="..\..\..\submodules\Framework.Uno\submodules\CodeGen\src\Common\Codelisk.GeneratorAttributes\Codelisk.GeneratorAttributes.csproj" />
+    <ProjectReference Include="..\..\..\submodules\Framework.Uno\submodules\CodeGen\src\GeneratorHelper\Foundation.Crawler\Foundation.Crawler.csproj" OutputItemType="Analyzer" PrivateAssets="all" />
+    <ProjectReference Include="..\..\..\submodules\Framework.Uno\submodules\CodeGen\src\Generators\Api\Api.Generator\Api.Generator.csproj" OutputItemType="Analyzer" PrivateAssets="all" />
+    <ProjectReference Include="..\..\..\submodules\Framework.Uno\submodules\CodeGen\src\Generators\Api\Codelisk.Api.RefitApis.Generator\Codelisk.Api.RefitApis.Generator.csproj" OutputItemType="Analyzer" PrivateAssets="all" />
+    <ProjectReference Include="..\..\..\submodules\Framework.Uno\submodules\CodeGen\src\Generators\Web\WebGenerator.Base\WebGenerator.Base.csproj" OutputItemType="Analyzer" PrivateAssets="all" />
+  </ItemGroup>
+
+</Project>

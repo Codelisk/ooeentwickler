@@ -76,6 +76,18 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codelisk.AutoRegisterInject
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CodeGen", "CodeGen", "{B37F1E79-D818-4A35-8450-E42722E5E3EA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{CFD9188B-433B-462A-A261-A5DC116E9078}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ooeentwickleruno.foundation", "ooeentwickleruno.foundation\ooeentwickleruno.foundation.csproj", "{0B9CE412-6F5F-4E24-8C9D-511827F21DE9}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "ooeentwickler.foundation.shared", "..\ooeentwicklerfoundation\ooeentwickler.foundation.shared\ooeentwickler.foundation.shared.shproj", "{7722768E-1C27-409B-AB06-B705776F1C48}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Uno", "Uno", "{F92E5311-13F4-4706-9403-3845C0A87CC1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiConnector", "ApiConnector", "{84F844EF-C567-4248-BF36-8DE784174DCE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ooeentwickleruno.apiclient", "ApiConnector\ooeentwickleruno.apiclient\ooeentwickleruno.apiclient.csproj", "{8D1A3F44-3D48-4A49-940F-9796E453452E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -504,13 +516,45 @@ Global
 		{5F7B17B4-E45B-4157-B902-B482B34FFA99}.Release|x64.Build.0 = Release|Any CPU
 		{5F7B17B4-E45B-4157-B902-B482B34FFA99}.Release|x86.ActiveCfg = Release|Any CPU
 		{5F7B17B4-E45B-4157-B902-B482B34FFA99}.Release|x86.Build.0 = Release|Any CPU
+		{0B9CE412-6F5F-4E24-8C9D-511827F21DE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B9CE412-6F5F-4E24-8C9D-511827F21DE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B9CE412-6F5F-4E24-8C9D-511827F21DE9}.Debug|arm64.ActiveCfg = Debug|Any CPU
+		{0B9CE412-6F5F-4E24-8C9D-511827F21DE9}.Debug|arm64.Build.0 = Debug|Any CPU
+		{0B9CE412-6F5F-4E24-8C9D-511827F21DE9}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{0B9CE412-6F5F-4E24-8C9D-511827F21DE9}.Debug|x64.Build.0 = Debug|Any CPU
+		{0B9CE412-6F5F-4E24-8C9D-511827F21DE9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0B9CE412-6F5F-4E24-8C9D-511827F21DE9}.Debug|x86.Build.0 = Debug|Any CPU
+		{0B9CE412-6F5F-4E24-8C9D-511827F21DE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B9CE412-6F5F-4E24-8C9D-511827F21DE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B9CE412-6F5F-4E24-8C9D-511827F21DE9}.Release|arm64.ActiveCfg = Release|Any CPU
+		{0B9CE412-6F5F-4E24-8C9D-511827F21DE9}.Release|arm64.Build.0 = Release|Any CPU
+		{0B9CE412-6F5F-4E24-8C9D-511827F21DE9}.Release|x64.ActiveCfg = Release|Any CPU
+		{0B9CE412-6F5F-4E24-8C9D-511827F21DE9}.Release|x64.Build.0 = Release|Any CPU
+		{0B9CE412-6F5F-4E24-8C9D-511827F21DE9}.Release|x86.ActiveCfg = Release|Any CPU
+		{0B9CE412-6F5F-4E24-8C9D-511827F21DE9}.Release|x86.Build.0 = Release|Any CPU
+		{8D1A3F44-3D48-4A49-940F-9796E453452E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D1A3F44-3D48-4A49-940F-9796E453452E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D1A3F44-3D48-4A49-940F-9796E453452E}.Debug|arm64.ActiveCfg = Debug|Any CPU
+		{8D1A3F44-3D48-4A49-940F-9796E453452E}.Debug|arm64.Build.0 = Debug|Any CPU
+		{8D1A3F44-3D48-4A49-940F-9796E453452E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8D1A3F44-3D48-4A49-940F-9796E453452E}.Debug|x64.Build.0 = Debug|Any CPU
+		{8D1A3F44-3D48-4A49-940F-9796E453452E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8D1A3F44-3D48-4A49-940F-9796E453452E}.Debug|x86.Build.0 = Debug|Any CPU
+		{8D1A3F44-3D48-4A49-940F-9796E453452E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D1A3F44-3D48-4A49-940F-9796E453452E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D1A3F44-3D48-4A49-940F-9796E453452E}.Release|arm64.ActiveCfg = Release|Any CPU
+		{8D1A3F44-3D48-4A49-940F-9796E453452E}.Release|arm64.Build.0 = Release|Any CPU
+		{8D1A3F44-3D48-4A49-940F-9796E453452E}.Release|x64.ActiveCfg = Release|Any CPU
+		{8D1A3F44-3D48-4A49-940F-9796E453452E}.Release|x64.Build.0 = Release|Any CPU
+		{8D1A3F44-3D48-4A49-940F-9796E453452E}.Release|x86.ActiveCfg = Release|Any CPU
+		{8D1A3F44-3D48-4A49-940F-9796E453452E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{11689861-BCC1-4F7B-B09F-34BE87A1A66B} = {D0533806-92D6-4E95-95AE-4791DCA4D739}
-		{DC5BFD62-A0C6-4A13-A074-7AC9ED85F60D} = {D0533806-92D6-4E95-95AE-4791DCA4D739}
+		{11689861-BCC1-4F7B-B09F-34BE87A1A66B} = {F92E5311-13F4-4706-9403-3845C0A87CC1}
+		{DC5BFD62-A0C6-4A13-A074-7AC9ED85F60D} = {F92E5311-13F4-4706-9403-3845C0A87CC1}
 		{0F1C215C-DB15-4F7B-B97D-1DF769F8410D} = {11689861-BCC1-4F7B-B09F-34BE87A1A66B}
 		{7735B4D8-AA47-41AE-95FD-485598043EC9} = {11689861-BCC1-4F7B-B09F-34BE87A1A66B}
 		{5D6CDB02-CC03-4894-A309-09DE47967A36} = {11689861-BCC1-4F7B-B09F-34BE87A1A66B}
@@ -539,12 +583,19 @@ Global
 		{1F98E755-420F-4E3D-B9E0-C137976F77A0} = {B37F1E79-D818-4A35-8450-E42722E5E3EA}
 		{5F7B17B4-E45B-4157-B902-B482B34FFA99} = {B37F1E79-D818-4A35-8450-E42722E5E3EA}
 		{B37F1E79-D818-4A35-8450-E42722E5E3EA} = {B0FD6D02-A35A-4E0A-9AE0-8B512C33D7C1}
+		{0B9CE412-6F5F-4E24-8C9D-511827F21DE9} = {D0533806-92D6-4E95-95AE-4791DCA4D739}
+		{7722768E-1C27-409B-AB06-B705776F1C48} = {CFD9188B-433B-462A-A261-A5DC116E9078}
+		{F92E5311-13F4-4706-9403-3845C0A87CC1} = {D0533806-92D6-4E95-95AE-4791DCA4D739}
+		{84F844EF-C567-4248-BF36-8DE784174DCE} = {D0533806-92D6-4E95-95AE-4791DCA4D739}
+		{8D1A3F44-3D48-4A49-940F-9796E453452E} = {84F844EF-C567-4248-BF36-8DE784174DCE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {83498F0C-015F-44E4-9E7E-813DAD113571}
 	EndGlobalSection
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		..\..\submodules\Framework.Uno\src\Framework.Base\Framework.UnoNative.Shared\Framework.UnoNative.Shared.projitems*{05414bc5-ee81-480f-a9f6-40617f802eb4}*SharedItemsImports = 13
+		..\ooeentwicklerfoundation\ooeentwickler.foundation.shared\ooeentwickler.foundation.shared.projitems*{0b9ce412-6f5f-4e24-8c9d-511827f21de9}*SharedItemsImports = 5
+		..\ooeentwicklerfoundation\ooeentwickler.foundation.shared\ooeentwickler.foundation.shared.projitems*{7722768e-1c27-409b-ab06-b705776f1c48}*SharedItemsImports = 13
 		..\..\submodules\Framework.Uno\src\Framework.Base\Framework.UnoNative.Shared\Framework.UnoNative.Shared.projitems*{dc5bfd62-a0c6-4a13-a074-7ac9ed85f60d}*SharedItemsImports = 5
 	EndGlobalSection
 EndGlobal
