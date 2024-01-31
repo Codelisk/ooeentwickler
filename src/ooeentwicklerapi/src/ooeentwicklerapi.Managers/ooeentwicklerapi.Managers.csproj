@@ -1,0 +1,10 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\submodules\Framework.Restservice\src\Framework.Restservice.Managers\Framework.Restservice.Managers.csproj" />
+    <ProjectReference Include="..\..\..\..\submodules\Framework.Restservice\submodules\CodeGen\src\Generators\Web\WebManager.Contract.Generator\WebManager.Contract.Generator.csproj" OutputItemType="Analyzer" PrivateAssets="all" />
+    <ProjectReference Include="..\..\..\..\submodules\Framework.Restservice\submodules\CodeGen\src\Generators\Web\WebManager.Generator\WebManager.Generator.csproj" OutputItemType="Analyzer" PrivateAssets="all" />
+    <ProjectReference Include="..\ooeentwicklerapi.Repositories\ooeentwicklerapi.Repositories.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,4 +1,4 @@
-﻿namespace ooeentwicklerapi
+﻿namespace ooeentwicklerapi.Managers
 {
     public class Class1
     {

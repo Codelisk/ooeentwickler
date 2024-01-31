@@ -1,0 +1,9 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\submodules\Framework.Restservice\src\Framework.Restservice.Controller\Framework.Restservice.Controller.csproj" />
+    <ProjectReference Include="..\..\..\..\submodules\Framework.Restservice\submodules\CodeGen\src\Generators\Web\Codelisk.Controller.Generator\Codelisk.Controller.Generator.csproj" OutputItemType="Analyzer" PrivateAssets="all" />
+    <ProjectReference Include="..\ooeentwicklerapi.Managers\ooeentwicklerapi.Managers.csproj" />
+  </ItemGroup>
+
+</Project>
