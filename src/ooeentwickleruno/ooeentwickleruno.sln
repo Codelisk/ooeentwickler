@@ -42,8 +42,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{CFD918
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ooeentwickleruno.foundation", "ooeentwickleruno.foundation\ooeentwickleruno.foundation.csproj", "{0B9CE412-6F5F-4E24-8C9D-511827F21DE9}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "ooeentwickler.foundation.shared", "..\ooeentwicklerfoundation\ooeentwickler.foundation.shared\ooeentwickler.foundation.shared.shproj", "{7722768E-1C27-409B-AB06-B705776F1C48}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Uno", "Uno", "{F92E5311-13F4-4706-9403-3845C0A87CC1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiConnector", "ApiConnector", "{84F844EF-C567-4248-BF36-8DE784174DCE}"
@@ -93,6 +91,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoFilterer.Dynamics", "..\..\..\..\Uno\Framework.Uno\submodules\Framework.Restservice\submodules\CodeGen\src\Submodules\AutoFilterer\src\AutoFilterer.Dynamics\AutoFilterer.Dynamics.csproj", "{6E534D89-3289-4E5A-8604-5AAC3395FFA6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codelisk.AutoRegisterInject.Generator", "..\..\..\..\Uno\Framework.Uno\submodules\Framework.Restservice\submodules\CodeGen\src\Submodules\AutoRegisterInject\src\AutoRegisterInject\Codelisk.AutoRegisterInject.Generator.csproj", "{9FF46469-CBDC-4846-A0A1-08806E3EA29A}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "ooeentwickler.foundation.shared", "..\ooeentwicklerfoundation\ooeentwickler.foundation.shared\ooeentwickler.foundation.shared.shproj", "{7722768E-1C27-409B-AB06-B705776F1C48}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -603,7 +603,6 @@ Global
 		{05414BC5-EE81-480F-A9F6-40617F802EB4} = {BB0BA901-54C8-430D-A5DB-EAFCC89EA3D8}
 		{B37F1E79-D818-4A35-8450-E42722E5E3EA} = {B0FD6D02-A35A-4E0A-9AE0-8B512C33D7C1}
 		{0B9CE412-6F5F-4E24-8C9D-511827F21DE9} = {D0533806-92D6-4E95-95AE-4791DCA4D739}
-		{7722768E-1C27-409B-AB06-B705776F1C48} = {CFD9188B-433B-462A-A261-A5DC116E9078}
 		{F92E5311-13F4-4706-9403-3845C0A87CC1} = {D0533806-92D6-4E95-95AE-4791DCA4D739}
 		{84F844EF-C567-4248-BF36-8DE784174DCE} = {D0533806-92D6-4E95-95AE-4791DCA4D739}
 		{8D1A3F44-3D48-4A49-940F-9796E453452E} = {84F844EF-C567-4248-BF36-8DE784174DCE}
@@ -629,13 +628,13 @@ Global
 		{AC7A26F2-14E9-4ABF-BCB9-489209C9868B} = {B37F1E79-D818-4A35-8450-E42722E5E3EA}
 		{6E534D89-3289-4E5A-8604-5AAC3395FFA6} = {B37F1E79-D818-4A35-8450-E42722E5E3EA}
 		{9FF46469-CBDC-4846-A0A1-08806E3EA29A} = {B37F1E79-D818-4A35-8450-E42722E5E3EA}
+		{7722768E-1C27-409B-AB06-B705776F1C48} = {CFD9188B-433B-462A-A261-A5DC116E9078}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {83498F0C-015F-44E4-9E7E-813DAD113571}
 	EndGlobalSection
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		..\..\submodules\Framework.Uno\src\Framework.Base\Framework.UnoNative.Shared\Framework.UnoNative.Shared.projitems*{05414bc5-ee81-480f-a9f6-40617f802eb4}*SharedItemsImports = 13
-		..\ooeentwicklerfoundation\ooeentwickler.foundation.shared\ooeentwickler.foundation.shared.projitems*{0b9ce412-6f5f-4e24-8c9d-511827f21de9}*SharedItemsImports = 5
 		..\ooeentwicklerfoundation\ooeentwickler.foundation.shared\ooeentwickler.foundation.shared.projitems*{7722768e-1c27-409b-ab06-b705776f1c48}*SharedItemsImports = 13
 		..\..\submodules\Framework.Uno\src\Framework.Base\Framework.UnoNative.Shared\Framework.UnoNative.Shared.projitems*{dc5bfd62-a0c6-4a13-a074-7ac9ed85f60d}*SharedItemsImports = 5
 	EndGlobalSection

@@ -9,8 +9,52 @@
     <Import_RootNamespace>ooeentwickler.foundation.shared</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Dtos\Account\AccountCompensationDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dtos\Account\AccountDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dtos\Account\AccountProgrammingFrameworkDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dtos\Account\AccountReferenceBaseDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dtos\Account\AccountSubBaseDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dtos\Account\DistrictDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dtos\Blog\BaseBlogEntry.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dtos\Blog\TextBlogEntry.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dtos\Blog\TitleBlogEntry.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dtos\Company\CompanyBenefitDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dtos\Company\CompanyDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dtos\Company\CompanyLocationDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dtos\Company\CompanySubBaseDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dtos\Company\IndustryDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dtos\Infrastructure\InfrastructureDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dtos\Infrastructure\IssueTrackerDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dtos\Infrastructure\RepositoryHostingDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dtos\Skills\ProgrammingFrameworkDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dtos\Skills\ProgrammingLanguageDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dtos\Skills\SkillsDto.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Dtos\TestDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Account\AccountCompensationEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Account\AccountEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Account\AccountProgrammingFrameworkEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Account\CompanyEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Account\DistrictEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)entities\company\CompanyBenefitEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Company\CompanyEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Company\CompanyLocationEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Company\IndustryEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Infrastructure\InfrastructureEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Infrastructure\IssueTrackerEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Infrastructure\RepositoryHostingEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Skills\ProgrammingFrameworkEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Skills\ProgrammingLanguageEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Skills\SkillsEntity.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\TestEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\User\UserEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\Account\AccountTypeEnum.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\Account\CompensationTypeEnum.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\Account\PreferredEmploymentStatusEnum.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\Account\SkillTypeEnum.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helper\DateTimeHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Usings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)DtoHelper\" />
   </ItemGroup>
 </Project>
