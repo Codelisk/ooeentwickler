@@ -57,8 +57,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebRepositories.Contract.Ge
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebRepositories.Generator", "..\..\submodules\Framework.Restservice\submodules\CodeGen\src\Generators\Web\WebRepositories.Generator\WebRepositories.Generator.csproj", "{A63E3D85-1342-433D-BA0D-2C36C254252B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication.API", "..\..\submodules\Framework.Restservice\submodules\CodeGen\src\Submodules\AutoFilterer\sandbox\WebApplication.API\WebApplication.API.csproj", "{EDED4DD3-6687-4060-970C-C236C73BC645}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codelisk.AutoFilterer", "..\..\submodules\Framework.Restservice\submodules\CodeGen\src\Submodules\AutoFilterer\src\AutoFilterer\Codelisk.AutoFilterer.csproj", "{57781B58-83A3-4D03-95AD-515EC7C7BB07}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoFilterer.Dynamics", "..\..\submodules\Framework.Restservice\submodules\CodeGen\src\Submodules\AutoFilterer\src\AutoFilterer.Dynamics\AutoFilterer.Dynamics.csproj", "{005C0F9F-4835-4E7E-92BC-16AB1945BC83}"
@@ -165,10 +163,6 @@ Global
 		{A63E3D85-1342-433D-BA0D-2C36C254252B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A63E3D85-1342-433D-BA0D-2C36C254252B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A63E3D85-1342-433D-BA0D-2C36C254252B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EDED4DD3-6687-4060-970C-C236C73BC645}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EDED4DD3-6687-4060-970C-C236C73BC645}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EDED4DD3-6687-4060-970C-C236C73BC645}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EDED4DD3-6687-4060-970C-C236C73BC645}.Release|Any CPU.Build.0 = Release|Any CPU
 		{57781B58-83A3-4D03-95AD-515EC7C7BB07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{57781B58-83A3-4D03-95AD-515EC7C7BB07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57781B58-83A3-4D03-95AD-515EC7C7BB07}.Release|Any CPU.ActiveCfg = Release|Any CPU
