@@ -1,5 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+  <PropertyGroup>
+    <TargetFramework>$(DotNetVersion)</TargetFramework>
+  </PropertyGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\..\..\Uno\Framework.Uno\submodules\Framework.Restservice\submodules\CodeGen\src\Common\Shared\Shared.csproj" OutputItemType="Analyzer" PrivateAssets="all" />
     <ProjectReference Include="..\..\..\..\..\..\Uno\Framework.Uno\submodules\Framework.Restservice\submodules\CodeGen\src\GeneratorHelper\Foundation.Crawler\Foundation.Crawler.csproj" OutputItemType="Analyzer" PrivateAssets="all" />

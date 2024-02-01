@@ -29,7 +29,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Dtos\Skills\ProgrammingFrameworkDto.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Dtos\Skills\ProgrammingLanguageDto.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Dtos\Skills\SkillsDto.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Dtos\TestDto.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Account\AccountCompensationEntity.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Account\AccountEntity.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Account\AccountProgrammingFrameworkEntity.cs" />
@@ -45,7 +44,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Skills\ProgrammingFrameworkEntity.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Skills\ProgrammingLanguageEntity.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Skills\SkillsEntity.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Entities\TestEntity.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\User\UserEntity.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Enums\Account\AccountTypeEnum.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Enums\Account\CompensationTypeEnum.cs" />
