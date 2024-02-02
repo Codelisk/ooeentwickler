@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Framework.UnoNative.Views.Pages;
 using ooeentwickleruno.viewmodels.ViewModels.Account.Onboarding;
+using Uno.Extensions.Markup.Generator;
 
 namespace ooeentwickleruno.views.Views.Account.Onboarding;
 public partial class RegisterPage : RegionBasePage<RegisterPageViewModel>
