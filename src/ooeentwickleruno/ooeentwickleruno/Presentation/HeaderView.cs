@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Framework.UnoNative.Pages;
+using Framework.UnoNative.Views.Pages;
+using ooeentwickleruno.controls.Buttons;
 
 namespace Sample.Presentation;
 public partial class HeaderView : RegionBasePage<HeaderViewModel>
@@ -20,8 +21,8 @@ public partial class HeaderView : RegionBasePage<HeaderViewModel>
             .ColumnDefinitions("*,auto,auto")
             .Children(
             new TextBlock().Text("Foodora").FontSize(50).HorizontalAlignment(HorizontalAlignment.Stretch),
-            new Button().Content("Login").Grid(1),
-            new Button().Content("Sign up").Grid(2)
+            new PrimaryButton().Content("Login").Grid(1),
+            new PrimaryButton().Content("Sign up").Grid(2)
             )
             ));
     }

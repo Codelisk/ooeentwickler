@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>$(DotNetVersion)</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Prism.Uno.WinUI" />
+    <PackageReference Include="Prism.DryIoc.Uno.WinUI" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\submodules\Framework.Uno\src\Framework.Base\Framework.Mvvm\Framework.Mvvm.csproj" />
+  </ItemGroup>
+
+</Project>

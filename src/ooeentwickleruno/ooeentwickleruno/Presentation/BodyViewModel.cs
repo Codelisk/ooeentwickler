@@ -13,7 +13,6 @@ namespace Sample.Presentation;
 public partial class BodyViewModel : RegionBaseViewModel
 {
     private string test="Test";
-
     public string Test
     {
         get { return test; }
@@ -25,6 +24,6 @@ public partial class BodyViewModel : RegionBaseViewModel
     public ICommand NavigateCommand => this.LoadingCommand(OnNavigateAsync);
     private async Task OnNavigateAsync()
     {
-        ChangeCurrentRegion("CompanyEntryDetailView");
+        ChangeCurrentRegion("RegisterPage");
     }
 }

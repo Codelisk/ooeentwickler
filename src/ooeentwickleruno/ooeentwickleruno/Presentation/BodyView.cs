@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Framework.UnoNative.Pages;
+using Framework.UnoNative.Views.Pages;
+using ooeentwickleruno.controls.Buttons;
 
 namespace Sample.Presentation;
 public partial class BodyView : RegionBasePage<BodyViewModel>
@@ -22,10 +23,10 @@ public partial class BodyView : RegionBasePage<BodyViewModel>
                     .VerticalAlignment(VerticalAlignment.Center)
                     .HorizontalAlignment(HorizontalAlignment.Center)
                     .Stretch(Stretch.UniformToFill),
-                    new Button()
+                    new PrimaryButton()
                     .Content(x=>x.Bind(()=>vm.Test))
                     .Command(x=>x.Bind(()=>vm.NavigateCommand))
-                    .Style(StaticResource.Get<Style>("ElevatedButtonStyle")).VerticalAlignment(VerticalAlignment.Bottom).Margin(10)
+                    .VerticalAlignment(VerticalAlignment.Bottom).Margin(10)
                 )));
     }
 }

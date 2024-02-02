@@ -19,4 +19,11 @@ public class App : BaseApp
         base.ConfigureServices(services);
         services.AddApi<AuthenticationService>();
     }
+    protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
+    {
+        base.ConfigureModuleCatalog(moduleCatalog);
+
+        moduleCatalog.AddModule<ooeentwickleruno.views.ModuleInitializer>();
+        moduleCatalog.AddModule<ooeentwickleruno.viewmodels.ModuleInitializer>();
+    }
 }
