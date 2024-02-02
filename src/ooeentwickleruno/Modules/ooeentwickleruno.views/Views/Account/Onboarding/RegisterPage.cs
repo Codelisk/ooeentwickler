@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Framework.UnoNative.Views.Pages;
+using ooeentwickleruno.controls.Buttons;
+using ooeentwickleruno.controls.TextBlocks;
+using ooeentwickleruno.controls.TextBoxes;
 using ooeentwickleruno.viewmodels.ViewModels.Account.Onboarding;
 using Uno.Extensions.Markup.Generator;
 
@@ -12,10 +15,12 @@ public partial class RegisterPage : RegionBasePage<RegisterPageViewModel>
 {
     protected override UIElement MainContent(RegisterPageViewModel vm)
     {
-        return new StackPanel()
+        return new Border().BorderThickness(1).BorderBrush("#CDCDCD").Margin(0,30,0,0).Padding(50).HorizontalAlignment(HorizontalAlignment.Center).Child(new StackPanel().Spacing(30)
             .Children(
-            new TextBox().PlaceholderText("Email"),
-            new TextBox().PlaceholderText("Password")
-            );
+            new TitleTextBlock().Text("Erstelle deinen Account"),
+            new DefaultTextBox().PlaceholderText("Email"),
+            new DefaultTextBox().PlaceholderText("Password"),
+            new PrimaryExpandButton().Content("Account erstellen").HorizontalAlignment(HorizontalAlignment.Stretch)
+            ));
     }
 }

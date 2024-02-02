@@ -16,5 +16,6 @@ public class ModuleInitializer : IModule
     public void RegisterTypes(IContainerRegistry containerRegistry)
     {
         containerRegistry.RegisterForNavigation<RegisterPage, RegisterPageViewModel>();
+        containerRegistry.RegisterForNavigation<SignInPage, SignInPageViewModel>();
     }
 }

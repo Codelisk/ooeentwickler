@@ -21,7 +21,7 @@ public partial class HeaderView : RegionBasePage<HeaderViewModel>
             .ColumnDefinitions("*,auto,auto")
             .Children(
             new TextBlock().Text("Foodora").FontSize(50).HorizontalAlignment(HorizontalAlignment.Stretch),
-            new PrimaryButton().Content("Login").Grid(1),
+            new SecondaryButton().Content("Login").Grid(1).Margin(0,0,20,0),
             new PrimaryButton().Content("Sign up").Grid(2)
             )
             ));
