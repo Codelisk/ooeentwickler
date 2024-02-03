@@ -39,10 +39,14 @@
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Account\AccountProgrammingFrameworkEntity.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Account\CompanyEntity.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Account\DistrictEntity.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)entities\company\CompanyBenefitEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Company\CompanySkillsEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Company\CompanyBenefitEntity.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Company\CompanyEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)entities\company\CompanyInfrastructureEntity.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Company\CompanyLocationEntity.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Entities\Company\IndustryEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Company\CompanyIndustryEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)entities\company\CompanyProgrammingFrameworkEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\General\IndustryEntity.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Infrastructure\InfrastructureEntity.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Infrastructure\IssueTrackerEntity.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Infrastructure\RepositoryHostingEntity.cs" />

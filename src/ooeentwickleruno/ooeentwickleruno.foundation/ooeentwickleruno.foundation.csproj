@@ -4,14 +4,11 @@
     <TargetFramework>$(DotNetVersion)</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\Uno\Framework.Uno\submodules\Framework.Restservice\src\Framework.Restservice.Foundation\Framework.Restservice.Foundation.csproj" />
-    <ProjectReference Include="..\..\..\..\..\Uno\Framework.Uno\submodules\Framework.Restservice\submodules\CodeGen\src\Common\Codelisk.GeneratorAttributes\Codelisk.GeneratorAttributes.csproj" />
-    <ProjectReference Include="..\..\..\..\..\Uno\Framework.Uno\submodules\Framework.Restservice\submodules\CodeGen\src\GeneratorHelper\Foundation.Crawler\Foundation.Crawler.csproj" OutputItemType="Analyzer" PrivateAssets="all" />
-    <ProjectReference Include="..\..\..\..\..\Uno\Framework.Uno\submodules\Framework.Restservice\submodules\CodeGen\src\Generators\Foundation\Codelisk.Foundation.Generator\Codelisk.Foundation.Generator.csproj" OutputItemType="Analyzer" PrivateAssets="all" />
-    <ProjectReference Include="..\..\..\..\..\Uno\Framework.Uno\submodules\Framework.Restservice\submodules\CodeGen\src\Generators\Web\WebGenerator.Base\WebGenerator.Base.csproj" OutputItemType="Analyzer" PrivateAssets="all" />
-  </ItemGroup>
-
   <Import Project="..\..\ooeentwicklerfoundation\ooeentwickler.foundation.shared\ooeentwickler.foundation.shared.projitems" Label="Shared" />
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\submodules\Framework.Uno\submodules\Framework.Restservice\src\Framework.Restservice.Foundation\Framework.Restservice.Foundation.csproj" />
+    <ProjectReference Include="..\..\..\submodules\Framework.Uno\submodules\Framework.Restservice\submodules\CodeGen\src\Generators\Web\WebAutoMapperProfile.Generator\WebAutoMapperProfile.Generator.csproj" OutputItemType="Analyzer" PrivateAssets="all" />
+  </ItemGroup>
 
 </Project>

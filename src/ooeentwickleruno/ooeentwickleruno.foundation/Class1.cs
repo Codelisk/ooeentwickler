@@ -1,4 +1,4 @@
-﻿namespace ooeentwickleruno.foundation;
+namespace ooeentwickleruno.foundation;
 
 public class Class1
 {

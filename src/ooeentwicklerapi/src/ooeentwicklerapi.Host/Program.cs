@@ -16,7 +16,7 @@ namespace ooeentwicklerapi.Host
 
             ConfigureDatabase(builder);
 
-            builder.Services.ConfigureAllServices<DtoEntityProfile, OoeDbContext>();
+            //builder.Services.ConfigureAllServices<DtoEntityProfile, OoeDbContext>();
             builder.Services.InitModules();
             builder.Build().ConfigureAndStartApp();
         }

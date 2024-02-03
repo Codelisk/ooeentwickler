@@ -15,19 +15,19 @@ namespace ooeentwickleruno.apiclient;
 public partial interface ICompanyInfrastructureApi : IBaseApi
 {
     [Post("/CompanyInfrastructure/Add")]
-    Task<global::CompanyInfrastructureDtoDto> Add(global::CompanyInfrastructureDtoDto companyInfrastructureDtoDto);
+    Task<global::CompanyInfrastructureDto> Add(global::CompanyInfrastructureDto companyInfrastructureDtoDto);
 
     [Post("/CompanyInfrastructure/AddRange")]
-    Task AddRange(System.Collections.Generic.List<global::CompanyInfrastructureDtoDto> companyInfrastructureDtoDtoList);
+    Task AddRange(System.Collections.Generic.List<global::CompanyInfrastructureDto> companyInfrastructureDtoDtoList);
 
     [Delete("/CompanyInfrastructure/Delete")]
     Task Delete(Guid id);
 
     [Get("/CompanyInfrastructure/Get")]
-    Task<global::CompanyInfrastructureDtoDto> Get(Guid id);
+    Task<global::CompanyInfrastructureDto> Get(Guid id);
 
     [Get("/CompanyInfrastructure/GetAll")]
-    Task<List<global::CompanyInfrastructureDtoDto>> GetAll();
+    Task<List<global::CompanyInfrastructureDto>> GetAll();
 
     [Get("/CompanyInfrastructure/GetAllFull")]
     Task<List<CompanyInfrastructureFullFull>> GetAllFull();
@@ -36,8 +36,8 @@ public partial interface ICompanyInfrastructureApi : IBaseApi
     Task<CompanyInfrastructureFullFull> GetFull(Guid id);
 
     [Get("/CompanyInfrastructure/GetLast")]
-    Task<global::CompanyInfrastructureDtoDto> GetLast();
+    Task<global::CompanyInfrastructureDto> GetLast();
 
     [Post("/CompanyInfrastructure/Save")]
-    Task<global::CompanyInfrastructureDtoDto> Save(global::CompanyInfrastructureDtoDto companyInfrastructureDtoDto);
+    Task<global::CompanyInfrastructureDto> Save(global::CompanyInfrastructureDto companyInfrastructureDtoDto);
 }
