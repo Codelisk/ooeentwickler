@@ -20,9 +20,14 @@
     <Compile Include="$(MSBuildThisFileDirectory)Dtos\Blog\TitleBlogEntry.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Dtos\Company\CompanyBenefitDto.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Dtos\Company\CompanyDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)dtos\company\CompanyInfrastructureDto.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Dtos\Company\CompanyLocationDto.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Dtos\Company\CompanySubBaseDto.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Dtos\Company\IndustryDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dtos\Company\CompanyBase\CompanyReferenceBaseDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dtos\Company\CompanyBase\CompanySubBaseDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dtos\Company\CompanyIndustryDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dtos\Company\CompanyProgrammingFrameworkDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dtos\Company\CompanySkillsDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dtos\General\IndustryDto.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Dtos\Infrastructure\InfrastructureDto.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Dtos\Infrastructure\IssueTrackerDto.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Dtos\Infrastructure\RepositoryHostingDto.cs" />
@@ -54,5 +59,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)DtoHelper\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Dtos\Company\CompanyBase\" />
   </ItemGroup>
 </Project>

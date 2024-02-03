@@ -1,4 +1,5 @@
 
+[PrimaryKey(nameof(CompanyId))]
 public partial class CompanySubBaseDto : BaseBaseIdDto
 {
     [Id]

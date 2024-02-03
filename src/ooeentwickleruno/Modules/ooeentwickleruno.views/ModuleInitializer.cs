@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ooeentwickleruno.viewmodels.ViewModels.Account.Onboarding;
+using ooeentwickleruno.viewmodels.ViewModels.Company;
 using ooeentwickleruno.views.Views.Account.Onboarding;
+using ooeentwickleruno.views.Views.Company;
 
 namespace ooeentwickleruno.views;
 public class ModuleInitializer : IModule
@@ -17,5 +19,6 @@ public class ModuleInitializer : IModule
     {
         containerRegistry.RegisterForNavigation<RegisterPage, RegisterPageViewModel>();
         containerRegistry.RegisterForNavigation<SignInPage, SignInPageViewModel>();
+        containerRegistry.RegisterForNavigation<CreateCompanyPage, CreateCompanyPageViewModel>();
     }
 }

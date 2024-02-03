@@ -21,10 +21,10 @@ public partial interface ICompanyBenefitApi : IBaseApi
     Task AddRange(System.Collections.Generic.List<global::CompanyBenefitDto> companyBenefitDtoList);
 
     [Delete("/CompanyBenefit/Delete")]
-    Task Delete(Guid companyId);
+    Task Delete(Guid id);
 
     [Get("/CompanyBenefit/Get")]
-    Task<global::CompanyBenefitDto> Get(Guid companyId);
+    Task<global::CompanyBenefitDto> Get(Guid id);
 
     [Get("/CompanyBenefit/GetAll")]
     Task<List<global::CompanyBenefitDto>> GetAll();
@@ -33,7 +33,7 @@ public partial interface ICompanyBenefitApi : IBaseApi
     Task<List<CompanyBenefitFull>> GetAllFull();
 
     [Get("/CompanyBenefit/GetFull")]
-    Task<CompanyBenefitFull> GetFull(Guid companyId);
+    Task<CompanyBenefitFull> GetFull(Guid id);
 
     [Get("/CompanyBenefit/GetLast")]
     Task<global::CompanyBenefitDto> GetLast();

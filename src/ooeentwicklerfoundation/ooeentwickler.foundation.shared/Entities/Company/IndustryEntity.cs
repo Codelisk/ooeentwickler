@@ -1,5 +1,5 @@
 
-[Entity(typeof(IndustryDto))]
-public partial class IndustryEntity : IndustryDto
+[Entity(typeof(CompanyIndustryDto))]
+public partial class IndustryEntity : CompanyIndustryDto
 {
 }

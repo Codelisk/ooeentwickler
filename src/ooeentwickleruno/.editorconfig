@@ -94,6 +94,10 @@ dotnet_style_qualification_for_event = false:suggestion
 
 # Naming rules
 
+dotnet_naming_rule.private_or_internal_field_should_be__fieldname.severity = suggestion
+dotnet_naming_rule.private_or_internal_field_should_be__fieldname.symbols = private_or_internal_field
+dotnet_naming_rule.private_or_internal_field_should_be__fieldname.style = _fieldname
+
 dotnet_naming_rule.interface_should_be_begins_with_i.severity = suggestion
 dotnet_naming_rule.interface_should_be_begins_with_i.symbols = interface
 dotnet_naming_rule.interface_should_be_begins_with_i.style = begins_with_i
@@ -131,6 +135,11 @@ dotnet_naming_style.pascal_case.required_prefix =
 dotnet_naming_style.pascal_case.required_suffix =
 dotnet_naming_style.pascal_case.word_separator =
 dotnet_naming_style.pascal_case.capitalization = pascal_case
+
+dotnet_naming_style._fieldname.required_prefix = _
+dotnet_naming_style._fieldname.required_suffix = 
+dotnet_naming_style._fieldname.word_separator = 
+dotnet_naming_style._fieldname.capitalization = camel_case
 
 dotnet_naming_style.pascal_case.required_prefix =
 dotnet_naming_style.pascal_case.required_suffix =

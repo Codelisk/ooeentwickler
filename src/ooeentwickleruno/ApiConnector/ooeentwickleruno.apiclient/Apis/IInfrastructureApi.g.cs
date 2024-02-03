@@ -21,10 +21,10 @@ public partial interface IInfrastructureApi : IBaseApi
     Task AddRange(System.Collections.Generic.List<global::InfrastructureDto> infrastructureDtoList);
 
     [Delete("/Infrastructure/Delete")]
-    Task Delete(Guid companyId);
+    Task Delete(Guid id);
 
     [Get("/Infrastructure/Get")]
-    Task<global::InfrastructureDto> Get(Guid companyId);
+    Task<global::InfrastructureDto> Get(Guid id);
 
     [Get("/Infrastructure/GetAll")]
     Task<List<global::InfrastructureDto>> GetAll();
@@ -33,7 +33,7 @@ public partial interface IInfrastructureApi : IBaseApi
     Task<List<InfrastructureFull>> GetAllFull();
 
     [Get("/Infrastructure/GetFull")]
-    Task<InfrastructureFull> GetFull(Guid companyId);
+    Task<InfrastructureFull> GetFull(Guid id);
 
     [Get("/Infrastructure/GetLast")]
     Task<global::InfrastructureDto> GetLast();
