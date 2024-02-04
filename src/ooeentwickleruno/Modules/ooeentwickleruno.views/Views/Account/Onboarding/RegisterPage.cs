@@ -20,7 +20,7 @@ public partial class RegisterPage : RegionBasePage<RegisterPageViewModel>
             new TitleTextBlock().Text("Erstelle deinen Account"),
             new DefaultTextBox().PlaceholderText("Email"),
             new DefaultTextBox().PlaceholderText("Password"),
-            new PrimaryExpandButton().Content("Account erstellen").HorizontalAlignment(HorizontalAlignment.Stretch)
+            new PrimaryExpandButton().Content("Account erstellen").HorizontalAlignment(HorizontalAlignment.Stretch).Command(()=> vm.RegisterCommand)
             ));
     }
 }
