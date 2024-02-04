@@ -5,11 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ooeentwicklerapi.Repositories
+namespace ooeentwicklerapi.Controller
 {
-    public partial class ModuleInitializer2
+    public partial class ModuleInitializer
     {
         partial void AddServices(IServiceCollection services);
-        
+        public void ConfigureServices(IServiceCollection services)
+        {
+            AddServices(services);
+        }
     }
 }

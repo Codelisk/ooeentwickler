@@ -1,8 +1,10 @@
 
-using Framework.Restservice.Database;
 using Framework.Restservice.Repositories;
 using Framework.Restservice.Server;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using ooeentwicklerapi.Database;
 using ooeentwicklerapi.Foundation;
 
@@ -17,7 +19,7 @@ namespace ooeentwicklerapi.Host
             ConfigureDatabase(builder);
 
             //builder.Services.ConfigureAllServices<DtoEntityProfile, OoeDbContext>();
-            builder.Services.InitModules();
+            
             builder.Build().ConfigureAndStartApp();
         }
         public static void ConfigureDatabase(WebApplicationBuilder builder)

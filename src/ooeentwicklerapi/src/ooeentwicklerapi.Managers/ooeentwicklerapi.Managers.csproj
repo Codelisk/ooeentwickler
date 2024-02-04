@@ -1,8 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\..\Uno\Framework.Uno\submodules\Framework.Restservice\src\Framework.Restservice.Managers\Framework.Restservice.Managers.csproj" />
-    <ProjectReference Include="..\..\..\..\..\..\Uno\Framework.Uno\submodules\Framework.Restservice\submodules\CodeGen\src\Generators\Web\WebManager.Contract.Generator\WebManager.Contract.Generator.csproj" OutputItemType="Analyzer" PrivateAssets="all" />
-    <ProjectReference Include="..\..\..\..\..\..\Uno\Framework.Uno\submodules\Framework.Restservice\submodules\CodeGen\src\Generators\Web\WebManager.Generator\WebManager.Generator.csproj" OutputItemType="Analyzer" PrivateAssets="all" />
+    <ProjectReference Include="..\..\..\..\submodules\Framework.Uno\submodules\Framework.Restservice\src\Framework.Restservice.Managers\Framework.Restservice.Managers.csproj" />
+    <ProjectReference Include="..\..\..\..\submodules\Framework.Uno\submodules\Framework.Restservice\submodules\CodeGen\src\Common\Codelisk.GeneratorAttributes\Codelisk.GeneratorAttributes.csproj" OutputItemType="Analyzer" PrivateAssets="all"  />
+    <ProjectReference Include="..\..\..\..\submodules\Framework.Uno\submodules\Framework.Restservice\submodules\CodeGen\src\GeneratorHelper\Foundation.Crawler\Foundation.Crawler.csproj" OutputItemType="Analyzer" PrivateAssets="all"  />
+    <ProjectReference Include="..\..\..\..\submodules\Framework.Uno\submodules\Framework.Restservice\submodules\CodeGen\src\GeneratorHelper\Generators.Base\Generators.Base.csproj" OutputItemType="Analyzer" PrivateAssets="all"  />
+    <ProjectReference Include="..\..\..\..\submodules\Framework.Uno\submodules\Framework.Restservice\submodules\CodeGen\src\Generators\Web\WebManager.Contract.Generator\WebManager.Contract.Generator.csproj" OutputItemType="Analyzer" PrivateAssets="all" />
+    <ProjectReference Include="..\..\..\..\submodules\Framework.Uno\submodules\Framework.Restservice\submodules\CodeGen\src\Generators\Web\WebManager.Generator\WebManager.Generator.csproj" OutputItemType="Analyzer" PrivateAssets="all" />
     <ProjectReference Include="..\ooeentwicklerapi.Repositories\ooeentwicklerapi.Repositories.csproj" />
   </ItemGroup>
 </Project>

@@ -27,8 +27,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\..\Uno\Framework.Uno\submodules\Framework.Restservice\src\Framework.Restservice.Foundation\Framework.Restservice.Foundation.csproj" />
-    <ProjectReference Include="..\..\..\..\..\..\Uno\Framework.Uno\submodules\Framework.Restservice\src\Framework.Restservice.Server\Framework.Restservice.Server.csproj" />
+    <ProjectReference Include="..\..\..\..\submodules\Framework.Uno\submodules\Framework.Restservice\src\Framework.Restservice.Foundation\Framework.Restservice.Foundation.csproj" />
+    <ProjectReference Include="..\..\..\..\submodules\Framework.Uno\submodules\Framework.Restservice\src\Framework.Restservice.Server\Framework.Restservice.Server.csproj" />
     <ProjectReference Include="..\ooeentwicklerapi.Controller\ooeentwicklerapi.Controller.csproj" />
     <ProjectReference Include="..\ooeentwicklerapi.Database\ooeentwicklerapi.Database.csproj" />
     <ProjectReference Include="..\ooeentwicklerapi.Foundation\ooeentwicklerapi.Foundation.csproj" />
