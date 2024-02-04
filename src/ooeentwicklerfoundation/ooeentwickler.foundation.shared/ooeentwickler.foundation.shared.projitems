@@ -62,7 +62,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Usings.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)DtoHelper\" />
     <Folder Include="$(MSBuildThisFileDirectory)Dtos\Company\CompanyBase\" />
   </ItemGroup>
 </Project>

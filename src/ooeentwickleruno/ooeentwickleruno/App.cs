@@ -17,7 +17,7 @@ public class App : BaseApp
     protected override void ConfigureServices(IServiceCollection services)
     {
         base.ConfigureServices(services);
-        services.AddApi<AuthenticationService>();
+        new ooeentwickleruno.apiclient.ModuleInitializer().Configure<AuthenticationService>(services);
     }
     protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
     {

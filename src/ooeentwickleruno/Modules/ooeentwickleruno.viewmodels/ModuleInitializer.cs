@@ -14,6 +14,5 @@ public class ModuleInitializer : IModule
 
     public void RegisterTypes(IContainerRegistry containerRegistry)
     {
-
     }
 }

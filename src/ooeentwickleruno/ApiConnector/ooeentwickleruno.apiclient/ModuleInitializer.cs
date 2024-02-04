@@ -10,18 +10,12 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace ooeentwickleruno.apiclient;
 
-internal partial class ModuleInitializer : Framework.ApiClient.ModuleInitializer
+public partial class ModuleInitializer : Framework.ApiClient.ModuleInitializer
 {
-    public override void AddApi<TAuthService>(IServiceCollection services)
+    partial void AddServices(IServiceCollection services);
+    public void Configure<TAuthService>(IServiceCollection services) where TAuthService : class, IAuthenticationService
     {
-        AddApis(services);
         base.AddApi<TAuthService>(services);
-    }
-}
-public static class ModuleInitializerExtension
-{
-    public static void AddApi<TAuthService>(this IServiceCollection services) where TAuthService : class, IAuthenticationService
-    {
-        new ModuleInitializer().AddApi<TAuthService>(services);
+        AddServices(services);
     }
 }
