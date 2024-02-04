@@ -9,9 +9,7 @@ namespace ooeentwicklerapi.Host
     {
         public static void InitModules(this IServiceCollection services)
         {
-            //services.AddRepositories();
-            //services.AddManager();
-            //services.AddControllerServices();
+            new ooeentwicklerapi.Managers.ModuleInitializer().Configure(services);
         }
     }
 }

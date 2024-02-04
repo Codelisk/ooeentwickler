@@ -18,6 +18,8 @@ namespace ooeentwicklerapi.Host
 
             ConfigureDatabase(builder);
 
+            builder.Services.ConfigureAllServices<DtoEntityProfile, OoeDbContext>();
+            builder.Services.InitModules();
             //builder.Services.ConfigureAllServices<DtoEntityProfile, OoeDbContext>();
             
             builder.Build().ConfigureAndStartApp();
@@ -27,7 +29,6 @@ namespace ooeentwicklerapi.Host
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
             builder.Services.AddTransient<DbContext, OoeDbContext>();
-            builder.Services.AddRepositoryServices();
             builder.Services.AddDbContext<OoeDbContext>(opt =>
             {
                 //opt.UseMySql(connectionString, new MariaDbServerVersion("15.1"), x => x.MigrationsAssembly("Backend.Host"));

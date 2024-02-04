@@ -10,7 +10,7 @@ namespace ooeentwicklerapi.Database
     public partial class ModuleInitializer
     {
         partial void AddServices(IServiceCollection services);
-        public void ConfigureServices(IServiceCollection services)
+        public void Configure(IServiceCollection services)
         {
             AddServices(services);
         }

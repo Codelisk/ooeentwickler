@@ -2,6 +2,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\submodules\Framework.Uno\submodules\Framework.Restservice\src\Framework.Restservice.Controller\Framework.Restservice.Controller.csproj" />
     <ProjectReference Include="..\..\..\..\submodules\Framework.Uno\submodules\Framework.Restservice\submodules\CodeGen\src\Common\Codelisk.GeneratorAttributes\Codelisk.GeneratorAttributes.csproj" OutputItemType="Analyzer" PrivateAssets="all" />
+    <ProjectReference Include="..\..\..\..\submodules\Framework.Uno\submodules\Framework.Restservice\submodules\CodeGen\src\Common\Codelisk.GeneratorShared\Codelisk.GeneratorShared.csproj"  OutputItemType="Analyzer" PrivateAssets="all"/>
     <ProjectReference Include="..\..\..\..\submodules\Framework.Uno\submodules\Framework.Restservice\submodules\CodeGen\src\GeneratorHelper\Foundation.Crawler\Foundation.Crawler.csproj" OutputItemType="Analyzer" PrivateAssets="all" />
     <ProjectReference Include="..\..\..\..\submodules\Framework.Uno\submodules\Framework.Restservice\submodules\CodeGen\src\GeneratorHelper\Generators.Base\Generators.Base.csproj" OutputItemType="Analyzer" PrivateAssets="all" />
     <ProjectReference Include="..\..\..\..\submodules\Framework.Uno\submodules\Framework.Restservice\submodules\CodeGen\src\Generators\Web\Codelisk.Controller.Generator\Codelisk.Controller.Generator.csproj" OutputItemType="Analyzer" PrivateAssets="all" />
