@@ -22,9 +22,9 @@ public partial class SignInPage : RegionBasePage<SignInPageViewModel>
             new DefaultBoldTextBlock().Text("Kein Account?").VerticalAlignment(VerticalAlignment.Center),
             new SecondaryButton().Content("Account erstellen").Margin(12,0,0,0).VerticalAlignment(VerticalAlignment.Center)
             ),
-            new DefaultTextBox().PlaceholderText("Email"),
-            new DefaultTextBox().PlaceholderText("Password"),
-            new PrimaryExpandButton().Content("Account erstellen").HorizontalAlignment(HorizontalAlignment.Stretch)
+            new DefaultTextBox().PlaceholderText("Email").Text(x => x.Bind(() => vm.Email).TwoWay()),
+            new DefaultTextBox().PlaceholderText("Password").Text(x => x.Bind(() => vm.Password).TwoWay()),
+            new PrimaryExpandButton().Content("Einloggen").HorizontalAlignment(HorizontalAlignment.Stretch).Command(() => vm.SignInCommand)
             ));
     }
 }

@@ -3,13 +3,48 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using Framework.ApiClient.Services;
 using Framework.Mvvm.ViewModels;
 using Framework.Services.Services.Vms;
+using ReactiveUI;
 
 namespace ooeentwickleruno.viewmodels.ViewModels.Account.Onboarding;
 public partial class SignInPageViewModel : RegionBaseViewModel
 {
-    public SignInPageViewModel(VmServices vmServices) : base(vmServices)
+    private readonly Framework.ApiClient.Services.IAuthenticationService _authenticationService;
+
+    public SignInPageViewModel(VmServices vmServices, Framework.ApiClient.Services.IAuthenticationService authenticationService) : base(vmServices)
     {
+        _authenticationService = authenticationService;
+    }
+
+    private string email="test@test.at";
+    public string Email
+    {
+        get { return email; }
+        set { this.RaiseAndSetIfChanged(ref email, value); }
+    }
+
+    private string password="Test1234!";
+    public string Password
+    {
+        get { return password; }
+        set { this.RaiseAndSetIfChanged(ref password, value); }
+    }
+
+    public ICommand SignInCommand => this.LoadingCommand(OnSignInAsync);
+    private async Task OnSignInAsync()
+    {
+        bool result = await _authenticationService.AuthenticateAndCacheTokenAsync(new Framework.ApiClient.Models.AuthPayload()
+        {
+            email = Email,
+            password = Password
+        });
+
+        if (result)
+        {
+            ChangeCurrentRegion("CreateCompanyPage");
+        }
     }
 }

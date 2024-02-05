@@ -18,8 +18,8 @@ public partial class RegisterPage : RegionBasePage<RegisterPageViewModel>
         return new Border().BorderThickness(1).BorderBrush("#CDCDCD").Margin(0,30,0,0).Padding(50).HorizontalAlignment(HorizontalAlignment.Center).Child(new StackPanel().Spacing(30)
             .Children(
             new TitleTextBlock().Text("Erstelle deinen Account"),
-            new DefaultTextBox().PlaceholderText("Email"),
-            new DefaultTextBox().PlaceholderText("Password"),
+            new DefaultTextBox().PlaceholderText("Email").Text(()=>vm.Email),
+            new DefaultTextBox().PlaceholderText("Password").Text(() => vm.Password),
             new PrimaryExpandButton().Content("Account erstellen").HorizontalAlignment(HorizontalAlignment.Stretch).Command(()=> vm.RegisterCommand)
             ));
     }
