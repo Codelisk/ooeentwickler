@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="ReactiveUI.Fody" />
     <PackageReference Include="ReactiveUI.Uno.WinUI" />
     <PackageReference Include="Uno.WinUI" />
     <PackageReference Include="Uno.WinUI.DevServer" Condition="'$(Configuration)'=='Debug'" />

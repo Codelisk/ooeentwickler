@@ -9,9 +9,11 @@ using Framework.Mvvm.ViewModels;
 using Framework.Services.Services.Vms;
 using ReactiveUI;
 
-namespace ooeentwickleruno.viewmodels.ViewModels.Company;
+namespace ooeentwickleruno.viewmodels.ViewModels.Company.CreateCompany;
+
 public partial class CreateCompanyPageViewModel : RegionBaseViewModel
 {
+    private readonly VmServices _vmServices;
     private readonly IProgrammingLanguageRepository _programmingLanguageRepository;
     private readonly IProgrammingFrameworkRepository _programmingFrameworkRepository;
     private readonly IIndustryRepository _industryRepository;
@@ -26,15 +28,19 @@ public partial class CreateCompanyPageViewModel : RegionBaseViewModel
     public List<RepositoryHostingDto> RepositoryHostings { get; set; }
     public List<object> SelectedProgrammingLanguages { get; set; } = new List<object>();
     public List<object> SelectedIndustries { get; set; } = new List<object>();
-    public ObservableCollection<CompanyBenefitDto> SelectedBenefits { get; set; } = new() { new CompanyBenefitDto { Title="test", CompanyId = Guid.Empty, Description ="Desc"} };
-    public CreateCompanyPageViewModel(VmServices vmServices,
+
+    public CreateCompanyPageViewModel(
+        VmServices vmServices,
         IProgrammingLanguageRepository programmingLanguageRepository,
         IProgrammingFrameworkRepository programmingFrameworkRepository,
         IIndustryRepository industryRepository,
         IIssueTrackerRepository issueTrackerRepository,
         IRepositoryHostingRepository repositoryHostingRepository,
-        ICompanyBenefitRepository companyBenefitRepository) : base(vmServices)
+        ICompanyBenefitRepository companyBenefitRepository
+    )
+        : base(vmServices)
     {
+        _vmServices = vmServices;
         _programmingLanguageRepository = programmingLanguageRepository;
         _programmingFrameworkRepository = programmingFrameworkRepository;
         _industryRepository = industryRepository;
@@ -56,11 +62,7 @@ public partial class CreateCompanyPageViewModel : RegionBaseViewModel
         RepositoryHostings = await _repositoryHostingRepository.GetAll();
         this.RaisePropertyChanged(nameof(RepositoryHostings));
         base.OnNavigatedTo(navigationContext);
-    }
 
-    public ICommand TestCommand => this.LoadingCommand<object>(OnTestAsync);
-    private async Task OnTestAsync(object benefit)
-    {
-        this.SelectedBenefits.Add(new CompanyBenefitDto { Title="test", CompanyId = Guid.Empty, Description ="Desc"});
+        _vmServices.RegionManager.RequestNavigate("CompanyBenefitRegion", "CreateBenefitView");
     }
 }

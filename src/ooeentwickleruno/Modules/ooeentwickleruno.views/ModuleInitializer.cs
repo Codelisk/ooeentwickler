@@ -4,21 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ooeentwickleruno.viewmodels.ViewModels.Account.Onboarding;
-using ooeentwickleruno.viewmodels.ViewModels.Company;
+using ooeentwickleruno.viewmodels.ViewModels.Company.CreateCompany;
 using ooeentwickleruno.views.Views.Account.Onboarding;
-using ooeentwickleruno.views.Views.Company;
+using ooeentwickleruno.views.Views.Company.Create;
 
 namespace ooeentwickleruno.views;
+
 public class ModuleInitializer : IModule
 {
-    public void OnInitialized(IContainerProvider containerProvider)
-    {
-    }
+    public void OnInitialized(IContainerProvider containerProvider) { }
 
     public void RegisterTypes(IContainerRegistry containerRegistry)
     {
         containerRegistry.RegisterForNavigation<RegisterPage, RegisterPageViewModel>();
         containerRegistry.RegisterForNavigation<SignInPage, SignInPageViewModel>();
         containerRegistry.RegisterForNavigation<CreateCompanyPage, CreateCompanyPageViewModel>();
+        containerRegistry.RegisterForNavigation<CreateBenefitView, CreateBenefitViewModel>();
     }
 }
