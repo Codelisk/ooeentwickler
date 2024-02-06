@@ -14,4 +14,8 @@
     <ProjectReference Include="..\ooeentwickleruno.controls\ooeentwickleruno.controls.csproj" />
     <ProjectReference Include="..\ooeentwickleruno.viewmodels\ooeentwickleruno.viewmodels.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\Tests\" />
+  </ItemGroup>
 </Project>

@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Framework.UnoNative.Views.Pages;
+using ooeentwickleruno.controls.Buttons.Fab;
+using ooeentwickleruno.controls.Chips;
 using ooeentwickleruno.controls.TextBlocks;
 using ooeentwickleruno.controls.TextBoxes;
 using ooeentwickleruno.viewmodels.ViewModels.Company;
+using Uno.Material;
 using Uno.Toolkit.UI;
 
 namespace ooeentwickleruno.views.Views.Company;
@@ -22,8 +25,7 @@ public partial class CreateCompanyPage : RegionBasePage<CreateCompanyPageViewMod
             new StackPanel().MaxWidth(700).Padding(50).Children(
             new DefaultTextBox().PlaceholderText("Gründungsjahr"),
             TitleTextBlock().Text("Programmiersprachen"),
-            new ChipGroup().Style(StaticResource.Get<Style>("SuggestionChipGroupStyle"))
-            .SelectionMode(ChipSelectionMode.Multiple)
+            new DefaultChipSelectionGroup()
             .ItemsSource(() => vm.ProgrammingLanguages)
             .SelectedItems(x => x.Bind(() => vm.SelectedProgrammingLanguages).TwoWay())
             .ItemTemplate<ProgrammingLanguageDto>(x => new TextBlock().Text(() => x.Name)),
@@ -43,9 +45,22 @@ public partial class CreateCompanyPage : RegionBasePage<CreateCompanyPageViewMod
             .TextWrapping(TextWrapping.Wrap),
             new DefaultTextBox().PlaceholderText("Karrierelink"),
             new DefaultTextBox().PlaceholderText("Webseitelink"),
-            TitleTextBlock().Text("Benefits"),
-            TitleTextBlock().Text("Branchen"),
-            new Button().Command(() => vm.TestCommand).Height(1000)
+            new WrapPanel().Orientation(Orientation.Horizontal).Children(
+                new DefaultTextBox()
+                .Assign(out var benefitTextBox)
+                .PlaceholderText("Benefit hinzufügen")
+                .AcceptsReturn(true)
+                .TextWrapping(TextWrapping.Wrap).Width(200),
+                new DefaultFab().Command(x => x.Bind(() => vm.TestCommand)).CommandParameter(x => x.Bind(()=>benefitTextBox.Text).Source(benefitTextBox)),
+                new DefaultChipRemovalGroup()
+                .ItemsSource(() => vm.SelectedBenefits)
+                .CanRemove(true)
+            ),
+            new DefaultChipSelectionGroup()
+            .ItemsSource(() => vm.Industries)
+            .SelectedItems(x => x.Bind(() => vm.SelectedIndustries).TwoWay())
+            .ItemTemplate<IndustryDto>(x => new TextBlock().Text(() => x.Name)),
+            new Button().Command(() => vm.TestCommand)
             );
     }
 }
