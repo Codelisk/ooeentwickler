@@ -17,41 +17,45 @@ public partial class CreateBenefitView : RegionBasePage<CreateBenefitViewModel>
 {
     protected override UIElement MainContent(CreateBenefitViewModel vm)
     {
-        var result = new WrapPanel()
-            .Orientation(Orientation.Horizontal)
-            .Children(
-                new StackPanel()
-                    .Spacing(10)
-                    .VerticalAlignment(VerticalAlignment.Center)
-                    .Children(
-                        new DefaultTextBlock().Text("Firmenbenefit"),
-                        new DefaultTextBox()
-                            .PlaceholderText("Titel")
-                            .Text(x =>
-                                x.Bind(() => vm.CurrentBenefitTitle).Mode(BindingMode.TwoWay)
-                            )
-                            .AcceptsReturn(true)
-                            .TextWrapping(TextWrapping.Wrap)
-                            .Width(200),
-                        new DefaultTextBox()
-                            .Text(x =>
-                                x.Bind(() => vm.CurrentBenefitDescription).Mode(BindingMode.TwoWay)
-                            )
-                            .PlaceholderText("Beschreibung")
-                            .AcceptsReturn(true)
-                            .TextWrapping(TextWrapping.Wrap)
-                            .Width(200)
-                    ),
-                new DefaultFab()
-                    .VerticalAlignment(VerticalAlignment.Center)
-                    .VerticalContentAlignment(VerticalAlignment.Center)
-                    .Command(x => x.Bind(() => vm.TestCommand)),
-                new DefaultChipRemovalGroup()
-                    .Assign(out var benefitChipGroup)
-                    .ItemsSource(() => vm.SelectedBenefits)
-                    .CanRemove(true)
-                    .ItemTemplate<CompanyBenefitDto>(x => new TextBlock().Text(() => x.Title))
-            );
+        var result = new RelativePanel().Children(
+            new WrapPanel()
+                .Orientation(Orientation.Horizontal)
+                .Children(
+                    new StackPanel()
+                        .Spacing(10)
+                        .VerticalAlignment(VerticalAlignment.Center)
+                        .Children(
+                            new DefaultTextBlock().Text("Firmenbenefit"),
+                            new DefaultTextBox()
+                                .PlaceholderText("Titel")
+                                .Text(x =>
+                                    x.Bind(() => vm.CurrentBenefitTitle).Mode(BindingMode.TwoWay)
+                                )
+                                .AcceptsReturn(true)
+                                .TextWrapping(TextWrapping.Wrap)
+                                .Width(200),
+                            new DefaultTextBox()
+                                .Text(x =>
+                                    x.Bind(() => vm.CurrentBenefitDescription)
+                                        .Mode(BindingMode.TwoWay)
+                                )
+                                .PlaceholderText("Beschreibung")
+                                .AcceptsReturn(true)
+                                .TextWrapping(TextWrapping.Wrap)
+                                .Width(200)
+                        ),
+                    new DefaultFab()
+                        .VerticalAlignment(VerticalAlignment.Center)
+                        .VerticalContentAlignment(VerticalAlignment.Center)
+                        .Command(x => x.Bind(() => vm.TestCommand)),
+                    new ChipGroup()
+                        .Assign(out var benefitChipGroup)
+                        .ItemsSource(() => vm.SelectedBenefits)
+                        .CanRemove(true)
+                        .ItemsPanel(() => new StackPanel().Orientation(Orientation.Horizontal))
+                        .ItemTemplate<CompanyBenefitDto>(x => new TextBlock().Text(() => x.Title))
+                )
+        );
 
         benefitChipGroup.ItemRemoved += (s, e) =>
         {
