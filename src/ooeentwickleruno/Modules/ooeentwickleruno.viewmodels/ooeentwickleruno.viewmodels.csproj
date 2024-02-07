@@ -40,6 +40,7 @@
     <ProjectReference Include="..\..\..\..\submodules\Framework.Uno\src\Framework.Base\Framework.Mvvm\Framework.Mvvm.csproj" />
     <ProjectReference Include="..\..\ApiConnector\ooeentwickleruno.apiclient\ooeentwickleruno.apiclient.csproj" />
     <ProjectReference Include="..\..\ooeentwickleruno.foundation\ooeentwickleruno.foundation.csproj" />
+    <ProjectReference Include="..\ooeentwickleruno.services\ooeentwickleruno.services.csproj" />
   </ItemGroup>
 
 </Project>

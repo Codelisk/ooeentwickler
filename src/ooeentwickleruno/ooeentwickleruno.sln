@@ -99,6 +99,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.Restservice.Found
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codelisk.GeneratorShared", "..\..\submodules\Framework.Uno\submodules\Framework.Restservice\submodules\CodeGen\src\Common\Codelisk.GeneratorShared\Codelisk.GeneratorShared.csproj", "{46DF77A6-541B-4C2C-A8D4-EC241F9E21CC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ooeentwickleruno.services", "Modules\ooeentwickleruno.services\ooeentwickleruno.services.csproj", "{DF8A07B5-6892-47C0-98D1-6DED93021645}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -607,6 +609,22 @@ Global
 		{46DF77A6-541B-4C2C-A8D4-EC241F9E21CC}.Release|x64.Build.0 = Release|Any CPU
 		{46DF77A6-541B-4C2C-A8D4-EC241F9E21CC}.Release|x86.ActiveCfg = Release|Any CPU
 		{46DF77A6-541B-4C2C-A8D4-EC241F9E21CC}.Release|x86.Build.0 = Release|Any CPU
+		{DF8A07B5-6892-47C0-98D1-6DED93021645}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF8A07B5-6892-47C0-98D1-6DED93021645}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF8A07B5-6892-47C0-98D1-6DED93021645}.Debug|arm64.ActiveCfg = Debug|Any CPU
+		{DF8A07B5-6892-47C0-98D1-6DED93021645}.Debug|arm64.Build.0 = Debug|Any CPU
+		{DF8A07B5-6892-47C0-98D1-6DED93021645}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{DF8A07B5-6892-47C0-98D1-6DED93021645}.Debug|x64.Build.0 = Debug|Any CPU
+		{DF8A07B5-6892-47C0-98D1-6DED93021645}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DF8A07B5-6892-47C0-98D1-6DED93021645}.Debug|x86.Build.0 = Debug|Any CPU
+		{DF8A07B5-6892-47C0-98D1-6DED93021645}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF8A07B5-6892-47C0-98D1-6DED93021645}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF8A07B5-6892-47C0-98D1-6DED93021645}.Release|arm64.ActiveCfg = Release|Any CPU
+		{DF8A07B5-6892-47C0-98D1-6DED93021645}.Release|arm64.Build.0 = Release|Any CPU
+		{DF8A07B5-6892-47C0-98D1-6DED93021645}.Release|x64.ActiveCfg = Release|Any CPU
+		{DF8A07B5-6892-47C0-98D1-6DED93021645}.Release|x64.Build.0 = Release|Any CPU
+		{DF8A07B5-6892-47C0-98D1-6DED93021645}.Release|x86.ActiveCfg = Release|Any CPU
+		{DF8A07B5-6892-47C0-98D1-6DED93021645}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -652,6 +670,7 @@ Global
 		{0D8E7422-27BC-463A-A9B4-6F521F9F3BEC} = {6243E01C-9969-4EDE-9B7C-29D1E5C5DAC8}
 		{EEA3949E-D60F-408C-9917-259711FC29B6} = {CFD9188B-433B-462A-A261-A5DC116E9078}
 		{46DF77A6-541B-4C2C-A8D4-EC241F9E21CC} = {B37F1E79-D818-4A35-8450-E42722E5E3EA}
+		{DF8A07B5-6892-47C0-98D1-6DED93021645} = {F6E9DE9B-BA35-485B-9CAB-B384EDF72EA8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {83498F0C-015F-44E4-9E7E-813DAD113571}

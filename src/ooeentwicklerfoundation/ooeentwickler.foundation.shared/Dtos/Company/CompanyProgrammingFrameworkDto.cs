@@ -2,5 +2,5 @@
 public partial class CompanyProgrammingFrameworkDto : CompanyReferenceBaseDto
 {
     [ForeignKey(nameof(ProgrammingFrameworkDto))]
-    public Guid ProgrammingFrameworkId { get; set; }
+    public required Guid ProgrammingFrameworkId { get; set; }
 }

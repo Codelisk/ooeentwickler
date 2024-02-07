@@ -27,7 +27,9 @@ public partial class CreateCompanyPage : RegionBasePage<CreateCompanyPageViewMod
             .MaxWidth(700)
             .Padding(50)
             .Children(
-                new DefaultTextBox().PlaceholderText("Gründungsjahr"),
+                new DefaultTextBox()
+                    .PlaceholderText("Gründungsjahr")
+                    .Text(x => x.Bind(() => vm.Company.FoundingYear).Mode(BindingMode.TwoWay)),
                 TitleTextBlock().Text("Programmiersprachen"),
                 new DefaultChipSelectionGroup()
                     .ItemsSource(() => vm.ProgrammingLanguages)
@@ -37,31 +39,43 @@ public partial class CreateCompanyPage : RegionBasePage<CreateCompanyPageViewMod
                 new ComboBox()
                     .PlaceholderText("Repositoryverwaltung")
                     .ItemsSource(() => vm.RepositoryHostings)
+                    .SelectedItem(x => x.Bind(() => vm.SelectedRepositoryHosting).TwoWay())
                     .DisplayMemberPath("Name"),
                 new ComboBox()
                     .PlaceholderText("Projektmanagment")
+                    .SelectedItem(x => x.Bind(() => vm.SelectedIssueTracker).TwoWay())
                     .ItemsSource(() => vm.IssueTrackers)
                     .DisplayMemberPath("Name"),
                 new NumberBox()
                     .PlaceholderText("Anzahl Entwickler")
+                    .Value(x => x.Bind(() => vm.Company.DeveloperCount).Mode(BindingMode.TwoWay))
                     .SpinButtonPlacementMode(() => NumberBoxSpinButtonPlacementMode.Inline),
                 new DefaultTextBox()
                     .PlaceholderText("Was macht Ihre Firma?")
                     .AcceptsReturn(true)
+                    .Text(x => x.Bind(() => vm.Company.Description).Mode(BindingMode.TwoWay))
                     .TextWrapping(TextWrapping.Wrap)
                     .MinHeight(200),
                 new DefaultTextBox()
                     .MinHeight(200)
                     .PlaceholderText("Wie sieht der Entwicklungsalltag aus in Ihrer Firma?")
                     .AcceptsReturn(true)
+                    .Text(x =>
+                        x.Bind(() => vm.Company.HowWeDevelopDescription).Mode(BindingMode.TwoWay)
+                    )
                     .TextWrapping(TextWrapping.Wrap),
-                new DefaultTextBox().PlaceholderText("Karrierelink"),
-                new DefaultTextBox().PlaceholderText("Webseitelink"),
+                new DefaultTextBox()
+                    .PlaceholderText("Karrierelink")
+                    .Text(x => x.Bind(() => vm.Company.CareerLink).Mode(BindingMode.TwoWay)),
+                new DefaultTextBox()
+                    .PlaceholderText("Webseitelink")
+                    .Text(x => x.Bind(() => vm.Company.WebsiteLink).Mode(BindingMode.TwoWay)),
                 new ContentControl().RegionManager(regionName: "CompanyBenefitRegion"),
                 new DefaultChipSelectionGroup()
                     .ItemsSource(() => vm.Industries)
                     .SelectedItems(x => x.Bind(() => vm.SelectedIndustries).TwoWay())
-                    .ItemTemplate<IndustryDto>(x => new TextBlock().Text(() => x.Name))
+                    .ItemTemplate<IndustryDto>(x => new TextBlock().Text(() => x.Name)),
+                new Button().Content("Hinzufügen").Command(() => vm.AddCompanyCommand)
             );
 
         return result;

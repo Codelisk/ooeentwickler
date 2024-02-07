@@ -19,9 +19,10 @@ public partial class CreateBenefitView : RegionBasePage<CreateBenefitViewModel>
     {
         var result = new RelativePanel().Children(
             new WrapPanel()
-                .Orientation(Orientation.Horizontal)
+                .Assign(out var wrapPanel)
                 .Children(
                     new StackPanel()
+                        .Grid(0)
                         .Spacing(10)
                         .VerticalAlignment(VerticalAlignment.Center)
                         .Children(
@@ -48,21 +49,47 @@ public partial class CreateBenefitView : RegionBasePage<CreateBenefitViewModel>
                         .VerticalAlignment(VerticalAlignment.Center)
                         .VerticalContentAlignment(VerticalAlignment.Center)
                         .Command(x => x.Bind(() => vm.TestCommand)),
-                    new ChipGroup()
+                    new ItemsRepeater()
+                        .Layout(new UniformGridLayout())
                         .Assign(out var benefitChipGroup)
                         .ItemsSource(() => vm.SelectedBenefits)
-                        .CanRemove(true)
-                        .ItemsPanel(() => new StackPanel().Orientation(Orientation.Horizontal))
-                        .ItemTemplate<CompanyBenefitDto>(x => new TextBlock().Text(() => x.Title))
+                        .ItemTemplate<CompanyBenefitDto>(x =>
+                        {
+                            var result = new Card()
+                                .IsClickable(false)
+                                .Style(StaticResource.Get<Style>("OutlinedCardStyle"))
+                                .HeaderContent(() => x.Title)
+                                .SupportingContent(() => x.Description)
+                                .HeaderContentTemplate<string>(headerContent =>
+                                {
+                                    return new StackPanel()
+                                        .Orientation(Orientation.Horizontal)
+                                        .Spacing(10)
+                                        .Children(
+                                            new DefaultBoldTextBlock().Text(() => headerContent),
+                                            new SymbolIcon()
+                                                .Symbol(Symbol.Cancel)
+                                                .Assign(out var deleteIcon)
+                                        )
+                                        .Padding(10);
+                                });
+                            result.Tapped += (s, e) =>
+                            {
+                                var dc = GetDataContext();
+                                dc.SelectedBenefits.Remove(
+                                    (s as Card).DataContext as CompanyBenefitDto
+                                );
+                            };
+                            return result;
+                        })
                 )
         );
-
-        benefitChipGroup.ItemRemoved += (s, e) =>
-        {
-            ((s as ChipGroup).DataContext as CreateBenefitViewModel).SelectedBenefits.Remove(
-                e.Item as CompanyBenefitDto
-            );
-        };
+        //benefitChipGroup.ItemRemoved += (s, e) =>
+        //{
+        //    ((s as ChipGroup).DataContext as CreateBenefitViewModel).SelectedBenefits.Remove(
+        //        e.Item as CompanyBenefitDto
+        //    );
+        //};
         return result;
     }
 }

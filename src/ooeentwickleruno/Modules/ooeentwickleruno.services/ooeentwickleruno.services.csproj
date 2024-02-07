@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>$(DotNetVersion)</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Prism.Uno.WinUI" />
+    <PackageReference Include="Prism.DryIoc.Uno.WinUI" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ApiConnector\ooeentwickleruno.apiclient\ooeentwickleruno.apiclient.csproj" />
+    <ProjectReference Include="..\..\ooeentwickleruno.foundation\ooeentwickleruno.foundation.csproj" />
+  </ItemGroup>
+</Project>

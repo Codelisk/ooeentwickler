@@ -7,13 +7,14 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Framework.Mvvm.ViewModels;
 using Framework.Services.Services.Vms;
+using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
 
 namespace ooeentwickleruno.viewmodels.ViewModels.Company.CreateCompany;
 
 public partial class CreateBenefitViewModel : RegionBaseViewModel
 {
-    public ObservableCollection<object> SelectedBenefits { get; set; } = new();
+    public ObservableCollection<object> SelectedBenefits { get; set; }
 
     [Reactive]
     public string CurrentBenefitTitle { get; set; }
@@ -26,6 +27,13 @@ public partial class CreateBenefitViewModel : RegionBaseViewModel
 
     public ICommand TestCommand => LoadingCommand<object>(OnTestAsync);
 
+    public override void OnNavigatedTo(NavigationContext navigationContext)
+    {
+        base.OnNavigatedTo(navigationContext);
+
+        SelectedBenefits = navigationContext.Parameters["test"] as ObservableCollection<object>;
+    }
+
     private async Task OnTestAsync(object o)
     {
         SelectedBenefits.Add(
@@ -36,5 +44,6 @@ public partial class CreateBenefitViewModel : RegionBaseViewModel
                 Description = CurrentBenefitDescription
             }
         );
+        this.RaisePropertyChanged(nameof(SelectedBenefits));
     }
 }
