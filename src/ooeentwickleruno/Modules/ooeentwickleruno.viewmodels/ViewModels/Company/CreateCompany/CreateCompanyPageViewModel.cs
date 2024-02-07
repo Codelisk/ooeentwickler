@@ -151,7 +151,7 @@ public partial class CreateCompanyPageViewModel : RegionBaseViewModel
         _vmServices.RegionManager.RequestNavigate(
             "CompanyBenefitRegion",
             "CreateBenefitView",
-            new NavigationParameters { { "test", SelectedBenefits } }
+            new NavigationParameters { { "SelectedBenefits", SelectedBenefits } }
         );
 
         base.OnNavigatedTo(navigationContext);

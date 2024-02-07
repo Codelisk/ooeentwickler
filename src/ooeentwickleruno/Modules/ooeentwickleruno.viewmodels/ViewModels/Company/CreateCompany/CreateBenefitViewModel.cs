@@ -31,7 +31,8 @@ public partial class CreateBenefitViewModel : RegionBaseViewModel
     {
         base.OnNavigatedTo(navigationContext);
 
-        SelectedBenefits = navigationContext.Parameters["test"] as ObservableCollection<object>;
+        SelectedBenefits =
+            navigationContext.Parameters["SelectedBenefits"] as ObservableCollection<object>;
         this.RaisePropertyChanged(nameof(SelectedBenefits));
     }
 
