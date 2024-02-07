@@ -15,6 +15,7 @@ namespace ooeentwickleruno.viewmodels.ViewModels.Company.CreateCompany;
 public partial class CreateCompanyPageViewModel : RegionBaseViewModel
 {
     private readonly VmServices _vmServices;
+    private readonly IInfrastructureRepository _infrastructureRepository;
     private readonly ICompanyRepository _companyRepository;
     private readonly IProgrammingLanguageRepository _programmingLanguageRepository;
     private readonly IProgrammingFrameworkRepository _programmingFrameworkRepository;
@@ -52,6 +53,7 @@ public partial class CreateCompanyPageViewModel : RegionBaseViewModel
 
     public CreateCompanyPageViewModel(
         VmServices vmServices,
+        IInfrastructureRepository infrastructureRepository,
         ICompanyRepository companyRepository,
         IProgrammingLanguageRepository programmingLanguageRepository,
         IProgrammingFrameworkRepository programmingFrameworkRepository,
@@ -69,6 +71,7 @@ public partial class CreateCompanyPageViewModel : RegionBaseViewModel
         : base(vmServices)
     {
         _vmServices = vmServices;
+        _infrastructureRepository = infrastructureRepository;
         _companyRepository = companyRepository;
         _programmingLanguageRepository = programmingLanguageRepository;
         _programmingFrameworkRepository = programmingFrameworkRepository;
@@ -156,26 +159,37 @@ public partial class CreateCompanyPageViewModel : RegionBaseViewModel
 
     private async Task AddCompanyInfrastructureAsync()
     {
-        var InfrastructureDto = new InfrastructureDto { 
-        IssueTrackerId = SelectedIssueTracker.GetId(),
-        RepositoryHostingId = SelectedRepositoryHosting.GetId()
+        var infrastructureDto = new InfrastructureDto
+        {
+            IssueTrackerId = SelectedIssueTracker.GetId(),
+            RepositoryHostingId = SelectedRepositoryHosting.GetId()
         };
 
+        infrastructureDto = await _infrastructureRepository.Add(infrastructureDto);
 
-        var account = _accountProvider.Account!;
         var companyInfrastructure = new CompanyInfrastructureDto
         {
             CompanyId = Company.GetId(),
-            InfrastructureId = 
+            InfrastructureId = infrastructureDto.GetId()
         };
 
-        await _companyInfrastructureRepository.AddRange(industries.ToList());
+        await _companyInfrastructureRepository.Add(companyInfrastructure);
+    }
+
+    private async Task AddCompanyBenefitsAsync()
+    {
+        var benefits = SelectedBenefits.Select(x => x as CompanyBenefitDto).ToList();
+
+        await _companyBenefitRepository.AddRange(benefits);
     }
 
     private async Task OnAddCompanyAsync()
     {
-        _companyBenefitRepository.AddRange(
-            SelectedBenefits.Select(x => x as CompanyBenefitDto).ToList()
-        );
+        Company = await _companyRepository.Save(Company);
+        await AddCompanyProgrammingLanguageAsync();
+        await AddCompanyProgrammingFrameworksAsync();
+        await AddCompanyInfrastructureAsync();
+        await AddCompanyIndustiresAsync();
+        await AddCompanyBenefitsAsync();
     }
 }
