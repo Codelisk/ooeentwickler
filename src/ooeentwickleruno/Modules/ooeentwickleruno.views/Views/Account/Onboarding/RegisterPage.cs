@@ -11,16 +11,33 @@ using ooeentwickleruno.viewmodels.ViewModels.Account.Onboarding;
 using Uno.Extensions.Markup.Generator;
 
 namespace ooeentwickleruno.views.Views.Account.Onboarding;
+
 public partial class RegisterPage : RegionBasePage<RegisterPageViewModel>
 {
     protected override UIElement MainContent(RegisterPageViewModel vm)
     {
-        return new Border().BorderThickness(1).BorderBrush("#CDCDCD").Margin(0,30,0,0).Padding(50).HorizontalAlignment(HorizontalAlignment.Center).Child(new StackPanel().Spacing(30)
-            .Children(
-            new TitleTextBlock().Text("Erstelle deinen Account"),
-            new DefaultTextBox().PlaceholderText("Email").Text(()=>vm.Email),
-            new DefaultTextBox().PlaceholderText("Password").Text(() => vm.Password),
-            new PrimaryExpandButton().Content("Account erstellen").HorizontalAlignment(HorizontalAlignment.Stretch).Command(()=> vm.RegisterCommand)
-            ));
+        return new Border()
+            .BorderThickness(1)
+            .BorderBrush("#CDCDCD")
+            .Margin(0, 30, 0, 0)
+            .Padding(50)
+            .HorizontalAlignment(HorizontalAlignment.Center)
+            .Child(
+                new StackPanel()
+                    .Spacing(30)
+                    .Children(
+                        new TitleTextBlock().Text("Erstelle deinen Account"),
+                        new DefaultTextBox()
+                            .PlaceholderText("Email")
+                            .Text(x => x.Bind(() => vm.Email).Mode(BindingMode.TwoWay)),
+                        new DefaultTextBox()
+                            .PlaceholderText("Password")
+                            .Text(x => x.Bind(() => vm.Password).Mode(BindingMode.TwoWay)),
+                        new PrimaryExpandButton()
+                            .Content("Account erstellen")
+                            .HorizontalAlignment(HorizontalAlignment.Stretch)
+                            .Command(() => vm.RegisterCommand)
+                    )
+            );
     }
 }

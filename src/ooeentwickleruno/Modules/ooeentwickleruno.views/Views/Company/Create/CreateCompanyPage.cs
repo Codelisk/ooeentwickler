@@ -32,19 +32,19 @@ public partial class CreateCompanyPage : RegionBasePage<CreateCompanyPageViewMod
                     .Text(x => x.Bind(() => vm.Company.FoundingYear).Mode(BindingMode.TwoWay)),
                 TitleTextBlock().Text("Programmiersprachen"),
                 new DefaultChipSelectionGroup()
-                    .ItemsSource(() => vm.ProgrammingLanguages)
+                    .ItemsSource(() => vm.AllProgrammingLanguages)
                     .SelectedItems(x => x.Bind(() => vm.SelectedProgrammingLanguages).TwoWay())
                     .ItemTemplate<ProgrammingLanguageDto>(x => new TextBlock().Text(() => x.Name)),
                 TitleTextBlock().Text("Repositoryverwaltung"),
                 new ComboBox()
                     .PlaceholderText("Repositoryverwaltung")
-                    .ItemsSource(() => vm.RepositoryHostings)
                     .SelectedItem(x => x.Bind(() => vm.SelectedRepositoryHosting).TwoWay())
+                    .ItemsSource(() => vm.AllRepositoryHostings)
                     .DisplayMemberPath("Name"),
                 new ComboBox()
                     .PlaceholderText("Projektmanagment")
                     .SelectedItem(x => x.Bind(() => vm.SelectedIssueTracker).TwoWay())
-                    .ItemsSource(() => vm.IssueTrackers)
+                    .ItemsSource(() => vm.AllIssueTrackers)
                     .DisplayMemberPath("Name"),
                 new NumberBox()
                     .PlaceholderText("Anzahl Entwickler")
@@ -72,7 +72,7 @@ public partial class CreateCompanyPage : RegionBasePage<CreateCompanyPageViewMod
                     .Text(x => x.Bind(() => vm.Company.WebsiteLink).Mode(BindingMode.TwoWay)),
                 new ContentControl().RegionManager(regionName: "CompanyBenefitRegion"),
                 new DefaultChipSelectionGroup()
-                    .ItemsSource(() => vm.Industries)
+                    .ItemsSource(() => vm.AllIndustries)
                     .SelectedItems(x => x.Bind(() => vm.SelectedIndustries).TwoWay())
                     .ItemTemplate<IndustryDto>(x => new TextBlock().Text(() => x.Name)),
                 new Button().Content("Hinzufügen").Command(() => vm.AddCompanyCommand)
