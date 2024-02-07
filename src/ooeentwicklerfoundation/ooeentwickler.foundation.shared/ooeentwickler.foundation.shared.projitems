@@ -47,6 +47,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)entities\company\CompanyProgrammingFrameworkEntity.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)entities\company\CompanyProgrammingLanguageEntity.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\General\IndustryEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Infrastructure\InfrastructureEntity.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Infrastructure\IssueTrackerEntity.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Infrastructure\RepositoryHostingEntity.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Skills\ProgrammingFrameworkEntity.cs" />
