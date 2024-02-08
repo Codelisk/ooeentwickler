@@ -62,8 +62,8 @@ public partial class CreateCompanyPageViewModel : RegionBaseViewModel
         ICompanyInfrastructureRepository companyInfrastructureRepository,
         ICompanyProgrammingFrameworkRepository companyProgrammingFrameworkRepository,
         ICompanyLocationRepository companyLocationRepository,
-        IIndustryRepository industryRepository,
         ICompanyBenefitRepository companyBenefitRepository,
+        IIndustryRepository industryRepository,
         IIssueTrackerRepository issueTrackerRepository,
         IRepositoryHostingRepository repositoryHostingRepository,
         IAccountProvider accountProvider

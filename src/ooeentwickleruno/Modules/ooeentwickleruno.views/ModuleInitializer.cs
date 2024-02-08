@@ -5,8 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using ooeentwickleruno.viewmodels.ViewModels.Account.Onboarding;
 using ooeentwickleruno.viewmodels.ViewModels.Company.CreateCompany;
+using ooeentwickleruno.viewmodels.ViewModels.Company.Show;
 using ooeentwickleruno.views.Views.Account.Onboarding;
 using ooeentwickleruno.views.Views.Company.Create;
+using ooeentwickleruno.views.Views.Company.Show;
 
 namespace ooeentwickleruno.views;
 
@@ -20,5 +22,6 @@ public class ModuleInitializer : IModule
         containerRegistry.RegisterForNavigation<SignInPage, SignInPageViewModel>();
         containerRegistry.RegisterForNavigation<CreateCompanyPage, CreateCompanyPageViewModel>();
         containerRegistry.RegisterForNavigation<CreateBenefitView, CreateBenefitViewModel>();
+        containerRegistry.RegisterForNavigation<ShowCompanyPage, ShowCompanyPageViewModel>();
     }
 }

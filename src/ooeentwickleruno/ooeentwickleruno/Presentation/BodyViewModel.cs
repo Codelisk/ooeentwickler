@@ -10,20 +10,23 @@ using ooeentwickleruno.apiclient;
 using ReactiveUI;
 
 namespace Sample.Presentation;
+
 public partial class BodyViewModel : RegionBaseViewModel
 {
-    private string test="Test";
+    private string test = "Test";
     public string Test
     {
         get { return test; }
         set { this.RaiseAndSetIfChanged(ref test, value); }
     }
-    public BodyViewModel(VmServices vmServices) : base(vmServices)
-    {
-    }
+
+    public BodyViewModel(VmServices vmServices)
+        : base(vmServices) { }
+
     public ICommand NavigateCommand => this.LoadingCommand(OnNavigateAsync);
+
     private async Task OnNavigateAsync()
     {
-        ChangeCurrentRegion("CreateCompanyPage");
+        ChangeCurrentRegion("ShowCompanyPage");
     }
 }
