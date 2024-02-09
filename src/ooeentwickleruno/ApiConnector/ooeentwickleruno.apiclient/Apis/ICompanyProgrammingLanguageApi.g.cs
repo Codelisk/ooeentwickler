@@ -36,7 +36,7 @@ public partial interface ICompanyProgrammingLanguageApi : IBaseApi
     Task<CompanyProgrammingLanguageFull> GetFull(Guid id);
 
     [Get("/CompanyProgrammingLanguage/GetLast")]
-    Task<global::CompanyProgrammingLanguageDto> GetLast();
+    Task<global::CompanyProgrammingLanguageDto?> GetLast();
 
     [Post("/CompanyProgrammingLanguage/Save")]
     Task<global::CompanyProgrammingLanguageDto> Save(global::CompanyProgrammingLanguageDto companyProgrammingLanguageDto);

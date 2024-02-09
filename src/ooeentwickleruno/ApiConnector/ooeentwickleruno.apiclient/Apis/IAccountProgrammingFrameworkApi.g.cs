@@ -36,7 +36,7 @@ public partial interface IAccountProgrammingFrameworkApi : IBaseApi
     Task<AccountProgrammingFrameworkFull> GetFull(Guid id);
 
     [Get("/AccountProgrammingFramework/GetLast")]
-    Task<global::AccountProgrammingFrameworkDto> GetLast();
+    Task<global::AccountProgrammingFrameworkDto?> GetLast();
 
     [Post("/AccountProgrammingFramework/Save")]
     Task<global::AccountProgrammingFrameworkDto> Save(global::AccountProgrammingFrameworkDto accountProgrammingFrameworkDto);

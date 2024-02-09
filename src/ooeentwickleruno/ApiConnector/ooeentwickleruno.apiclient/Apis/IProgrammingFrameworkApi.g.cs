@@ -36,7 +36,7 @@ public partial interface IProgrammingFrameworkApi : IBaseApi
     Task<ProgrammingFrameworkFull> GetFull(Guid id);
 
     [Get("/ProgrammingFramework/GetLast")]
-    Task<global::ProgrammingFrameworkDto> GetLast();
+    Task<global::ProgrammingFrameworkDto?> GetLast();
 
     [Post("/ProgrammingFramework/Save")]
     Task<global::ProgrammingFrameworkDto> Save(global::ProgrammingFrameworkDto programmingFrameworkDto);

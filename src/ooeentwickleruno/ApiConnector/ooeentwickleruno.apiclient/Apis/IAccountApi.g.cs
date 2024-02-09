@@ -36,7 +36,7 @@ public partial interface IAccountApi : IBaseApi
     Task<AccountFull> GetFull(Guid id);
 
     [Get("/Account/GetLast")]
-    Task<global::AccountDto> GetLast();
+    Task<global::AccountDto?> GetLast();
 
     [Post("/Account/Save")]
     Task<global::AccountDto> Save(global::AccountDto accountDto);

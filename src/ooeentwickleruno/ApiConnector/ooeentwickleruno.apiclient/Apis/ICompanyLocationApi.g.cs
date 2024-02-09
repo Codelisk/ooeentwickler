@@ -36,7 +36,7 @@ public partial interface ICompanyLocationApi : IBaseApi
     Task<CompanyLocationFull> GetFull(Guid companyId);
 
     [Get("/CompanyLocation/GetLast")]
-    Task<global::CompanyLocationDto> GetLast();
+    Task<global::CompanyLocationDto?> GetLast();
 
     [Post("/CompanyLocation/Save")]
     Task<global::CompanyLocationDto> Save(global::CompanyLocationDto companyLocationDto);

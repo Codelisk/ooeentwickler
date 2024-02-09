@@ -36,7 +36,7 @@ public partial interface IDistrictApi : IBaseApi
     Task<DistrictFull> GetFull(Guid id);
 
     [Get("/District/GetLast")]
-    Task<global::DistrictDto> GetLast();
+    Task<global::DistrictDto?> GetLast();
 
     [Post("/District/Save")]
     Task<global::DistrictDto> Save(global::DistrictDto districtDto);

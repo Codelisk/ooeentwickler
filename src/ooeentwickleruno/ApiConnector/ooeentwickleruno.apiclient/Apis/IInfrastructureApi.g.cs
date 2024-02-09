@@ -36,7 +36,7 @@ public partial interface IInfrastructureApi : IBaseApi
     Task<InfrastructureFull> GetFull(Guid id);
 
     [Get("/Infrastructure/GetLast")]
-    Task<global::InfrastructureDto> GetLast();
+    Task<global::InfrastructureDto?> GetLast();
 
     [Post("/Infrastructure/Save")]
     Task<global::InfrastructureDto> Save(global::InfrastructureDto infrastructureDto);

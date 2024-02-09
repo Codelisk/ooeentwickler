@@ -36,7 +36,7 @@ public partial interface IAccountCompensationApi : IBaseApi
     Task<AccountCompensationFull> GetFull(Guid accountId);
 
     [Get("/AccountCompensation/GetLast")]
-    Task<global::AccountCompensationDto> GetLast();
+    Task<global::AccountCompensationDto?> GetLast();
 
     [Post("/AccountCompensation/Save")]
     Task<global::AccountCompensationDto> Save(global::AccountCompensationDto accountCompensationDto);

@@ -36,7 +36,7 @@ public partial interface ICompanyBenefitApi : IBaseApi
     Task<CompanyBenefitFull> GetFull(Guid id);
 
     [Get("/CompanyBenefit/GetLast")]
-    Task<global::CompanyBenefitDto> GetLast();
+    Task<global::CompanyBenefitDto?> GetLast();
 
     [Post("/CompanyBenefit/Save")]
     Task<global::CompanyBenefitDto> Save(global::CompanyBenefitDto companyBenefitDto);

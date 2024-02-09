@@ -36,7 +36,7 @@ public partial interface ICompanyInfrastructureApi : IBaseApi
     Task<CompanyInfrastructureFull> GetFull(Guid id);
 
     [Get("/CompanyInfrastructure/GetLast")]
-    Task<global::CompanyInfrastructureDto> GetLast();
+    Task<global::CompanyInfrastructureDto?> GetLast();
 
     [Post("/CompanyInfrastructure/Save")]
     Task<global::CompanyInfrastructureDto> Save(global::CompanyInfrastructureDto companyInfrastructureDto);

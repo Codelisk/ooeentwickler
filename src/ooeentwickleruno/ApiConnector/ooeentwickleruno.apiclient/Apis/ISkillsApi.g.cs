@@ -36,7 +36,7 @@ public partial interface ISkillsApi : IBaseApi
     Task<SkillsFull> GetFull(Guid accountId);
 
     [Get("/Skills/GetLast")]
-    Task<global::SkillsDto> GetLast();
+    Task<global::SkillsDto?> GetLast();
 
     [Post("/Skills/Save")]
     Task<global::SkillsDto> Save(global::SkillsDto skillsDto);

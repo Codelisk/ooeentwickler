@@ -36,7 +36,7 @@ public partial interface ICompanyIndustryApi : IBaseApi
     Task<CompanyIndustryFull> GetFull(Guid companyId);
 
     [Get("/CompanyIndustry/GetLast")]
-    Task<global::CompanyIndustryDto> GetLast();
+    Task<global::CompanyIndustryDto?> GetLast();
 
     [Post("/CompanyIndustry/Save")]
     Task<global::CompanyIndustryDto> Save(global::CompanyIndustryDto companyIndustryDto);

@@ -36,7 +36,7 @@ public partial interface IIssueTrackerApi : IBaseApi
     Task<IssueTrackerFull> GetFull(Guid id);
 
     [Get("/IssueTracker/GetLast")]
-    Task<global::IssueTrackerDto> GetLast();
+    Task<global::IssueTrackerDto?> GetLast();
 
     [Post("/IssueTracker/Save")]
     Task<global::IssueTrackerDto> Save(global::IssueTrackerDto issueTrackerDto);

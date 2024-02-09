@@ -36,7 +36,7 @@ public partial interface IProgrammingLanguageApi : IBaseApi
     Task<ProgrammingLanguageFull> GetFull(Guid id);
 
     [Get("/ProgrammingLanguage/GetLast")]
-    Task<global::ProgrammingLanguageDto> GetLast();
+    Task<global::ProgrammingLanguageDto?> GetLast();
 
     [Post("/ProgrammingLanguage/Save")]
     Task<global::ProgrammingLanguageDto> Save(global::ProgrammingLanguageDto programmingLanguageDto);

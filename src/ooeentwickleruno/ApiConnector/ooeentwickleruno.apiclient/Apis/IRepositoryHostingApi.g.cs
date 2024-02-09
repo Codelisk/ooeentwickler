@@ -36,7 +36,7 @@ public partial interface IRepositoryHostingApi : IBaseApi
     Task<RepositoryHostingFull> GetFull(Guid id);
 
     [Get("/RepositoryHosting/GetLast")]
-    Task<global::RepositoryHostingDto> GetLast();
+    Task<global::RepositoryHostingDto?> GetLast();
 
     [Post("/RepositoryHosting/Save")]
     Task<global::RepositoryHostingDto> Save(global::RepositoryHostingDto repositoryHostingDto);

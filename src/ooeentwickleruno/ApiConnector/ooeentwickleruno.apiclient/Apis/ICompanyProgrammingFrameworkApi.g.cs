@@ -36,7 +36,7 @@ public partial interface ICompanyProgrammingFrameworkApi : IBaseApi
     Task<CompanyProgrammingFrameworkFull> GetFull(Guid id);
 
     [Get("/CompanyProgrammingFramework/GetLast")]
-    Task<global::CompanyProgrammingFrameworkDto> GetLast();
+    Task<global::CompanyProgrammingFrameworkDto?> GetLast();
 
     [Post("/CompanyProgrammingFramework/Save")]
     Task<global::CompanyProgrammingFrameworkDto> Save(global::CompanyProgrammingFrameworkDto companyProgrammingFrameworkDto);
