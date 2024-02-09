@@ -38,35 +38,6 @@ public partial class SignInPageViewModel : RegionBaseViewModel
         _dispatcher = dispatcher;
         _mainWindow = mainWindow;
         _authenticationService = authenticationService;
-        OnAddImageAsync();
-    }
-
-    private async Task OnAddImageAsync()
-    {
-        Console.WriteLine("AddImageCommand");
-
-        await _dispatcher.ExecuteAsync(async () =>
-        {
-            var fileOpenPicker = new FileOpenPicker();
-            fileOpenPicker.FileTypeFilter.Add(".png");
-            fileOpenPicker.FileTypeFilter.Add(".jpg");
-
-            // For Uno.WinUI-based apps
-            var hwnd = WinRT.Interop.WindowNative.GetWindowHandle(_mainWindow.MainWindow);
-            WinRT.Interop.InitializeWithWindow.Initialize(fileOpenPicker, hwnd);
-
-            StorageFile pickedFile = await fileOpenPicker.PickSingleFileAsync();
-            if (pickedFile != null)
-            {
-                // File was picked, you can now use it
-                var text = await FileIO.ReadBufferAsync(pickedFile);
-                var bytes = text.ToArray();
-            }
-            else
-            {
-                // No file was picked or the dialog was cancelled.
-            }
-        });
     }
 
     private string email = "test@test.at";

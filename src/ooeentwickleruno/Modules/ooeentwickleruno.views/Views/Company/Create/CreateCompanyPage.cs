@@ -76,7 +76,8 @@ public partial class CreateCompanyPage : RegionBasePage<CreateCompanyPageViewMod
                     .ItemsSource(() => vm.AllIndustries)
                     .SelectedItems(x => x.Bind(() => vm.SelectedIndustries).TwoWay())
                     .ItemTemplate<IndustryDto>(x => new TextBlock().Text(() => x.Name)),
-                new PrimaryButton().Content("Bild").Command(() => vm.AddImageCommand),
+                new PrimaryButton().Content("Logo").Command(() => vm.AddImageCommand),
+                new PrimaryButton().Content("Präsentationsbild").Command(() => vm.AddImageCommand),
                 new Button().Content("Hinzufügen").Command(() => vm.AddCompanyCommand)
             );
 

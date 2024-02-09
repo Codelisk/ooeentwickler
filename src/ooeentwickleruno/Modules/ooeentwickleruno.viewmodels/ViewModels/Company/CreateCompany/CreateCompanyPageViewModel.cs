@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -33,6 +34,7 @@ public partial class CreateCompanyPageViewModel : RegionBaseViewModel
     private readonly IRepositoryHostingRepository _repositoryHostingRepository;
     private readonly IAccountProvider _accountProvider;
     private readonly IMainWindowProvider<Window> _mainWindow;
+    private readonly IDispatcher _dispatcher;
 
     public List<ProgrammingLanguageDto> AllProgrammingLanguages { get; set; }
     public List<ProgrammingFrameworkDto> AllProgrammingFrameworks { get; set; }
@@ -71,7 +73,8 @@ public partial class CreateCompanyPageViewModel : RegionBaseViewModel
         IIssueTrackerRepository issueTrackerRepository,
         IRepositoryHostingRepository repositoryHostingRepository,
         IAccountProvider accountProvider,
-        IMainWindowProvider<Window> mainWindow
+        IMainWindowProvider<Window> mainWindow,
+        IDispatcher dispatcher
     )
         : base(vmServices)
     {
@@ -91,6 +94,7 @@ public partial class CreateCompanyPageViewModel : RegionBaseViewModel
         _repositoryHostingRepository = repositoryHostingRepository;
         _accountProvider = accountProvider;
         _mainWindow = mainWindow;
+        _dispatcher = dispatcher;
     }
 
     public override async void OnNavigatedTo(NavigationContext navigationContext)
@@ -167,27 +171,28 @@ public partial class CreateCompanyPageViewModel : RegionBaseViewModel
 
     private async Task OnAddImageAsync()
     {
-        Console.WriteLine("AddImageCommand");
-
-        var fileOpenPicker = new FileOpenPicker();
-        fileOpenPicker.SuggestedStartLocation = PickerLocationId.ComputerFolder;
-        fileOpenPicker.FileTypeFilter.Add(".txt");
-        fileOpenPicker.FileTypeFilter.Add(".csv");
-
-        // For Uno.WinUI-based apps
-        var hwnd = WinRT.Interop.WindowNative.GetWindowHandle(_mainWindow.MainWindow);
-        WinRT.Interop.InitializeWithWindow.Initialize(fileOpenPicker, hwnd);
-
-        StorageFile pickedFile = await fileOpenPicker.PickSingleFileAsync();
-        if (pickedFile != null)
+        await _dispatcher.ExecuteAsync(async () =>
         {
-            // File was picked, you can now use it
-            var text = await FileIO.ReadTextAsync(pickedFile);
-        }
-        else
-        {
-            // No file was picked or the dialog was cancelled.
-        }
+            var fileOpenPicker = new FileOpenPicker();
+            fileOpenPicker.FileTypeFilter.Add(".png");
+            fileOpenPicker.FileTypeFilter.Add(".jpg");
+
+            // For Uno.WinUI-based apps
+            var hwnd = WinRT.Interop.WindowNative.GetWindowHandle(_mainWindow.MainWindow);
+            WinRT.Interop.InitializeWithWindow.Initialize(fileOpenPicker, hwnd);
+
+            StorageFile pickedFile = await fileOpenPicker.PickSingleFileAsync();
+            if (pickedFile != null)
+            {
+                // File was picked, you can now use it
+                var text = await FileIO.ReadBufferAsync(pickedFile);
+                var bytes = text.ToArray();
+            }
+            else
+            {
+                // No file was picked or the dialog was cancelled.
+            }
+        });
     }
 
     public ICommand AddCompanyCommand => this.LoadingCommand(OnAddCompanyAsync);

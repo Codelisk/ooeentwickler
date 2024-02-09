@@ -20,11 +20,15 @@
     <Compile Include="$(MSBuildThisFileDirectory)Dtos\Blog\TitleBlogEntry.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Dtos\Company\CompanyBenefitDto.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Dtos\Company\CompanyDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dtos\Company\CompanyImages\CompanyLogoDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dtos\Company\CompanyImages\CompanyPresentationImageDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Company\CompanyImages\CompanyPresentationImageEntity.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)dtos\company\CompanyInfrastructureDto.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Dtos\Company\CompanyLocationDto.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Dtos\Company\CompanyBase\CompanyReferenceBaseDto.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Dtos\Company\CompanyBase\CompanySubBaseDto.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Dtos\Company\CompanyIndustryDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Company\CompanyImages\CompanyLogoEntity.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Dtos\Company\CompanyProgrammingFrameworkDto.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)dtos\company\CompanyProgrammingLanguageDto.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Dtos\General\IndustryDto.cs" />
@@ -63,5 +67,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Dtos\Company\CompanyBase\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Entities\Company\CompanyImages\" />
   </ItemGroup>
 </Project>
