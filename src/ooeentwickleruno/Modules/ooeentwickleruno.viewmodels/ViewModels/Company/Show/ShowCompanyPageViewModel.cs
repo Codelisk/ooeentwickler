@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Framework.Mvvm.ViewModels;
 using Framework.Services.Services.Vms;
+using Microsoft.UI.Xaml.Media.Imaging;
 using ooeentwickleruno.services.Provider.AccountProvider;
 using ReactiveUI;
 
@@ -28,6 +30,8 @@ public partial class ShowCompanyPageViewModel : RegionBaseViewModel
     private readonly IIssueTrackerRepository _issueTrackerRepository;
     private readonly IRepositoryHostingRepository _repositoryHostingRepository;
     private readonly IAccountProvider _accountProvider;
+    private readonly ICompanyLogoRepository _companyLogoRepository;
+    private readonly ICompanyPresentationImageRepository _companyPresentationImageRepository;
 
     public List<ProgrammingLanguageDto> AllProgrammingLanguages { get; set; }
     public List<ProgrammingFrameworkDto> AllProgrammingFrameworks { get; set; }
@@ -48,6 +52,9 @@ public partial class ShowCompanyPageViewModel : RegionBaseViewModel
 
     public CompanyDto Company { get; set; }
 
+    public BitmapImage CompanyLogo { get; set; }
+    public BitmapImage CompanyPresentationImage { get; set; }
+
     public ShowCompanyPageViewModel(
         VmServices vmServices,
         ICompanyRepository companyRepository,
@@ -63,7 +70,9 @@ public partial class ShowCompanyPageViewModel : RegionBaseViewModel
         IIndustryRepository industryRepository,
         IIssueTrackerRepository issueTrackerRepository,
         IRepositoryHostingRepository repositoryHostingRepository,
-        IAccountProvider accountProvider
+        IAccountProvider accountProvider,
+        ICompanyLogoRepository companyLogoRepository,
+        ICompanyPresentationImageRepository companyPresentationImageRepository
     )
         : base(vmServices)
     {
@@ -82,6 +91,8 @@ public partial class ShowCompanyPageViewModel : RegionBaseViewModel
         _issueTrackerRepository = issueTrackerRepository;
         _repositoryHostingRepository = repositoryHostingRepository;
         _accountProvider = accountProvider;
+        _companyLogoRepository = companyLogoRepository;
+        _companyPresentationImageRepository = companyPresentationImageRepository;
     }
 
     public override async void OnNavigatedTo(NavigationContext navigationContext)
@@ -150,5 +161,16 @@ public partial class ShowCompanyPageViewModel : RegionBaseViewModel
         this.RaisePropertyChanged(nameof(SelectedIssueTracker));
         this.RaisePropertyChanged(nameof(SelectedRepositoryHosting));
         this.RaisePropertyChanged(nameof(CompanyCompanyBenefits));
+
+        var companyLogoBytes = (await _companyLogoRepository.GetLast()).bytes;
+        var companyPresentationImageBytes = (
+            await _companyPresentationImageRepository.GetLast()
+        ).bytes;
+        CompanyLogo = new BitmapImage();
+        CompanyLogo.SetSource(new MemoryStream(companyLogoBytes));
+        CompanyPresentationImage = new BitmapImage();
+        CompanyPresentationImage.SetSource(new MemoryStream(companyPresentationImageBytes));
+        this.RaisePropertyChanged(nameof(CompanyLogo));
+        this.RaisePropertyChanged(nameof(CompanyPresentationImage));
     }
 }

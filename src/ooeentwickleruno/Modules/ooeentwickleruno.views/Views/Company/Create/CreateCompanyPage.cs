@@ -36,6 +36,11 @@ public partial class CreateCompanyPage : RegionBasePage<CreateCompanyPageViewMod
                     .ItemsSource(() => vm.AllProgrammingLanguages)
                     .SelectedItems(x => x.Bind(() => vm.SelectedProgrammingLanguages).TwoWay())
                     .ItemTemplate<ProgrammingLanguageDto>(x => new TextBlock().Text(() => x.Name)),
+                TitleTextBlock().Text("Frameworks"),
+                new DefaultChipSelectionGroup()
+                    .ItemsSource(() => vm.AllProgrammingFrameworks)
+                    .SelectedItems(x => x.Bind(() => vm.SelectedProgrammingFrameworks).TwoWay())
+                    .ItemTemplate<ProgrammingFrameworkDto>(x => new TextBlock().Text(() => x.Name)),
                 TitleTextBlock().Text("Repositoryverwaltung"),
                 new ComboBox()
                     .PlaceholderText("Repositoryverwaltung")

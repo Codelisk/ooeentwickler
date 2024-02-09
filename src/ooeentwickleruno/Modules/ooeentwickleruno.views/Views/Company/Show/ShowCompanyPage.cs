@@ -23,9 +23,10 @@ public partial class ShowCompanyPage : RegionBasePage<ShowCompanyPageViewModel>
             .Children(
                 new StackPanel().Children(
                     new Image()
-                        .VerticalAlignment(VerticalAlignment.Stretch)
-                        .HorizontalAlignment(HorizontalAlignment.Stretch)
-                        .Source(() => new byte[4]),
+                        .HorizontalAlignment(HorizontalAlignment.Center)
+                        .Stretch(Stretch.UniformToFill)
+                        .Height(360)
+                        .Source(() => vm.CompanyPresentationImage),
                     new Grid()
                         .MaxWidth(1200)
                         .Margin(20, 0, 20, 0)
@@ -36,15 +37,16 @@ public partial class ShowCompanyPage : RegionBasePage<ShowCompanyPageViewModel>
                                 .CornerRadius(4)
                                 .VerticalAlignment(VerticalAlignment.Center)
                                 .HorizontalAlignment(HorizontalAlignment.Center)
-                                .BorderBrush(Colors.White)
+                                .BorderBrush("#F4F4F4")
                                 .Translation(new System.Numerics.Vector3(0, -50, 0))
                                 .Child(
                                     new Image()
-                                        .Width(100)
-                                        .Height(100)
-                                        .Source(
-                                            "https://kcdn.at/company/6971/3223964/viessmann-gro--.companysquare.gif"
-                                        )
+                                        .Width(140)
+                                        .Height(140)
+                                        .Source(() => vm.CompanyLogo)
+                                        .VerticalAlignment(VerticalAlignment.Stretch)
+                                        .HorizontalAlignment(HorizontalAlignment.Stretch)
+                                        .Stretch(Stretch.UniformToFill)
                                 )
                         ),
                     new ElevatedView()
@@ -96,8 +98,16 @@ public partial class ShowCompanyPage : RegionBasePage<ShowCompanyPageViewModel>
                                                 new DefaultChipShowGroup()
                                                     .ItemsSource(() => vm.InfrastructureNames)
                                                     .HorizontalAlignment(HorizontalAlignment.Center)
-                                                    .ItemTemplate<ProgrammingLanguageDto>(x =>
+                                                    .ItemTemplate<string>(x =>
                                                         new TextBlock().Text(() => x)
+                                                    ),
+                                                new DefaultChipShowGroup()
+                                                    .ItemsSource(
+                                                        () => vm.CompanyProgrammingFrameworks
+                                                    )
+                                                    .HorizontalAlignment(HorizontalAlignment.Center)
+                                                    .ItemTemplate<ProgrammingFrameworkDto>(x =>
+                                                        new TextBlock().Text(() => x.Name)
                                                     )
                                             ),
                                             new Divider().HorizontalAlignment(

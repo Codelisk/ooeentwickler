@@ -66,7 +66,7 @@ public partial class SignInPageViewModel : RegionBaseViewModel
 
         if (result)
         {
-            ChangeCurrentRegion("CreateCompanyPage");
+            ChangeCurrentRegion("ShowCompanyPage");
         }
     }
 }

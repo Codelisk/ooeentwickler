@@ -181,6 +181,7 @@ public partial class CreateCompanyPageViewModel : RegionBaseViewModel
         {
             var fileOpenPicker = new FileOpenPicker();
             fileOpenPicker.FileTypeFilter.Add(".png");
+            fileOpenPicker.FileTypeFilter.Add(".gif");
             fileOpenPicker.FileTypeFilter.Add(".jpg");
 
             // For Uno.WinUI-based apps
@@ -193,7 +194,7 @@ public partial class CreateCompanyPageViewModel : RegionBaseViewModel
                 // File was picked, you can now use it
                 var text = await FileIO.ReadBufferAsync(pickedFile);
                 var bytes = text.ToArray();
-                await _companyLogoRepository.Add(
+                await _companyLogoRepository.Save(
                     new CompanyLogoDto { bytes = bytes, CompanyId = Company.GetId() }
                 );
             }
@@ -212,6 +213,7 @@ public partial class CreateCompanyPageViewModel : RegionBaseViewModel
         {
             var fileOpenPicker = new FileOpenPicker();
             fileOpenPicker.FileTypeFilter.Add(".png");
+            fileOpenPicker.FileTypeFilter.Add(".gif");
             fileOpenPicker.FileTypeFilter.Add(".jpg");
 
             // For Uno.WinUI-based apps
@@ -224,7 +226,7 @@ public partial class CreateCompanyPageViewModel : RegionBaseViewModel
                 // File was picked, you can now use it
                 var text = await FileIO.ReadBufferAsync(pickedFile);
                 var bytes = text.ToArray();
-                await _companyPresentationImageRepository.Add(
+                await _companyPresentationImageRepository.Save(
                     new CompanyPresentationImageDto { bytes = bytes, CompanyId = Company.GetId() }
                 );
             }
