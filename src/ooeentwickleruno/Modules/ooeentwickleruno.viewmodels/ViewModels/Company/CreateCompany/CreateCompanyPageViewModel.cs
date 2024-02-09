@@ -35,6 +35,8 @@ public partial class CreateCompanyPageViewModel : RegionBaseViewModel
     private readonly IAccountProvider _accountProvider;
     private readonly IMainWindowProvider<Window> _mainWindow;
     private readonly IDispatcher _dispatcher;
+    private readonly ICompanyLogoRepository _companyLogoRepository;
+    private readonly ICompanyPresentationImageRepository _companyPresentationImageRepository;
 
     public List<ProgrammingLanguageDto> AllProgrammingLanguages { get; set; }
     public List<ProgrammingFrameworkDto> AllProgrammingFrameworks { get; set; }
@@ -74,7 +76,9 @@ public partial class CreateCompanyPageViewModel : RegionBaseViewModel
         IRepositoryHostingRepository repositoryHostingRepository,
         IAccountProvider accountProvider,
         IMainWindowProvider<Window> mainWindow,
-        IDispatcher dispatcher
+        IDispatcher dispatcher,
+        ICompanyLogoRepository companyLogoRepository,
+        ICompanyPresentationImageRepository companyPresentationImageRepository
     )
         : base(vmServices)
     {
@@ -95,6 +99,8 @@ public partial class CreateCompanyPageViewModel : RegionBaseViewModel
         _accountProvider = accountProvider;
         _mainWindow = mainWindow;
         _dispatcher = dispatcher;
+        _companyLogoRepository = companyLogoRepository;
+        _companyPresentationImageRepository = companyPresentationImageRepository;
     }
 
     public override async void OnNavigatedTo(NavigationContext navigationContext)
@@ -167,9 +173,9 @@ public partial class CreateCompanyPageViewModel : RegionBaseViewModel
         base.OnNavigatedTo(navigationContext);
     }
 
-    public ICommand AddImageCommand => this.LoadingCommand(OnAddImageAsync);
+    public ICommand AddLogoCommand => this.LoadingCommand(OnAddLogoAsync);
 
-    private async Task OnAddImageAsync()
+    private async Task OnAddLogoAsync()
     {
         await _dispatcher.ExecuteAsync(async () =>
         {
@@ -187,6 +193,40 @@ public partial class CreateCompanyPageViewModel : RegionBaseViewModel
                 // File was picked, you can now use it
                 var text = await FileIO.ReadBufferAsync(pickedFile);
                 var bytes = text.ToArray();
+                await _companyLogoRepository.Add(
+                    new CompanyLogoDto { bytes = bytes, CompanyId = Company.GetId() }
+                );
+            }
+            else
+            {
+                // No file was picked or the dialog was cancelled.
+            }
+        });
+    }
+
+    public ICommand AddPresentationImageCommand => this.LoadingCommand(OnAddPresentationImageAsync);
+
+    private async Task OnAddPresentationImageAsync()
+    {
+        await _dispatcher.ExecuteAsync(async () =>
+        {
+            var fileOpenPicker = new FileOpenPicker();
+            fileOpenPicker.FileTypeFilter.Add(".png");
+            fileOpenPicker.FileTypeFilter.Add(".jpg");
+
+            // For Uno.WinUI-based apps
+            var hwnd = WinRT.Interop.WindowNative.GetWindowHandle(_mainWindow.MainWindow);
+            WinRT.Interop.InitializeWithWindow.Initialize(fileOpenPicker, hwnd);
+
+            StorageFile pickedFile = await fileOpenPicker.PickSingleFileAsync();
+            if (pickedFile != null)
+            {
+                // File was picked, you can now use it
+                var text = await FileIO.ReadBufferAsync(pickedFile);
+                var bytes = text.ToArray();
+                await _companyPresentationImageRepository.Add(
+                    new CompanyPresentationImageDto { bytes = bytes, CompanyId = Company.GetId() }
+                );
             }
             else
             {

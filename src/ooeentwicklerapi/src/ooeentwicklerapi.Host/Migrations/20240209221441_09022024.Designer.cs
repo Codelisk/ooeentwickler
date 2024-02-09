@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ooeentwicklerapi.Database;
 
@@ -10,9 +11,11 @@ using ooeentwicklerapi.Database;
 namespace ooeentwicklerapi.Host.Migrations
 {
     [DbContext(typeof(OoeDbContext))]
-    partial class OoeDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240209221441_09022024")]
+    partial class _09022024
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.0");
