@@ -6,9 +6,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Framework.Mvvm.ViewModels;
+using Framework.Services.Services.Application;
 using Framework.Services.Services.Vms;
 using ooeentwickleruno.services.Provider.AccountProvider;
 using ReactiveUI;
+using Windows.Storage;
+using Windows.Storage.Pickers;
 
 namespace ooeentwickleruno.viewmodels.ViewModels.Company.CreateCompany;
 
@@ -29,6 +32,7 @@ public partial class CreateCompanyPageViewModel : RegionBaseViewModel
     private readonly IIssueTrackerRepository _issueTrackerRepository;
     private readonly IRepositoryHostingRepository _repositoryHostingRepository;
     private readonly IAccountProvider _accountProvider;
+    private readonly IMainWindowProvider<Window> _mainWindow;
 
     public List<ProgrammingLanguageDto> AllProgrammingLanguages { get; set; }
     public List<ProgrammingFrameworkDto> AllProgrammingFrameworks { get; set; }
@@ -66,7 +70,8 @@ public partial class CreateCompanyPageViewModel : RegionBaseViewModel
         IIndustryRepository industryRepository,
         IIssueTrackerRepository issueTrackerRepository,
         IRepositoryHostingRepository repositoryHostingRepository,
-        IAccountProvider accountProvider
+        IAccountProvider accountProvider,
+        IMainWindowProvider<Window> mainWindow
     )
         : base(vmServices)
     {
@@ -85,6 +90,7 @@ public partial class CreateCompanyPageViewModel : RegionBaseViewModel
         _issueTrackerRepository = issueTrackerRepository;
         _repositoryHostingRepository = repositoryHostingRepository;
         _accountProvider = accountProvider;
+        _mainWindow = mainWindow;
     }
 
     public override async void OnNavigatedTo(NavigationContext navigationContext)
@@ -155,6 +161,33 @@ public partial class CreateCompanyPageViewModel : RegionBaseViewModel
         );
 
         base.OnNavigatedTo(navigationContext);
+    }
+
+    public ICommand AddImageCommand => this.LoadingCommand(OnAddImageAsync);
+
+    private async Task OnAddImageAsync()
+    {
+        Console.WriteLine("AddImageCommand");
+
+        var fileOpenPicker = new FileOpenPicker();
+        fileOpenPicker.SuggestedStartLocation = PickerLocationId.ComputerFolder;
+        fileOpenPicker.FileTypeFilter.Add(".txt");
+        fileOpenPicker.FileTypeFilter.Add(".csv");
+
+        // For Uno.WinUI-based apps
+        var hwnd = WinRT.Interop.WindowNative.GetWindowHandle(_mainWindow.MainWindow);
+        WinRT.Interop.InitializeWithWindow.Initialize(fileOpenPicker, hwnd);
+
+        StorageFile pickedFile = await fileOpenPicker.PickSingleFileAsync();
+        if (pickedFile != null)
+        {
+            // File was picked, you can now use it
+            var text = await FileIO.ReadTextAsync(pickedFile);
+        }
+        else
+        {
+            // No file was picked or the dialog was cancelled.
+        }
     }
 
     public ICommand AddCompanyCommand => this.LoadingCommand(OnAddCompanyAsync);

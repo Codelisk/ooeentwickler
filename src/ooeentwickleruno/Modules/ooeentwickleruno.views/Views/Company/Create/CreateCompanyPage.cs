@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Framework.UnoNative.Views.Pages;
+using ooeentwickleruno.controls.Buttons;
 using ooeentwickleruno.controls.Buttons.Fab;
 using ooeentwickleruno.controls.Chips;
 using ooeentwickleruno.controls.TextBlocks;
@@ -75,6 +76,7 @@ public partial class CreateCompanyPage : RegionBasePage<CreateCompanyPageViewMod
                     .ItemsSource(() => vm.AllIndustries)
                     .SelectedItems(x => x.Bind(() => vm.SelectedIndustries).TwoWay())
                     .ItemTemplate<IndustryDto>(x => new TextBlock().Text(() => x.Name)),
+                new PrimaryButton().Content("Bild").Command(() => vm.AddImageCommand),
                 new Button().Content("Hinzufügen").Command(() => vm.AddCompanyCommand)
             );
 

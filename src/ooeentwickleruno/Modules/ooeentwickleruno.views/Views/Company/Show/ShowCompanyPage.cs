@@ -25,9 +25,7 @@ public partial class ShowCompanyPage : RegionBasePage<ShowCompanyPageViewModel>
                     new Image()
                         .VerticalAlignment(VerticalAlignment.Stretch)
                         .HorizontalAlignment(HorizontalAlignment.Stretch)
-                        .Source(
-                            "https://kcdn.at/company-profile/6971/3578406/1980_360_revolution.jpg"
-                        ),
+                        .Source(() => new byte[4]),
                     new Grid()
                         .MaxWidth(1200)
                         .Margin(20, 0, 20, 0)

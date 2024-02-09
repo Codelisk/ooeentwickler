@@ -3,6 +3,7 @@ using Framework.UnoNative.Services;
 using ooeentwickleruno.apiclient;
 using Sample.Presentation;
 using Uno.Core.Collections;
+using Windows.UI.Core;
 
 namespace ooeentwickleruno;
 
