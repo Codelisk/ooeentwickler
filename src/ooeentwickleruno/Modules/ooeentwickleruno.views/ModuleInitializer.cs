@@ -25,5 +25,9 @@ public class ModuleInitializer : IModule
         containerRegistry.RegisterForNavigation<CreateBenefitView, CreateBenefitViewModel>();
         containerRegistry.RegisterForNavigation<ShowCompanyPage, ShowCompanyPageViewModel>();
         containerRegistry.RegisterForNavigation<CreateDistrictView, CreateDistrictViewModel>();
+        containerRegistry.RegisterForNavigation<
+            CompanyOverviewPage,
+            CompanyOverviewPageViewModel
+        >();
     }
 }
