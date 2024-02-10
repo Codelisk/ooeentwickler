@@ -9,6 +9,7 @@ using ooeentwickleruno.viewmodels.ViewModels.Company.Show;
 using ooeentwickleruno.views.Views.Account.Onboarding;
 using ooeentwickleruno.views.Views.Company.Create;
 using ooeentwickleruno.views.Views.Company.Show;
+using ooeentwickleruno.views.Views.DataCreation;
 
 namespace ooeentwickleruno.views;
 
@@ -23,5 +24,6 @@ public class ModuleInitializer : IModule
         containerRegistry.RegisterForNavigation<CreateCompanyPage, CreateCompanyPageViewModel>();
         containerRegistry.RegisterForNavigation<CreateBenefitView, CreateBenefitViewModel>();
         containerRegistry.RegisterForNavigation<ShowCompanyPage, ShowCompanyPageViewModel>();
+        containerRegistry.RegisterForNavigation<CreateDistrictView, CreateDistrictViewModel>();
     }
 }

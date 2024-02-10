@@ -14,7 +14,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Dtos\Account\AccountProgrammingFrameworkDto.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Dtos\Account\AccountReferenceBaseDto.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Dtos\Account\AccountSubBaseDto.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Dtos\Account\DistrictDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dtos\General\DistrictDto.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Dtos\Blog\BaseBlogEntry.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Dtos\Blog\TextBlogEntry.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Dtos\Blog\TitleBlogEntry.cs" />
@@ -22,6 +22,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Dtos\Company\CompanyDto.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Dtos\Company\CompanyImages\CompanyLogoDto.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Dtos\Company\CompanyImages\CompanyPresentationImageDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dtos\General\GeneralImages\DistrictImageDto.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Company\CompanyImages\CompanyPresentationImageEntity.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)dtos\company\CompanyInfrastructureDto.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Dtos\Company\CompanyLocationDto.cs" />
@@ -50,6 +51,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Company\CompanyIndustryEntity.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)entities\company\CompanyProgrammingFrameworkEntity.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)entities\company\CompanyProgrammingLanguageEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\General\GeneralImages\DistrictImageEntity.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\General\IndustryEntity.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Infrastructure\InfrastructureEntity.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Infrastructure\IssueTrackerEntity.cs" />
