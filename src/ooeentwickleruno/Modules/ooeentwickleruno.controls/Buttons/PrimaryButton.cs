@@ -8,6 +8,7 @@ using Microsoft.UI.Xaml.Controls;
 using ooeentwickleruno.controls.Buttons.Base;
 
 namespace ooeentwickleruno.controls.Buttons;
+
 public class PrimaryButton : BaseButton
 {
     public PrimaryButton()

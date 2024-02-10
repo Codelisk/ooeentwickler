@@ -19,7 +19,6 @@ public partial class ShowCompanyPage : RegionBasePage<ShowCompanyPageViewModel>
     protected override UIElement MainContent(ShowCompanyPageViewModel vm)
     {
         return new Grid()
-            .Padding(0, 30, 0, 0)
             .Background("#F4F4F4")
             .Children(
                 new StackPanel().Children(
@@ -30,7 +29,6 @@ public partial class ShowCompanyPage : RegionBasePage<ShowCompanyPageViewModel>
                         .Source(() => vm.CompanyPresentationImage),
                     new Grid()
                         .MaxWidth(1200)
-                        .Margin(20, 0, 20, 0)
                         .Background(Colors.White)
                         .Children(
                             new Border()
@@ -56,12 +54,12 @@ public partial class ShowCompanyPage : RegionBasePage<ShowCompanyPageViewModel>
                         .HorizontalAlignment(HorizontalAlignment.Stretch)
                         .CornerRadius(3)
                         .Background(Colors.White)
-                        .Margin(20, 0, 20, 20)
                         .Elevation(1)
                         .ElevatedContent(
                             new StackPanel()
                                 .MaxWidth(1000)
                                 .Spacing(20)
+                                .Padding(40, 0, 40, 0)
                                 .Children(
                                     new StackPanel()
                                         .Spacing(10)
