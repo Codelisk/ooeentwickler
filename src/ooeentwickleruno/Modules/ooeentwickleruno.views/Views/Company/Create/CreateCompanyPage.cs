@@ -28,6 +28,11 @@ public partial class CreateCompanyPage : RegionBasePage<CreateCompanyPageViewMod
             .MaxWidth(700)
             .Padding(50)
             .Children(
+                new ComboBox()
+                    .PlaceholderText("Bezirk")
+                    .ItemsSource(() => vm.AllDistricts)
+                    .SelectedItem(x => x.Bind(() => vm.SelectedDistrict).TwoWay())
+                    .DisplayMemberPath("Name"),
                 TitleTextBlock().Text("Ort"),
                 new DefaultTextBox()
                     .PlaceholderText("Gründungsjahr")

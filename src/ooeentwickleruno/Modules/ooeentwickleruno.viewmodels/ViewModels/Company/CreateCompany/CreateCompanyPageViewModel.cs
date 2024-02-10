@@ -36,6 +36,7 @@ public partial class CreateCompanyPageViewModel : RegionBaseViewModel
     private readonly IMainWindowProvider<Window> _mainWindow;
     private readonly IDispatcher _dispatcher;
     private readonly ICompanyLogoRepository _companyLogoRepository;
+    private readonly IDistrictRepository _districtRepository;
     private readonly ICompanyPresentationImageRepository _companyPresentationImageRepository;
 
     public List<ProgrammingLanguageDto> AllProgrammingLanguages { get; set; }
@@ -43,6 +44,7 @@ public partial class CreateCompanyPageViewModel : RegionBaseViewModel
     public List<IndustryDto> AllIndustries { get; set; }
     public List<IssueTrackerDto> AllIssueTrackers { get; set; }
     public List<RepositoryHostingDto> AllRepositoryHostings { get; set; }
+    public List<DistrictDto> AllDistricts { get; set; }
 
     public List<CompanyProgrammingLanguageDto> OldProgrammingLanguages { get; set; }
     public List<CompanyProgrammingFrameworkDto> OldProgrammingFrameworks { get; set; }
@@ -57,6 +59,7 @@ public partial class CreateCompanyPageViewModel : RegionBaseViewModel
     public RepositoryHostingDto SelectedRepositoryHosting { get; set; }
     public ObservableCollection<object> SelectedBenefits { get; set; } = new();
     public CompanyLocationDto SelectedCompanyLocation { get; set; }
+    public DistrictDto SelectedDistrict { get; set; }
 
     public CompanyDto Company { get; set; } = null;
 
@@ -79,6 +82,7 @@ public partial class CreateCompanyPageViewModel : RegionBaseViewModel
         IMainWindowProvider<Window> mainWindow,
         IDispatcher dispatcher,
         ICompanyLogoRepository companyLogoRepository,
+        IDistrictRepository districtRepository,
         ICompanyPresentationImageRepository companyPresentationImageRepository
     )
         : base(vmServices)
@@ -101,6 +105,7 @@ public partial class CreateCompanyPageViewModel : RegionBaseViewModel
         _mainWindow = mainWindow;
         _dispatcher = dispatcher;
         _companyLogoRepository = companyLogoRepository;
+        _districtRepository = districtRepository;
         _companyPresentationImageRepository = companyPresentationImageRepository;
     }
 
@@ -119,6 +124,8 @@ public partial class CreateCompanyPageViewModel : RegionBaseViewModel
         }
         this.RaisePropertyChanged(nameof(Company));
 
+        AllDistricts = await _districtRepository.GetAll();
+        this.RaisePropertyChanged(nameof(AllDistricts));
         AllProgrammingLanguages = await _programmingLanguageRepository.GetAll();
         this.RaisePropertyChanged(nameof(AllProgrammingLanguages));
         AllProgrammingFrameworks = await _programmingFrameworkRepository.GetAll();
@@ -162,7 +169,11 @@ public partial class CreateCompanyPageViewModel : RegionBaseViewModel
         SelectedCompanyLocation = await _companyLocationRepository.GetLast();
         if (SelectedCompanyLocation is null)
         {
-            SelectedCompanyLocation = new CompanyLocationDto() { CompanyId = Company.GetId() };
+            SelectedCompanyLocation = new CompanyLocationDto()
+            {
+                CompanyId = Company.GetId(),
+                DistrictId = Guid.Empty
+            };
         }
 
         this.RaisePropertyChanged(nameof(SelectedIndustries));
@@ -342,6 +353,7 @@ public partial class CreateCompanyPageViewModel : RegionBaseViewModel
 
     private Task SaveCompanyLocationAsync()
     {
+        SelectedCompanyLocation.DistrictId = SelectedDistrict.GetId();
         return _companyLocationRepository.Save(SelectedCompanyLocation);
     }
 
