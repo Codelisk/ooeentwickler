@@ -71,6 +71,18 @@ public partial class ShowCompanyPage : RegionBasePage<ShowCompanyPageViewModel>
                                                 .VerticalAlignment(VerticalAlignment.Top)
                                                 .HorizontalAlignment(HorizontalAlignment.Center)
                                                 .HorizontalTextAlignment(TextAlignment.Center),
+                                            new DefaultTextBlock()
+                                                .Inlines(
+                                                    new Run().Text(() => vm.CompanyLocation.Street),
+                                                    new Run().Text(", "),
+                                                    new Run().Text(
+                                                        () => vm.CompanyLocation.Zipcode
+                                                    ),
+                                                    new Run().Text(" "),
+                                                    new Run().Text(() => vm.CompanyLocation.City)
+                                                )
+                                                .Foreground("#7C8796")
+                                                .HorizontalAlignment(HorizontalAlignment.Center),
                                             new ItemsRepeater()
                                                 .HorizontalAlignment(HorizontalAlignment.Center)
                                                 .ItemsSource(() => vm.CompanyIndustries)

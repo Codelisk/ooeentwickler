@@ -56,6 +56,7 @@ public partial class CreateCompanyPageViewModel : RegionBaseViewModel
     public IssueTrackerDto SelectedIssueTracker { get; set; }
     public RepositoryHostingDto SelectedRepositoryHosting { get; set; }
     public ObservableCollection<object> SelectedBenefits { get; set; } = new();
+    public CompanyLocationDto SelectedCompanyLocation { get; set; }
 
     public CompanyDto Company { get; set; } = null;
 
@@ -158,11 +159,18 @@ public partial class CreateCompanyPageViewModel : RegionBaseViewModel
         OldCompanyBenefits = await _companyBenefitRepository.GetAll();
         SelectedBenefits = new ObservableCollection<object>(OldCompanyBenefits);
 
+        SelectedCompanyLocation = await _companyLocationRepository.GetLast();
+        if (SelectedCompanyLocation is null)
+        {
+            SelectedCompanyLocation = new CompanyLocationDto() { CompanyId = Company.GetId() };
+        }
+
         this.RaisePropertyChanged(nameof(SelectedIndustries));
         this.RaisePropertyChanged(nameof(SelectedProgrammingFrameworks));
         this.RaisePropertyChanged(nameof(SelectedProgrammingLanguages));
         this.RaisePropertyChanged(nameof(SelectedIssueTracker));
         this.RaisePropertyChanged(nameof(SelectedRepositoryHosting));
+        this.RaisePropertyChanged(nameof(SelectedCompanyLocation));
 
         _vmServices.RegionManager.RequestNavigate(
             "CompanyBenefitRegion",
@@ -332,9 +340,15 @@ public partial class CreateCompanyPageViewModel : RegionBaseViewModel
         await _companyBenefitRepository.AddRange(benefits);
     }
 
+    private Task SaveCompanyLocationAsync()
+    {
+        return _companyLocationRepository.Save(SelectedCompanyLocation);
+    }
+
     private async Task OnAddCompanyAsync()
     {
         Company = await _companyRepository.Save(Company);
+        await SaveCompanyLocationAsync();
         await AddCompanyProgrammingLanguageAsync();
         await AddCompanyProgrammingFrameworksAsync();
         await AddCompanyInfrastructureAsync();

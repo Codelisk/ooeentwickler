@@ -28,9 +28,25 @@ public partial class CreateCompanyPage : RegionBasePage<CreateCompanyPageViewMod
             .MaxWidth(700)
             .Padding(50)
             .Children(
+                TitleTextBlock().Text("Ort"),
                 new DefaultTextBox()
                     .PlaceholderText("Gründungsjahr")
                     .Text(x => x.Bind(() => vm.Company.FoundingYear).Mode(BindingMode.TwoWay)),
+                new DefaultTextBox()
+                    .PlaceholderText("Straße")
+                    .Text(x =>
+                        x.Bind(() => vm.SelectedCompanyLocation.Street).Mode(BindingMode.TwoWay)
+                    ),
+                new DefaultTextBox()
+                    .PlaceholderText("Plz")
+                    .Text(x =>
+                        x.Bind(() => vm.SelectedCompanyLocation.Zipcode).Mode(BindingMode.TwoWay)
+                    ),
+                new DefaultTextBox()
+                    .PlaceholderText("Ort")
+                    .Text(x =>
+                        x.Bind(() => vm.SelectedCompanyLocation.City).Mode(BindingMode.TwoWay)
+                    ),
                 TitleTextBlock().Text("Programmiersprachen"),
                 new DefaultChipSelectionGroup()
                     .ItemsSource(() => vm.AllProgrammingLanguages)

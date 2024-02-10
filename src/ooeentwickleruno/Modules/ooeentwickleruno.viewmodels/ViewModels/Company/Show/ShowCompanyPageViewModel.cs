@@ -54,6 +54,7 @@ public partial class ShowCompanyPageViewModel : RegionBaseViewModel
 
     public BitmapImage CompanyLogo { get; set; }
     public BitmapImage CompanyPresentationImage { get; set; }
+    public CompanyLocationDto CompanyLocation { get; set; }
 
     public ShowCompanyPageViewModel(
         VmServices vmServices,
@@ -172,5 +173,8 @@ public partial class ShowCompanyPageViewModel : RegionBaseViewModel
         CompanyPresentationImage.SetSource(new MemoryStream(companyPresentationImageBytes));
         this.RaisePropertyChanged(nameof(CompanyLogo));
         this.RaisePropertyChanged(nameof(CompanyPresentationImage));
+
+        CompanyLocation = await _companyLocationRepository.GetLast();
+        this.RaisePropertyChanged(nameof(CompanyLocation));
     }
 }
