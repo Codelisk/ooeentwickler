@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Framework.Mvvm.ViewModels;
 using Framework.Services.Services.Vms;
 using ooeentwickleruno.viewmodels.Models;
@@ -53,6 +54,14 @@ public partial class CompanyOverviewPageViewModel : RegionBaseViewModel
         _companyProgrammingLanguageRepository = companyProgrammingLanguageRepository;
     }
 
+    public async Task CompanyTappedAsync(CompanyOverviewModel companyOverviewModel)
+    {
+        ChangeCurrentRegion(
+            "ShowCompanyPage",
+            new NavigationParameters() { { "CompanyOverviewModel", companyOverviewModel } }
+        );
+    }
+
     public ObservableCollection<CompanyOverviewModel> Companies { get; set; } = new();
 
     public override async void OnNavigatedTo(NavigationContext navigationContext)
@@ -75,49 +84,52 @@ public partial class CompanyOverviewPageViewModel : RegionBaseViewModel
             .Where(x => x.companyLocationDto.DistrictId == districtId)
             .ToList();
 
-        foreach (var item in locations)
+        for (var i = 0; i < 30; i++)
         {
-            var companyId = item.company.companyDto.GetId();
-            var languages = companyProgrammingLanguages
-                .Where(x => x.CompanyId == companyId)
-                .Select(x =>
-                    allProgrammingLanguages.FirstOrDefault(y =>
-                        y.GetId() == x.ProgrammingLanguageId
+            foreach (var item in locations)
+            {
+                var companyId = item.company.companyDto.GetId();
+                var languages = companyProgrammingLanguages
+                    .Where(x => x.CompanyId == companyId)
+                    .Select(x =>
+                        allProgrammingLanguages.FirstOrDefault(y =>
+                            y.GetId() == x.ProgrammingLanguageId
+                        )
                     )
-                )
-                .ToList();
-            var frameworks = companyProgrammingFrameworks
-                .Where(x => x.CompanyId == companyId)
-                .Select(x =>
-                    allProgrammingFrameworks.FirstOrDefault(y =>
-                        y.GetId() == x.ProgrammingFrameworkId
+                    .ToList();
+                var frameworks = companyProgrammingFrameworks
+                    .Where(x => x.CompanyId == companyId)
+                    .Select(x =>
+                        allProgrammingFrameworks.FirstOrDefault(y =>
+                            y.GetId() == x.ProgrammingFrameworkId
+                        )
                     )
-                )
-                .ToList();
+                    .ToList();
 
-            var infrastructureId = companyInfrastructures
-                .FirstOrDefault(x => x.CompanyId == companyId)
-                .InfrastructureId;
-            var infrastructure = allInfrastructures.FirstOrDefault(x =>
-                x.GetId() == infrastructureId
-            );
-            var issueTracker = allIssueTrackers.FirstOrDefault(x =>
-                x.GetId() == infrastructure.IssueTrackerId
-            );
-            var repositoryHosting = allRepositoryHostings.FirstOrDefault(x =>
-                x.GetId() == infrastructure.RepositoryHostingId
-            );
+                var infrastructureId = companyInfrastructures
+                    .FirstOrDefault(x => x.CompanyId == companyId)
+                    .InfrastructureId;
+                var infrastructure = allInfrastructures.FirstOrDefault(x =>
+                    x.GetId() == infrastructureId
+                );
+                var issueTracker = allIssueTrackers.FirstOrDefault(x =>
+                    x.GetId() == infrastructure.IssueTrackerId
+                );
+                var repositoryHosting = allRepositoryHostings.FirstOrDefault(x =>
+                    x.GetId() == infrastructure.RepositoryHostingId
+                );
 
-            Companies.Add(
-                new CompanyOverviewModel(
-                    item.company.companyDto,
-                    item.companyLocationDto,
-                    languages,
-                    frameworks,
-                    repositoryHosting,
-                    issueTracker
-                )
-            );
+                Companies.Add(
+                    new CompanyOverviewModel(
+                        item.company.companyDto,
+                        item.companyLocationDto,
+                        languages,
+                        frameworks,
+                        repositoryHosting,
+                        issueTracker
+                    )
+                );
+            }
         }
     }
 }

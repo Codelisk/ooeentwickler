@@ -7,6 +7,7 @@ using AsyncAwaitBestPractices;
 using Framework.UnoNative.Views.Pages;
 using Microsoft.UI.Xaml.Media.Imaging;
 using ooeentwickleruno.controls.Buttons;
+using ooeentwickleruno.controls.Lists;
 using ooeentwickleruno.viewmodels.Models;
 
 namespace Sample.Presentation;
@@ -18,8 +19,7 @@ public partial class BodyView : RegionBasePage<BodyViewModel>
     protected override UIElement MainContent(BodyViewModel vm)
     {
         return new Grid().Children(
-            new ItemsRepeater()
-                .Layout(new UniformGridLayout())
+            new DefaultItemsRepeater()
                 .ItemsSource(() => vm.Districts)
                 .ItemTemplate<DistrictBitmapModel>(x =>
                 {

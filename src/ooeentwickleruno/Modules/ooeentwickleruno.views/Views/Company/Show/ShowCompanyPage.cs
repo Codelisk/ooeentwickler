@@ -7,6 +7,7 @@ using Framework.UnoNative.Views.Pages;
 using ooeentwickleruno.controls.Chips;
 using ooeentwickleruno.controls.Chips.Base;
 using ooeentwickleruno.controls.Chips.SingleChip;
+using ooeentwickleruno.controls.Lists;
 using ooeentwickleruno.controls.TextBlocks;
 using ooeentwickleruno.viewmodels.ViewModels.Company.Show;
 using Uno.Toolkit.UI;
@@ -84,7 +85,6 @@ public partial class ShowCompanyPage : RegionBasePage<ShowCompanyPageViewModel>
                                                 .Foreground("#7C8796")
                                                 .HorizontalAlignment(HorizontalAlignment.Center),
                                             new ItemsRepeater()
-                                                .HorizontalAlignment(HorizontalAlignment.Center)
                                                 .ItemsSource(() => vm.CompanyIndustries)
                                                 .ItemTemplate<IndustryDto>(x =>
                                                     new DefaultTextBlock()
@@ -140,8 +140,7 @@ public partial class ShowCompanyPage : RegionBasePage<ShowCompanyPageViewModel>
                                         .VerticalAlignment(VerticalAlignment.Top)
                                         .HorizontalAlignment(HorizontalAlignment.Center)
                                         .HorizontalTextAlignment(TextAlignment.Center),
-                                    new ItemsRepeater()
-                                        .Layout(new UniformGridLayout())
+                                    new DefaultItemsRepeater()
                                         .ItemsSource(() => vm.CompanyCompanyBenefits)
                                         .ItemTemplate<CompanyBenefitDto>(x =>
                                             new CardContentControl()

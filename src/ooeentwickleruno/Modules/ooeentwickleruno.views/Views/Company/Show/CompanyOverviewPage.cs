@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AsyncAwaitBestPractices;
+using ooeentwickleruno.controls.Lists;
 using ooeentwickleruno.controls.TextBlocks;
 using ooeentwickleruno.viewmodels.Models;
 using ooeentwickleruno.viewmodels.ViewModels.Company.Show;
@@ -14,12 +16,13 @@ public partial class CompanyOverviewPage : RegionBasePage<CompanyOverviewPageVie
 {
     protected override UIElement MainContent(CompanyOverviewPageViewModel vm)
     {
-        return new ItemsRepeater()
-            .HorizontalAlignment(HorizontalAlignment.Stretch)
+        return new DefaultItemsRepeater()
+            .Assign(out var itemsRepeater)
             .VerticalAlignment(VerticalAlignment.Stretch)
             .ItemsSource(() => vm.Companies)
             .ItemTemplate<CompanyOverviewModel>(x =>
-                new Card()
+            {
+                var result = new Card()
                     .BorderThickness(3)
                     .BorderBrush("#F4F4F4")
                     .Style(StaticResource.Get<Style>("OutlinedCardStyle"))
@@ -79,9 +82,25 @@ public partial class CompanyOverviewPage : RegionBasePage<CompanyOverviewPageVie
                                 new Divider(),
                                 new DefaultTextBlock()
                                     .Text(y => y.Bind(() => x.IssueTracker.Name))
-                                    .HorizontalAlignment(HorizontalAlignment.Center)
+                                    .HorizontalAlignment(HorizontalAlignment.Center),
+                                new Grid()
+                                    .Background("#5946D2")
+                                    .Padding(0, 10, 0, 10)
+                                    .Children(
+                                        new DefaultBoldTextBlock()
+                                            .Text("Mehr erfahren")
+                                            .HorizontalAlignment(HorizontalAlignment.Center)
+                                            .Foreground(Colors.White)
+                                    )
                             );
-                    })
-            );
+                    });
+                result.Tapped += (s, e) =>
+                {
+                    var dc = GetDataContext();
+                    dc.CompanyTappedAsync((s as Card).DataContext as CompanyOverviewModel)
+                        .SafeFireAndForget();
+                };
+                return result;
+            });
     }
 }

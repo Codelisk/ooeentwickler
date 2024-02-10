@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Framework.UnoNative.Views.Pages;
 using ooeentwickleruno.controls.Buttons.Fab;
 using ooeentwickleruno.controls.Chips;
+using ooeentwickleruno.controls.Lists;
 using ooeentwickleruno.controls.TextBlocks;
 using ooeentwickleruno.controls.TextBoxes;
 using ooeentwickleruno.viewmodels.ViewModels.Company.CreateCompany;
@@ -49,8 +50,7 @@ public partial class CreateBenefitView : RegionBasePage<CreateBenefitViewModel>
                         .VerticalAlignment(VerticalAlignment.Center)
                         .VerticalContentAlignment(VerticalAlignment.Center)
                         .Command(x => x.Bind(() => vm.TestCommand)),
-                    new ItemsRepeater()
-                        .Layout(new UniformGridLayout())
+                    new DefaultItemsRepeater()
                         .Assign(out var benefitChipGroup)
                         .ItemsSource(() => vm.SelectedBenefits)
                         .ItemTemplate<CompanyBenefitDto>(x =>
