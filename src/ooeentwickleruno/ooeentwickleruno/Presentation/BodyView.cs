@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Framework.UnoNative.Views.Pages;
 using Microsoft.UI.Xaml.Media.Imaging;
 using ooeentwickleruno.controls.Buttons;
+using ooeentwickleruno.viewmodels.Models;
 
 namespace Sample.Presentation;
 
@@ -17,8 +18,9 @@ public partial class BodyView : RegionBasePage<BodyViewModel>
     {
         return new Grid().Children(
             new ItemsRepeater()
+                .Layout(new UniformGridLayout())
                 .ItemsSource(() => vm.Districts)
-                .ItemTemplate<(DistrictDto, BitmapImage)>(x =>
+                .ItemTemplate<DistrictBitmapModel>(x =>
                 {
                     return new CardContentControl()
                         .Style(StaticResource.Get<Style>("ElevatedCardContentControlStyle"))
@@ -27,12 +29,12 @@ public partial class BodyView : RegionBasePage<BodyViewModel>
                         .Content(
                             new Grid().Children(
                                 new Image()
-                                    .Source(() => x.Item2)
+                                    .Source(() => x.Bitmap)
                                     .VerticalAlignment(VerticalAlignment.Center)
                                     .HorizontalAlignment(HorizontalAlignment.Center)
                                     .Stretch(Stretch.UniformToFill),
                                 new ElevatedButton()
-                                    .Content(() => x.Item1)
+                                    .Content(() => x.District.Name)
                                     .Command(x => x.Bind(() => vm.NavigateCommand))
                                     .VerticalAlignment(VerticalAlignment.Bottom)
                                     .Margin(10)

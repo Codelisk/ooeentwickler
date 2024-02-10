@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,7 @@ using Framework.Mvvm.ViewModels;
 using Framework.Services.Services.Vms;
 using Microsoft.UI.Xaml.Media.Imaging;
 using ooeentwickleruno.apiclient;
+using ooeentwickleruno.viewmodels.Models;
 using ReactiveUI;
 
 namespace Sample.Presentation;
@@ -36,37 +38,32 @@ public partial class BodyViewModel : RegionBaseViewModel
         _districtRepository = districtRepository;
     }
 
-    public override void OnNavigatedTo(NavigationContext navigationContext)
+    public override async void OnNavigatedTo(NavigationContext navigationContext)
     {
         base.OnNavigatedTo(navigationContext);
-        _districtRepository
-            .GetAll()
-            .ContinueWith(x =>
+
+        var districts = await _districtRepository.GetAll();
+
+        foreach (var district in districts)
+        {
+            var districtImage = await _districtImageRepository.Get(district.GetId());
+
+            if (districtImage is null)
             {
-                foreach (var district in x.Result)
-                {
-                    _districtImageRepository
-                        .Get(district.GetId())
-                        .ContinueWith(y =>
-                        {
-                            if (y.Result == null)
-                            {
-                                Districts.Add((district, null));
-                            }
-                            else
-                            {
-                                var image = new BitmapImage();
-                                image.SetSource(new MemoryStream(y.Result.bytes));
-                                Districts.Add((district, image));
-                            }
-                        });
-                }
-                this.RaisePropertyChanged(nameof(Districts));
-            });
+                Districts.Add(new(district, null));
+            }
+            else
+            {
+                var image = new BitmapImage();
+                image.SetSource(new MemoryStream(districtImage.bytes));
+                Districts.Add(new(district, image));
+            }
+        }
+
+        this.RaisePropertyChanged(nameof(Districts));
     }
 
-    public List<(DistrictDto, BitmapImage)> Districts { get; set; } =
-        new List<(DistrictDto, BitmapImage)>();
+    public ObservableCollection<DistrictBitmapModel> Districts { get; set; } = new();
     public ICommand NavigateCommand => this.LoadingCommand(OnNavigateAsync);
 
     private async Task OnNavigateAsync()
