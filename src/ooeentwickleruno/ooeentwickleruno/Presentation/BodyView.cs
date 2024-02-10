@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AsyncAwaitBestPractices;
 using Framework.UnoNative.Views.Pages;
 using Microsoft.UI.Xaml.Media.Imaging;
 using ooeentwickleruno.controls.Buttons;
@@ -22,9 +23,10 @@ public partial class BodyView : RegionBasePage<BodyViewModel>
                 .ItemsSource(() => vm.Districts)
                 .ItemTemplate<DistrictBitmapModel>(x =>
                 {
-                    return new CardContentControl()
+                    var result = new CardContentControl()
                         .Style(StaticResource.Get<Style>("ElevatedCardContentControlStyle"))
                         .Width(300)
+                        .Assign(out var card)
                         .Height(250)
                         .Content(
                             new Grid().Children(
@@ -35,11 +37,21 @@ public partial class BodyView : RegionBasePage<BodyViewModel>
                                     .Stretch(Stretch.UniformToFill),
                                 new ElevatedButton()
                                     .Content(() => x.District.Name)
-                                    .Command(x => x.Bind(() => vm.NavigateCommand))
                                     .VerticalAlignment(VerticalAlignment.Bottom)
                                     .Margin(10)
                             )
                         );
+                    result.Tapped += (s, e) =>
+                    {
+                        var dc = GetDataContext();
+                        dc.DistrictTappedAsync(
+                                (
+                                    (s as CardContentControl).DataContext as DistrictBitmapModel
+                                ).District
+                            )
+                            .SafeFireAndForget();
+                    };
+                    return result;
                 })
         );
     }

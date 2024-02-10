@@ -64,10 +64,12 @@ public partial class BodyViewModel : RegionBaseViewModel
     }
 
     public ObservableCollection<DistrictBitmapModel> Districts { get; set; } = new();
-    public ICommand NavigateCommand => this.LoadingCommand(OnNavigateAsync);
 
-    private async Task OnNavigateAsync()
+    public async Task DistrictTappedAsync(DistrictDto districtDto)
     {
-        ChangeCurrentRegion("ShowCompanyPage");
+        ChangeCurrentRegion(
+            "CompanyOverviewPage",
+            new NavigationParameters { { "DistrictId", districtDto.GetId() } }
+        );
     }
 }
