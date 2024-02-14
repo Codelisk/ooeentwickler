@@ -1,4 +1,5 @@
 <Project>
+  <Import Project="Directory.Packages.props" Condition="exists('Directory.Packages.props')" />
   <Import Project="..\submodules\Framework.Uno\submodules\Framework.Restservice\Backend.props" Condition="exists('..\submodules\Framework.Uno\submodules\Framework.Restservice\Backend.props')" />
   <Import Project="..\..\submodules\Framework.Uno\submodules\Framework.Restservice\Backend.props" Condition="exists('..\..\submodules\Framework.Uno\submodules\Framework.Restservice\Backend.props')" />
   <Import Project="..\..\..\submodules\Framework.Uno\submodules\Framework.Restservice\Backend.props" Condition="exists('..\..\..\submodules\Framework.Uno\submodules\Framework.Restservice\Backend.props')" />
