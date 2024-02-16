@@ -36,6 +36,9 @@ jobs:
     - run: |
         cd ./src/ooeentwickleruno/ooeentwickleruno.Wasm
         dotnet build -c Release
+    - name: Show content of CompanyRepository.g.cs
+      run: cat ./src/ooeentwickleruno/ApiConnector/ooeentwickleruno.apiclient/Api.Generator/Api.Generator.Generators.WebApiGenerator/Repositories/CompanyRepository.g.cs
+
     - id: builddeploy
       name: Build And Deploy
       uses: Azure/static-web-apps-deploy@v1
