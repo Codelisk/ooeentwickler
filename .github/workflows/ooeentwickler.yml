@@ -15,7 +15,7 @@ on:
 
 env:
   AZURE_STATIC_WEBAPP_NAME: ooeentwickler
-  APP_DIRECTORY: ./src/ooeentwickleruno/ooeentwickleruno.Wasm
+  APP_DIRECTORY: ./src/ooeentwickleruno/ooeentwickleruno.Wasm/Release/net8.0/dist
   API_DIRECTORY: ''
   OUTPUT: ./src/ooeentwickleruno/ooeentwickleruno.Wasm/wwwroot
   DEPLOYMENT_ENVIRONMENT: preview
@@ -29,9 +29,14 @@ jobs:
     - uses: actions/checkout@v4
       with:
         submodules: recursive
-    - uses: actions/setup-dotnet@v1
+    - name: Setup dotnet
+      uses: actions/setup-dotnet@v1
       with:
         dotnet-version: '8.0.x' # Ensure this matches the version you need
+    - run: |
+      cd ./src/ooeentwickleruno/ooeentwickleruno.Wasm
+      dotnet build -c Release
+
     - id: builddeploy
       name: Build And Deploy
       uses: Azure/static-web-apps-deploy@v1
@@ -41,7 +46,6 @@ jobs:
         action: upload
         deployment_environment: ${{env.DEPLOYMENT_ENVIRONMENT}}
         app_location: ${{ env.APP_DIRECTORY }}
-        api_location: ${{ env.API_DIRECTORY }}
         output_location: ${{ env.OUTPUT }}
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
