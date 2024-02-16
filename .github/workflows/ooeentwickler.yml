@@ -34,9 +34,8 @@ jobs:
       with:
         dotnet-version: '8.0.x' # Ensure this matches the version you need
     - run: |
-      cd ./src/ooeentwickleruno/ooeentwickleruno.Wasm
-      dotnet build -c Release
-
+        cd ./src/ooeentwickleruno/ooeentwickleruno.Wasm
+        dotnet build -c Release
     - id: builddeploy
       name: Build And Deploy
       uses: Azure/static-web-apps-deploy@v1
