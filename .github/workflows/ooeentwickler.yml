@@ -28,7 +28,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
       with:
-        submodules: true
+        submodules: recursive
     - id: builddeploy
       name: Build And Deploy
       uses: Azure/static-web-apps-deploy@v1
