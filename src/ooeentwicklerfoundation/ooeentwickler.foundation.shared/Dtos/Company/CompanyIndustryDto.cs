@@ -2,5 +2,5 @@
 public partial class CompanyIndustryDto : CompanySubBaseDto
 {
     [ForeignKey(nameof(IndustryDto))]
-    public required Guid IndustryId { get; set; }
+    public Guid IndustryId { get; set; }
 }
