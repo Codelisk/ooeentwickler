@@ -1,5 +1,3 @@
-global using Framework.ApiClient.Repositories.Base;
-global using ooeentwickleruno.apiclient;
 global using Codelisk.GeneratorAttributes;
 global using Codelisk.GeneratorAttributes.GeneralAttributes.Registration;
 global using Codelisk.GeneratorAttributes.GeneratorAttributes;
