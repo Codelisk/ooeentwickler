@@ -29,12 +29,6 @@ jobs:
     - uses: actions/checkout@v4
       with:
         submodules: recursive
-        
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: '8.0.x' # Ensure this matches the version you need
-        
     - id: builddeploy
       name: Build And Deploy
       uses: Azure/static-web-apps-deploy@v1
