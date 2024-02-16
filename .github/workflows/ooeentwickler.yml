@@ -8,7 +8,7 @@ on:
     - closed
     branches:
     - master
-    workflow_dispatch: # This line adds the manual trigger option
+  workflow_dispatch: # This line adds the manual trigger option
 env:
   AZURE_STATIC_WEBAPP_NAME: ooeentwickler
   APP_DIRECTORY: ooeentwickler\src\ooeentwickleruno\ooeentwickleruno.Wasm
