@@ -8,6 +8,9 @@ on:
     - closed
     branches:
     - master
+    push:
+    branches:
+    - master
   workflow_dispatch: # This line adds the manual trigger option
 env:
   AZURE_STATIC_WEBAPP_NAME: ooeentwickler
