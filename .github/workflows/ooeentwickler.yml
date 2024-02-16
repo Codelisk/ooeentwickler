@@ -15,9 +15,9 @@ on:
 
 env:
   AZURE_STATIC_WEBAPP_NAME: ooeentwickler
-  APP_DIRECTORY: src\ooeentwickleruno\ooeentwickleruno.Wasm
+  APP_DIRECTORY: ./src/ooeentwickleruno/ooeentwickleruno.Wasm
   API_DIRECTORY: ''
-  OUTPUT: ooeentwickler\src\ooeentwickleruno\ooeentwickleruno.Wasm\wwwroot
+  OUTPUT: ./src/ooeentwickleruno/ooeentwickleruno.Wasm/wwwroot
   DEPLOYMENT_ENVIRONMENT: preview
 
 jobs:
