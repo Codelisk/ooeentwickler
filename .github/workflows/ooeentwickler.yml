@@ -29,9 +29,6 @@ jobs:
     - uses: actions/checkout@v4
       with:
         submodules: recursive
-    
-    - name: Show content of CompanyRepository.g.cs
-      run: cat ./src/ooeentwickleruno/ApiConnector/ooeentwickleruno.apiclient/Api.Generator/Api.Generator.Generators.WebApiGenerator/Repositories/CompanyRepository.g.cs
     - name: Setup dotnet
       uses: actions/setup-dotnet@v1
       with:
@@ -39,6 +36,11 @@ jobs:
     - run: |
         cd ./src/ooeentwickleruno/ooeentwickleruno.Wasm
         dotnet build -c Release
+    continue-on-error: true
+
+    - name: Show content of CompanyRepository.g.cs
+      if: always()
+      run: cat ./src/ooeentwickleruno/ApiConnector/ooeentwickleruno.apiclient/Api.Generator/Api.Generator.Generators.WebApiGenerator/Repositories/CompanyRepository.g.cs
 
     - id: builddeploy
       name: Build And Deploy
