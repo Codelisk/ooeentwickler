@@ -8,16 +8,18 @@ on:
     - closed
     branches:
     - master
-    push:
+  push:
     branches:
     - master
   workflow_dispatch: # This line adds the manual trigger option
+
 env:
   AZURE_STATIC_WEBAPP_NAME: ooeentwickler
   APP_DIRECTORY: ooeentwickler\src\ooeentwickleruno\ooeentwickleruno.Wasm
   API_DIRECTORY: ''
   OUTPUT: ooeentwickler\src\ooeentwickleruno\ooeentwickleruno.Wasm\wwwroot
   DEPLOYMENT_ENVIRONMENT: preview
+
 jobs:
   build_and_deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
