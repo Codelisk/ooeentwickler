@@ -32,7 +32,7 @@ jobs:
     - name: Setup dotnet
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '8.0.x' # Ensure this matches the version you need
+        dotnet-version: '8.x.x' # Ensure this matches the version you need
     - run: |
         cd ./src/ooeentwicklerapi
         dotnet build -c Release
