@@ -10,7 +10,6 @@
     <ProjectReference Include="..\..\..\..\submodules\Framework.Uno\submodules\Framework.Restservice\submodules\CodeGen\src\Common\Codelisk.GeneratorShared\Codelisk.GeneratorShared.csproj" OutputItemType="Analyzer" PrivateAssets="all" />
     <ProjectReference Include="..\..\..\..\submodules\Framework.Uno\submodules\Framework.Restservice\submodules\CodeGen\src\GeneratorHelper\Foundation.Crawler\Foundation.Crawler.csproj" OutputItemType="Analyzer" PrivateAssets="all" />
     <ProjectReference Include="..\..\..\..\submodules\Framework.Uno\submodules\Framework.Restservice\submodules\CodeGen\src\GeneratorHelper\Generators.Base\Generators.Base.csproj" OutputItemType="Analyzer" PrivateAssets="all" />
-    <ProjectReference Include="..\..\..\..\submodules\Framework.Uno\submodules\Framework.Restservice\submodules\CodeGen\src\Generators\Api\Api.Generator\Api.Generator.csproj" OutputItemType="Analyzer" PrivateAssets="all" />
     <!--<ProjectReference Include="..\..\..\..\submodules\Framework.Uno\submodules\Framework.Restservice\submodules\CodeGen\src\Generators\Api\Codelisk.Api.RefitApis.Generator\Codelisk.Api.RefitApis.Generator.csproj" OutputItemType="Analyzer" PrivateAssets="all" />-->
     <ProjectReference Include="..\..\ooeentwickleruno.foundation\ooeentwickleruno.foundation.csproj" />
     <!--<ProjectReference Include="..\..\..\..\..\..\Uno\Framework.Uno\submodules\Framework.Restservice\submodules\CodeGen\src\Generators\Api\Codelisk.Api.RefitApis.Generator\Codelisk.Api.RefitApis.Generator.csproj" OutputItemType="Analyzer" PrivateAssets="all" />-->
