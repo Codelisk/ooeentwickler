@@ -34,7 +34,7 @@ jobs:
       with:
         dotnet-version: '8.x.x' # Ensure this matches the version you need
     - run: |
-        cd ./src/ooeentwicklerapi
+        cd ./src/ooeentwickleruno/ApiConnector/ooeentwickleruno.apiclient
         dotnet build -c Release
     - id: builddeploy
       name: Build And Deploy
