@@ -36,6 +36,12 @@ jobs:
     - run: |
         cd ./src/ooeentwickleruno/ApiConnector/ooeentwickleruno.apiclient
         dotnet build -c Release
+    - run: |
+        cd ./src/ooeentwickleruno/ooeentwickleruno
+        dotnet build -c Release
+    - run: |
+        cd ./src/ooeentwickleruno/ooeentwickleruno.Wasm
+        dotnet build -c Release      
     - id: builddeploy
       name: Build And Deploy
       uses: Azure/static-web-apps-deploy@v1
