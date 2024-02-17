@@ -33,13 +33,16 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: '8.x.x' # Ensure this matches the version you need
-    - run: |
+    - name: Build 1
+      run: |
         cd ./src/ooeentwickleruno/ApiConnector/ooeentwickleruno.apiclient
         dotnet build -c Release
-    - run: |
+    - name: Build 2
+      run: |
         cd ./src/ooeentwickleruno/ooeentwickleruno
         dotnet build -c Release
-    - run: |
+    - name: Build 3
+      run: |
         cd ./src/ooeentwickleruno/ooeentwickleruno.Wasm
         dotnet build -c Release      
     - id: builddeploy
