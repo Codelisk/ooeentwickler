@@ -23,7 +23,6 @@ public class App : BaseApp
             services
         );
     }
-
     protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
     {
         base.ConfigureModuleCatalog(moduleCatalog);
