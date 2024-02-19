@@ -15,7 +15,7 @@ on:
 
 env:
   AZURE_STATIC_WEBAPP_NAME: ooeentwickler
-  APP_DIRECTORY: ./src/ooeentwickleruno/ooeentwickleruno.Wasm/bind/Release/net8.0/dist
+  APP_DIRECTORY: ./src/ooeentwickleruno/ooeentwickleruno.Wasm/bin/Release/net8.0/dist
   API_DIRECTORY: ''
   OUTPUT: ./src/ooeentwickleruno/ooeentwickleruno.Wasm/wwwroot
   DEPLOYMENT_ENVIRONMENT: preview
