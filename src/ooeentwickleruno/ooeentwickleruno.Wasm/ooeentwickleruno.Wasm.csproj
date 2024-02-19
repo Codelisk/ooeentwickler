@@ -33,9 +33,6 @@
     <!-- <WasmShellGenerateAOTProfile>true</WasmShellGenerateAOTProfile> -->
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="manifest.webmanifest" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="WasmCSS\Fonts.css" />
     <EmbeddedResource Include="WasmScripts\AppManifest.js" />
   </ItemGroup>
