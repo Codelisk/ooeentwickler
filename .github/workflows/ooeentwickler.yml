@@ -23,7 +23,7 @@ env:
 jobs:
   build_and_deploy_job:
     name: Build and Deploy Job
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
     - uses: actions/checkout@v4
       with:
