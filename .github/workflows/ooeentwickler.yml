@@ -15,7 +15,7 @@ on:
 
 env:
   AZURE_STATIC_WEBAPP_NAME: ooeentwickler
-  APP_DIRECTORY: ./src/ooeentwickleruno/ooeentwickleruno.Wasm/bin/Release/net8.0/dist
+  APP_DIRECTORY: ./src/ooeentwickleruno/ooeentwickleruno.Wasm/bin/Debug/net8.0/dist
   API_DIRECTORY: ''
   DEPLOYMENT_ENVIRONMENT: preview
 
@@ -42,7 +42,7 @@ jobs:
     - name: Build 3
       run: |
         cd ./src/ooeentwickleruno/ooeentwickleruno.Wasm
-        dotnet build -c Release
+        dotnet build -c Debug
     - name: Upload Artifacts
       uses: actions/upload-artifact@v2
       with:
