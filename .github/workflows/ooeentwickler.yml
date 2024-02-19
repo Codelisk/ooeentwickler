@@ -46,6 +46,7 @@ jobs:
         dotnet build -c Release      
     - id: builddeploy
       name: Build And Deploy
+      runs-on: ubuntu-latest
       uses: Azure/static-web-apps-deploy@v1
       with:
         azure_static_web_apps_api_token: ${{ secrets.ooeentwickler_SPN }}
