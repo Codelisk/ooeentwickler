@@ -5,11 +5,11 @@
     <MicrosoftAspNetCore>8.0.0</MicrosoftAspNetCore>
     <MicrosoftEntityFrameworkCore>8.0.0</MicrosoftEntityFrameworkCore>
     <MicrosoftExtensionsVersion>8.0.0</MicrosoftExtensionsVersion>
-    <Uno>4.2.0-dev.12</Uno>
-    <UnoWinUI>5.2.0-dev.600</UnoWinUI>
+    <Uno>4.2.0-dev.17</Uno>
+    <UnoWinUI>5.2.0-dev.710</UnoWinUI>
     <UnoWinUI2>5.2.0-dev.27</UnoWinUI2>
-    <UnoToolkitWinUI>5.2.0-dev.24</UnoToolkitWinUI>
-    <UnoExtensions>4.1.0-dev.12</UnoExtensions>
+    <UnoToolkitWinUI>5.2.0-dev.31</UnoToolkitWinUI>
+    <UnoExtensions>4.1.0-dev.24</UnoExtensions>
     <Prism>9.0.401-pre</Prism>
   </PropertyGroup>
   <ItemGroup Label="Global Package versions">
@@ -73,6 +73,7 @@
     <PackageVersion Include="Prism.Core" Version="$(Prism)" />
     <PackageVersion Include="Prism.DryIoc.Uno.WinUI" Version="$(Prism)" />
     <PackageVersion Include="Prism.Uno.WinUI" Version="$(Prism)" />
+    <PackageVersion Include="Prism.Uno.WinUI.Markup" Version="$(Prism)" />
     <PackageVersion Include="Swashbuckle.AspNetCore" Version="6.5.0" />
     <PackageVersion Include="Uno.Core.Extensions.Logging.Singleton" Version="4.0.1" />
     <PackageVersion Include="Uno.Extensions.Core.WinUI" Version="$(UnoExtensions)" />
