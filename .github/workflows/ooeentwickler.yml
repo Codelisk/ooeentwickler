@@ -7,24 +7,23 @@ on:
     - reopened
     - closed
     branches:
-    - master
+    - fixcodegen
   push:
     branches:
-    - master
+    - fixcodegen
   workflow_dispatch: # This line adds the manual trigger option 
 
 env:
   AZURE_STATIC_WEBAPP_NAME: ooeentwickler
-  APP_DIRECTORY: ./src/ooeentwickleruno/ooeentwickleruno.Wasm/Release/net8.0/dist
+  APP_DIRECTORY: ./src/ooeentwickleruno/ooeentwickleruno.Wasm/bin/Release/net8.0/dist
   API_DIRECTORY: ''
-  OUTPUT: ./src/ooeentwickleruno/ooeentwickleruno.Wasm/wwwroot
+  OUTPUT: ./src/ooeentwickleruno/ooeentwickleruno.Wasm/bin/Release/net8.0/dist
   DEPLOYMENT_ENVIRONMENT: preview
 
 jobs:
-  build_and_deploy_job:
-    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
-    name: Build and Deploy Job
-    runs-on: ubuntu-latest
+  build_job:
+    name: Build Job
+    runs-on: windows-latest
     steps:
     - uses: actions/checkout@v4
       with:
@@ -32,21 +31,43 @@ jobs:
     - name: Setup dotnet
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '8.x.x' # Ensure this matches the version you need
-    - name: Build 1
-      run: |
-        cd ./src/ooeentwickleruno/ApiConnector/ooeentwickleruno.apiclient
-        dotnet build -c Release
-    - name: Build 2
-      run: |
-        cd ./src/ooeentwickleruno/ooeentwickleruno
-        dotnet build -c Release
+        dotnet-version: '8.x.x'
+    # - name: Build 1
+    #   run: |
+    #     cd ./src/ooeentwickleruno/ApiConnector/ooeentwickleruno.apiclient
+    #     dotnet build -c Release
+    # - name: Build 2
+    #   run: |
+    #     cd ./src/ooeentwickleruno/ooeentwickleruno
+    #     dotnet build -c Release
     - name: Build 3
       run: |
         cd ./src/ooeentwickleruno/ooeentwickleruno.Wasm
-        dotnet build -c Release      
-    - id: builddeploy
-      name: Build And Deploy
+        dotnet build -c Release
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: built-app
+        path: ${{ env.OUTPUT }}
+    # - name: 'Artifact: azure-swa'
+    #   run: |
+    #     cd ./src/ooeentwickleruno/ooeentwickleruno.Wasm
+    #     dotnet publish --output dist
+  deploy_job:
+    name: Deploy Job
+    needs: build_job
+    runs-on: ubuntu-latest
+    steps:
+    - name: Download Artifacts
+      uses: actions/download-artifact@v2
+      with:
+        name: built-app
+        path: ${{ env.APP_DIRECTORY }}
+    - name: Setup dotnet
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '8.x.x'
+    - name: Build And Deploy
       uses: Azure/static-web-apps-deploy@v1
       with:
         azure_static_web_apps_api_token: ${{ secrets.ooeentwickler_SPN }}
@@ -55,6 +76,9 @@ jobs:
         deployment_environment: ${{env.DEPLOYMENT_ENVIRONMENT}}
         app_location: ${{ env.APP_DIRECTORY }}
         output_location: ${{ env.OUTPUT }}
+        skip_app_build: true
+        skip_api_build: true
+
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
     name: Close Pull Request Job
