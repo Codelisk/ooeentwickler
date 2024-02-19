@@ -7,10 +7,10 @@ on:
     - reopened
     - closed
     branches:
-    - fixcodegen
+    - master
   push:
     branches:
-    - fixcodegen
+    - master
   workflow_dispatch: # This line adds the manual trigger option 
 
 env:
