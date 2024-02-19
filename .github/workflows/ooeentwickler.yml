@@ -49,10 +49,10 @@ jobs:
       with:
         name: built-app
         path: ${{ env.OUTPUT }}
-    - name: 'Artifact: azure-swa'
-      run: |
-        cd ./src/ooeentwickleruno/ooeentwickleruno.Wasm
-        dotnet publish --output dist
+    # - name: 'Artifact: azure-swa'
+    #   run: |
+    #     cd ./src/ooeentwickleruno/ooeentwickleruno.Wasm
+    #     dotnet publish --output dist
   deploy_job:
     name: Deploy Job
     needs: build_job
