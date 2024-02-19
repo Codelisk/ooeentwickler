@@ -1,7 +1,4 @@
 {
-  "platform": {
-    "apiRuntime": "dotnet:8.0"
-  },
   "navigationFallback": {
     "rewrite": "/index.html",
     "exclude": [

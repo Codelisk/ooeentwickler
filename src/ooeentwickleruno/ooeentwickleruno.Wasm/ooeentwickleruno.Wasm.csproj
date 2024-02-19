@@ -51,7 +51,6 @@
     -->
     <None Include="Program.cs" />
     <None Include="LinkerConfig.xml" />
-    <None Include="wwwroot\web.config" />
   </ItemGroup>
 
   <ItemGroup>
