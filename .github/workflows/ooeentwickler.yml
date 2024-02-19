@@ -76,6 +76,8 @@ jobs:
         deployment_environment: ${{env.DEPLOYMENT_ENVIRONMENT}}
         app_location: ${{ env.APP_DIRECTORY }}
         output_location: ${{ env.OUTPUT }}
+        skip_app_build: true
+        skip_api_build: true
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
