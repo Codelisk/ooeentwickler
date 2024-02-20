@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ooeentwicklerapi.Database;
 using ooeentwicklerapi.Foundation;
+using Microsoft.EntityFrameworkCore;
 
 namespace ooeentwicklerapi.Host
 {
@@ -31,8 +32,9 @@ namespace ooeentwicklerapi.Host
             builder.Services.AddTransient<DbContext, OoeDbContext>();
             builder.Services.AddDbContext<OoeDbContext>(opt =>
             {
+                opt.UseSqlServer(connectionString, x => x.MigrationsAssembly("Orderlyze.Printing.Restservice"));
                 //opt.UseMySql(connectionString, new MariaDbServerVersion("15.1"), x => x.MigrationsAssembly("Backend.Host"));
-                opt.UseSqlite(connectionString, b => b.MigrationsAssembly("ooeentwicklerapi.Host"));
+                //opt.UseSqlite(connectionString, b => b.MigrationsAssembly("ooeentwicklerapi.Host"));
             });
         }
     }
