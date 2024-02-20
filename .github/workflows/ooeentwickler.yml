@@ -17,6 +17,7 @@ env:
   AZURE_STATIC_WEBAPP_NAME: ooeentwickler
   APP_DIRECTORY: ./src/ooeentwickleruno/ooeentwickleruno.Wasm/bin/Debug/net8.0/dist
   API_DIRECTORY: ''
+  OUTPUT: ./src/ooeentwickleruno/ooeentwickleruno.Wasm/bin/Debug/net8.0/dist
   DEPLOYMENT_ENVIRONMENT: preview
 
 jobs:
@@ -34,15 +35,20 @@ jobs:
     # - name: Build 1
     #   run: |
     #     cd ./src/ooeentwickleruno/ApiConnector/ooeentwickleruno.apiclient
-    #     dotnet build -c Release
+    #     dotnet build -c Debug
     # - name: Build 2
     #   run: |
     #     cd ./src/ooeentwickleruno/ooeentwickleruno
-    #     dotnet build -c Release
+    #     dotnet build -c Debug
     - name: Build 3
       run: |
         cd ./src/ooeentwickleruno/ooeentwickleruno.Wasm
         dotnet build -c Debug
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: built-app
+        path: ${{ env.OUTPUT }}
     # - name: 'Artifact: azure-swa'
     #   run: |
     #     cd ./src/ooeentwickleruno/ooeentwickleruno.Wasm
@@ -52,6 +58,11 @@ jobs:
     needs: build_job
     runs-on: ubuntu-latest
     steps:
+    - name: Download Artifacts
+      uses: actions/download-artifact@v2
+      with:
+        name: built-app
+        path: ${{ env.APP_DIRECTORY }}
     - name: Setup dotnet
       uses: actions/setup-dotnet@v1
       with:
@@ -64,9 +75,9 @@ jobs:
         action: upload
         deployment_environment: ${{env.DEPLOYMENT_ENVIRONMENT}}
         app_location: ${{ env.APP_DIRECTORY }}
-        output_location: ""
-        # skip_app_build: true
-        # skip_api_build: true
+        output_location: ${{ env.OUTPUT }}
+        skip_app_build: true
+        skip_api_build: true
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
