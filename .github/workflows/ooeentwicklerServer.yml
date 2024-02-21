@@ -36,4 +36,4 @@ jobs:
     - name: Publish
       run: |
         cd ${{ env.HOST_DIRECTORY }}
-        dotnet publish "${{ env.HOST_DIRECTORY }}/ooeentwicklerapi.Host.csproj" -c Release -p:PublishProfile="${{ env.HOST_DIRECTORY }}/Properties/PublishProfiles/ooeentwickler.pubxml" -p:Password="${{ secrets.PublishServerPassword }}"
+        dotnet publish "ooeentwicklerapi.Host.csproj" -c Release -p:PublishProfile="Properties/PublishProfiles/ooeentwickler.pubxml" -p:Password="${{ secrets.PublishServerPassword }}"
