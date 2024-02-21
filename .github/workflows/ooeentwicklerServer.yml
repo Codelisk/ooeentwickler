@@ -31,7 +31,7 @@ jobs:
         dotnet-version: '8.x.x'
     - name: Build
       run: |
-        cd {{ env.HOST_DIRECTORY }}
+        cd ./src/ooeentwicklerapi/src/ooeentwicklerapi.Host
         dotnet build -c Release
     - name: Publish
       run: |
