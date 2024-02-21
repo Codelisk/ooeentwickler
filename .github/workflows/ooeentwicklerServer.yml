@@ -32,7 +32,7 @@ jobs:
     - name: Build
       run: |
         cd ${{ env.HOST_DIRECTORY }}
-        dotnet build -c Release
+        dotnet build -c Debug
     - name: Publish
       run: |
         cd ${{ env.HOST_DIRECTORY }}
