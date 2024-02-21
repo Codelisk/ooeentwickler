@@ -1,4 +1,4 @@
-name: Build and deploy .NET Core application to Web App ooeentwickler
+name: Wasm
 on:
   pull_request:
     types:
@@ -7,10 +7,10 @@ on:
     - reopened
     - closed
     branches:
-    - test
+    - release
   push:
     branches:
-    - test
+    - release
   workflow_dispatch: # This line adds the manual trigger option 
 
 env:
