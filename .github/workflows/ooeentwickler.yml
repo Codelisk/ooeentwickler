@@ -7,10 +7,10 @@ on:
     - reopened
     - closed
     branches:
-    - master
+    - test
   push:
     branches:
-    - master
+    - test
   workflow_dispatch: # This line adds the manual trigger option 
 
 env:

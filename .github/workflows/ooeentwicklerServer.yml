@@ -14,7 +14,7 @@ on:
   workflow_dispatch: # This line adds the manual trigger option 
 
 env:
-  HOST_DIRECTORY: ./src/ooeentwicklerapi/ooeentwicklerapi.Host
+  HOST_DIRECTORY: ./src/ooeentwicklerapi/src/ooeentwicklerapi.Host
   DEPLOYMENT_ENVIRONMENT: preview
 
 jobs:
@@ -31,7 +31,7 @@ jobs:
         dotnet-version: '8.x.x'
     - name: Build
       run: |
-        cd ./src/ooeentwicklerapi/ooeentwicklerapi.Host
+        cd {{ env.HOST_DIRECTORY }}
         dotnet build -c Release
     - name: Publish
       run: |
