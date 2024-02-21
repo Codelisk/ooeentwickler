@@ -1,0 +1,39 @@
+name: Build and deploy .NET Core application to Web App ooeentwickler
+on:
+  pull_request:
+    types:
+    - opened
+    - synchronize
+    - reopened
+    - closed
+    branches:
+    - master
+  push:
+    branches:
+    - master
+  workflow_dispatch: # This line adds the manual trigger option 
+
+env:
+  HOST_DIRECTORY: ./src/ooeentwicklerapi/ooeentwicklerapi.Host
+  DEPLOYMENT_ENVIRONMENT: preview
+
+jobs:
+  build_job:
+    name: Build Job
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: recursive
+    - name: Setup dotnet
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '8.x.x'
+    - name: Build
+      run: |
+        cd ./src/ooeentwicklerapi/ooeentwicklerapi.Host
+        dotnet build -c Release
+    - name: Publish
+      run: |
+        cd ${{ env.HOST_DIRECTORY }}
+        dotnet publish "${{ env.HOST_DIRECTORY }}/ooeentwicklerapi.Host.csproj" -c Release -p:PublishProfile="${{ env.HOST_DIRECTORY }}/Properties/PublishProfiles/ooeentwickler.pubxml" -p:Password="${{ secrets.PublishServerPassword }}"
